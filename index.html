@@ -2172,11 +2172,15 @@ async function sbTest(){
 
   const conf = j && j.mailer_autoconfirm===false;
   say("ok","الاتصال سليم — المشروع يستجيب والمفتاح مقبول."+tables+
-    (conf?" ملاحظة: مشروعك يطلب تأكيد البريد، فبعد «حساب جديد» افتح رسالة التأكيد ثم ادخل.":""));
+    (conf?" <b>لكن مشروعك يطلب تأكيد البريد</b>، وبريد Supabase المدمج لا يرسل إلا لأعضاء "+
+      "مؤسستك فيه وبحدّ رسالتين في الساعة — فالأرجح ألا تصلك رسالة. لتطبيق شخصي: أطفئ "+
+      "<b>Confirm email</b> من Authentication ← Sign In / Providers ← Email.":""));
   return true;
 }
 
 /* ---- الدخول والتسجيل ---- */
+const HOW_="في Supabase ← Authentication ← Sign In / Providers ← Email أطفئ <b>Confirm email</b> "+
+  "ثم Save، واحذف الحساب العالق من Authentication ← Users، ثم اضغط «حساب جديد» هنا.";
 async function sbAuth(kind){
   const em=(document.getElementById("sbEmail").value||"").trim();
   const pw=document.getElementById("sbPass").value||"";
@@ -2191,14 +2195,34 @@ async function sbAuth(kind){
       body:JSON.stringify({email:em,password:pw})});
     const j=await r.json().catch(()=>({}));
     if(!r.ok){
+      const code=j.error_code||j.code||"";
       const why=j.msg||j.error_description||j.message||j.error||("خطأ "+r.status);
       const mm=document.getElementById("sbMsg");
-      if(mm) mm.innerHTML=`<span style="color:var(--warn)">${why}</span>
-        <br><span class="mono" style="font-size:.8rem;opacity:.75">${SB.url+path}</span>`;
+      let extra="";
+      if(code==="email_not_confirmed"||/not confirmed/i.test(why))
+        extra=`<br><br><span style="color:var(--dim)">الحساب موجود لكنه غير مؤكَّد.
+          ${HOW_}</span>`;
+      else if(/rate limit/i.test(why))
+        extra=`<br><br><span style="color:var(--dim)">بريد Supabase المدمج يسمح برسالتين في
+          الساعة للمشروع كله. انتظر ساعة، أو — وهو الأفضل لتطبيق شخصي — أطفئ
+          <b>Confirm email</b> من Authentication ← Sign In / Providers ← Email.</span>`;
+      else if(/not authorized|not_authorized/i.test(why))
+        extra=`<br><br><span style="color:var(--dim)">بريد Supabase المدمج لا يرسل إلا
+          لأعضاء مؤسستك في Supabase. ${HOW_}</span>`;
+      else if(/already registered|already been registered/i.test(why))
+        extra=`<br><br><span style="color:var(--dim)">الحساب مسجّل من قبل — اضغط
+          «دخول» بدل «حساب جديد». وإن قيل إنه غير مؤكَّد فـ${HOW_}</span>`;
+      if(mm) mm.innerHTML=`<span style="color:var(--warn)">${why}</span>${extra}
+        <br><span class="mono" style="font-size:.8rem;opacity:.7">${SB.url+path}</span>`;
       throw new Error(why);
     }
     if(!j.access_token){
-      toast("أُنشئ الحساب — افتح بريدك وأكّد التسجيل ثم ادخل");
+      const mm=document.getElementById("sbMsg");
+      if(mm) mm.innerHTML=`<span style="color:var(--warn)">أُنشئ الحساب، والمشروع يطلب تأكيد
+        البريد. وبريد Supabase المدمج <b>لا يصل إلا لأعضاء مؤسستك فيه</b>، وبحدّ رسالتين في
+        الساعة للمشروع كله — فقد لا تصلك رسالة أبدًا.</span><br><br>
+        <span style="color:var(--dim)"><b>الحل لتطبيق شخصي:</b> في Supabase ← Authentication ← Sign In / Providers ← Email ← أطفئ <b>Confirm email</b> ثم Save. وبما أن حسابك أُنشئ قبل الإطفاء فهو عالق غير مؤكَّد: احذفه من Authentication ← Users، ثم اضغط «حساب جديد» هنا — ستدخل فورًا بلا بريد.</span>`;
+      toast("أُنشئ الحساب — راجع الرسالة أدناه");
       b.disabled=false; b.textContent=t0; return;
     }
     SB.email=em; sbSetSession(j);
