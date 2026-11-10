@@ -2307,6 +2307,11 @@ async function sbSync(manual){
     tombSave();
 
     await sbSyncAI();
+    try{
+      const rs=await fetch(SB.url+"/auth/v1/settings",
+        {headers:{apikey:SB.key,Authorization:"Bearer "+SB.key}});
+      if(rs.ok){ const js=await rs.json(); SB.openSignup = js.disable_signup===false; }
+    }catch(e){}
     store(); renderCases();
     SB.last=Date.now(); sbSave(); paintCloud();
     if(manual) toast("تمت المزامنة — "+toAr(CASES.length)+" قضية");
@@ -2379,7 +2384,15 @@ function paintCloud(busy){
     return;
   }
   const when=SB.last?`آخر مزامنة ${new Date(SB.last).toLocaleString("ar-SA")}`:"لم تتم مزامنة بعد";
-  box.innerHTML=`<div class="hint" style="margin-bottom:12px">${when} ·
+  const warn = SB.openSignup ? `<div class="legal" style="margin:0 0 14px">
+      <strong>أغلق باب التسجيل.</strong> مشروعك ما زال يقبل حسابات جديدة، ومفتاحك العام
+      ظاهر لكل من يفتح الصفحة — فيستطيع أي شخص إنشاء حساب في مشروعك. لن يقرأ قضاياك
+      (يمنعه RLS)، لكنه يستهلك حصتك. وما دام حسابك صار موجودًا فلا حاجة للباب مفتوحًا:
+      <br><br>Supabase ← Authentication ← Sign In / Providers ← أطفئ
+      <strong>Allow new users to sign up</strong> ← Save.
+      <br><span style="opacity:.75">لا يؤثر ذلك على حسابك الحالي — الدخول يبقى يعمل،
+      ويُمنع إنشاء حسابات جديدة فقط.</span></div>` : "";
+  box.innerHTML=warn+`<div class="hint" style="margin-bottom:12px">${when} ·
       ${toAr(CASES.length)} قضية محليًا</div>
     <div class="bar">
       <button class="btn pri" onclick="sbSync(true)">مزامنة الآن</button>
