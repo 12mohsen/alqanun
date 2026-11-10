@@ -1,0 +1,33 @@
+{
+  "name": "دليل المسار القضائي",
+  "short_name": "المسار القضائي",
+  "description": "التركات والأحوال الشخصية · العقار والمحكمة العامة · النزاع مع المنشآت القانونية — المملكة العربية السعودية",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1419",
+  "theme_color": "#0f1419",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "دعوى جديدة",
+      "short_name": "دعوى جديدة",
+      "url": "./index.html#cases",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "محرّك المسار",
+      "short_name": "محرّك المسار",
+      "url": "./index.html#wiz",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

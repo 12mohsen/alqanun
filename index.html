@@ -2,8 +2,18 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>دليل المسار القضائي — التركات والعقار</title>
+<meta name="description" content="دليل المسار القضائي السعودي: التركات والأحوال الشخصية، والعقار والمحكمة العامة، والنزاع مع المنشآت القانونية.">
+<meta name="theme-color" content="#0f1419">
+<meta name="color-scheme" content="dark light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="المسار القضائي">
 <style>
 :root{
   --bg:#0f1419; --panel:#161d26; --panel2:#1d2630; --line:#2a3645;
@@ -195,6 +205,36 @@ input[type=date]:focus,select:focus{outline:none;border-color:var(--accent)}
 @media(max-width:700px){
   .prow{grid-template-columns:1fr 1fr;gap:6px}
   .prow .x{grid-column:span 2}
+
+  /* التبويبات كانت تأخذ أربعة صفوف من الشاشة — صفّ واحد يُمرَّر */
+  nav.tabs{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin-bottom:18px;gap:2px}
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{flex:0 0 auto;white-space:nowrap;padding:11px 13px;font-size:.9rem}
+
+  .wrap{padding:0 13px 70px}
+  .card{padding:18px 15px}
+  header{padding:16px 0 12px}
+  h2{font-size:1.15rem}
+
+
+  /* أزرار يسهل ضغطها بالإبهام */
+  .btn{padding:11px 15px}
+  .btn.sm{padding:9px 13px;font-size:.86rem}
+  .cact .btn{flex:1 1 auto;text-align:center}
+
+  .tblwrap{-webkit-overflow-scrolling:touch}
+  table{font-size:.84rem}
+}
+
+/* احترام حواف الشاشات ذات القصّة */
+@supports(padding:max(0px)){
+  @media(max-width:700px){
+    .wrap{padding-left:max(13px,env(safe-area-inset-left));
+          padding-right:max(13px,env(safe-area-inset-right));
+          padding-bottom:max(70px,env(safe-area-inset-bottom))}
+  }
 }
 
 /* ---------- cases ---------- */
@@ -271,6 +311,13 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
   .card{padding:17px}
   nav.tabs button{padding:10px 11px;font-size:.87rem}
 }
+
+/* آخر الأنماط — ليفوز على ما سبقه: iOS يقرّب الصفحة على أي حقل أصغر من 16px */
+@media(max-width:700px){
+  input,select,textarea,
+  textarea,input[type=text],input[type=number],input[type=password],
+  input[type=email],input[type=date]{font-size:16px}
+}
 </style>
 </head>
 <body>
@@ -339,6 +386,7 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
       <input type="file" id="impFile" accept=".json" style="display:none">
     </div>
     <div id="storeWarn"></div>
+    <div class="bar" id="installBar" style="margin-top:-6px"></div>
     <div class="cases" id="caseList"></div>
   </div>
 
@@ -3120,6 +3168,52 @@ load();
 renderCases();
 loadAI();
 sbLoad();
+
+/* ===================== التثبيت على الجوال ===================== */
+/* عامل الخدمة يعمل على http(s) فقط — ولا يُسجَّل عند فتح الملف من القرص */
+if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("sw.js").catch(()=>{});
+  });
+}
+
+/* زر «ثبّت التطبيق» — يظهر فقط حين يسمح المتصفح بالتثبيت */
+let DEFER=null;
+window.addEventListener("beforeinstallprompt",e=>{
+  e.preventDefault(); DEFER=e; paintInstall();
+});
+window.addEventListener("appinstalled",()=>{ DEFER=null; paintInstall(); });
+
+function standalone(){
+  return window.matchMedia("(display-mode: standalone)").matches ||
+         navigator.standalone===true;
+}
+function paintInstall(){
+  const el=document.getElementById("installBar");
+  if(!el) return;
+  if(standalone()){ el.innerHTML=""; return; }
+  if(DEFER){
+    el.innerHTML=`<button class="btn pri" onclick="doInstall()">ثبّت التطبيق على الجهاز</button>
+      <span class="hint" style="display:inline-block;margin-right:10px">يفتح كتطبيق مستقل
+        ويعمل بلا إنترنت.</span>`;
+    return;
+  }
+  const ios=/iPad|iPhone|iPod/.test(navigator.userAgent||"");
+  el.innerHTML = ios
+    ? `<div class="hint">لتثبيته على الآيفون: زر <strong>المشاركة</strong> في سفري
+        ← <strong>إضافة إلى الشاشة الرئيسية</strong>.</div>`
+    : (location.protocol.indexOf("http")===0
+        ? `<div class="hint">لتثبيته: قائمة المتصفح ← <strong>تثبيت التطبيق</strong>
+           أو <strong>إضافة إلى الشاشة الرئيسية</strong>.</div>`
+        : `<div class="hint">التثبيت يحتاج فتح التطبيق من رابط (https) لا من ملف على القرص.</div>`);
+}
+async function doInstall(){
+  if(!DEFER) return;
+  DEFER.prompt();
+  try{ await DEFER.userChoice; }catch(e){}
+  DEFER=null; paintInstall();
+}
+paintInstall();
 </script>
 </body>
 </html>
