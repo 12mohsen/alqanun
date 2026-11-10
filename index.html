@@ -450,6 +450,35 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
     </details>
   </div>
 
+  <div class="card" id="dangerCard">
+    <h2>منطقة الخطر</h2>
+    <p>مسحٌ نهائي لكل القضايا والمسودات. لا تراجع عنه ولا سلة محذوفات.</p>
+    <details style="margin-top:14px">
+      <summary style="cursor:pointer;color:var(--danger);font-size:.92rem">فتح منطقة الخطر</summary>
+      <div style="margin-top:16px">
+        <div class="bar">
+          <button class="btn" onclick="exportCases()">صدّر نسخة احتياطية أولًا</button>
+        </div>
+        <div class="fg"><label class="fl">نطاق المسح</label>
+          <select id="wpScope" onchange="paintWipe()">
+            <option value="local">هذا الجهاز فقط — ويبقى ما في الخادم</option>
+            <option value="all">كل شيء — هذا الجهاز والخادم وبقية أجهزتي</option>
+          </select>
+          <div class="hint" id="wpScopeHint"></div></div>
+        <div class="fg">
+          <label class="fl" style="display:flex;align-items:center;gap:9px;cursor:pointer">
+            <input type="checkbox" id="wpKeys" style="width:auto;margin:0">
+            <span>امسح أيضًا مفاتيح الذكاء الاصطناعي وبيانات مشروع Supabase</span></label>
+          <div class="hint">بدونها تبقى المفاتيح والمشروع، ويُمسح محتوى القضايا وحده.</div></div>
+        <div id="wpGate"></div>
+        <div class="bar" style="margin-top:4px">
+          <button class="btn dan" id="wpGo" onclick="wipeRun()">امسح نهائيًا</button>
+        </div>
+        <div class="hint" id="wpMsg"></div>
+      </div>
+    </details>
+  </div>
+
   <div class="card" id="caseEditCard" style="display:none">
     <h2 id="editTitle">دعوى جديدة</h2>
     <div id="caseForm" style="margin-top:16px"></div>
@@ -1620,6 +1649,7 @@ function showList(){
   document.getElementById("caseListCard").style.display="";
   document.getElementById("caseEditCard").style.display="none";
   document.getElementById("caseDocCard").style.display="none";
+  const d=document.getElementById("dangerCard"); if(d) d.style.display="";
   renderCases();
 }
 function renderCases(){
@@ -1776,6 +1806,7 @@ function renderForm(title){
   document.getElementById("caseListCard").style.display="none";
   document.getElementById("caseDocCard").style.display="none";
   document.getElementById("caseEditCard").style.display="";
+  const dz=document.getElementById("dangerCard"); if(dz) dz.style.display="none";
   document.getElementById("editTitle").textContent=title;
   const t=CASE_TYPES[cur.type]||CASE_TYPES.qisma;
 
@@ -2401,6 +2432,7 @@ function paintCloud(busy){
   }else if(sbOn()){ st.textContent="المشروع جاهز — لم تدخل"; st.className="tag n"; }
   else { st.textContent="غير مُفعّلة"; st.className="tag"; }
 
+  try{ paintWipe(); }catch(e){}
   if(!sbOn()){
     box.innerHTML=`<div class="fg"><label class="fl">عنوان المشروع (Project URL)</label>
         <input type="text" id="sbUrl" placeholder="https://xxxxxxxx.supabase.co" value="${esc(SB.url)}">
@@ -2431,6 +2463,7 @@ function paintCloud(busy){
         التأكيد ثم ادخل.</div>`;
     return;
   }
+  try{ paintWipe(); }catch(e){}
   const when=SB.last?`آخر مزامنة ${new Date(SB.last).toLocaleString("ar-SA")}`:"لم تتم مزامنة بعد";
   const warn = SB.openSignup ? `<div class="legal" style="margin:0 0 14px">
       <strong>أغلق باب التسجيل.</strong> مشروعك ما زال يقبل حسابات جديدة، ومفتاحك العام
@@ -2448,6 +2481,104 @@ function paintCloud(busy){
       <button class="btn dan" onclick="sbForget()">مسح المشروع من المتصفح</button>
     </div>
     <div class="hint" id="sbMsg" style="margin-top:10px"></div>`;
+}
+
+/* ===================== منطقة الخطر: مسح كل شيء ===================== */
+const WORD="امسح كل شيء";
+
+function paintWipe(){
+  const g=document.getElementById("wpGate"), h=document.getElementById("wpScopeHint");
+  if(!g) return;
+  const scope=(document.getElementById("wpScope")||{}).value||"local";
+  if(h) h.textContent = scope==="all"
+    ? "يُعلَّم كل صفّ على الخادم بالحذف، فتختفي القضايا من بقية أجهزتك عند أول مزامنة."
+    : "يُمسح محتوى هذا المتصفح وحده، وتعود القضايا من الخادم عند أول مزامنة.";
+
+  if(sbIn()){
+    g.innerHTML=`<div class="fg"><label class="fl">كلمة مرور حسابك — للتأكيد</label>
+      <input type="password" id="wpPass" autocomplete="current-password">
+      <div class="hint">تُفحص فعليًا مع ${SB.email||"حسابك"}؛ وبدونها لا يُمسح شيء.</div></div>`;
+  }else{
+    g.innerHTML=`<div class="fg"><label class="fl">اكتب للتأكيد: <code>${WORD}</code></label>
+      <input type="text" id="wpWord" placeholder="${WORD}">
+      <div class="hint">لست داخلًا على مشروع، فالتأكيد بالكتابة بدل كلمة المرور.</div></div>`;
+  }
+}
+
+async function wipeRun(){
+  const msg=document.getElementById("wpMsg");
+  const say=(c,t)=>{ if(msg) msg.innerHTML=`<span style="color:var(--${c})">${t}</span>`; };
+  const scope=document.getElementById("wpScope").value;
+  const alsoKeys=document.getElementById("wpKeys").checked;
+  const btn=document.getElementById("wpGo");
+
+  if(scope==="all" && !sbIn()){
+    say("warn","لست داخلًا على مشروع — لا يمكن المسح من الخادم. اختر «هذا الجهاز فقط»."); return;
+  }
+
+  /* البوابة: كلمة المرور الحقيقية، أو العبارة إن لم تكن داخلًا */
+  if(sbIn()){
+    const pw=(document.getElementById("wpPass")||{}).value||"";
+    if(!pw){ say("warn","أدخل كلمة مرور حسابك."); return; }
+    say("dim","يتحقق من كلمة المرور…");
+    try{
+      const r=await fetch(SB.url+"/auth/v1/token?grant_type=password",{method:"POST",
+        headers:{apikey:SB.key,"Content-Type":"application/json"},
+        body:JSON.stringify({email:SB.email,password:pw})});
+      if(!r.ok){ say("warn","كلمة المرور خاطئة — لم يُمسح شيء."); return; }
+      sbSetSession(await r.json());
+    }catch(e){ say("warn","تعذّر التحقق: "+String(e.message||e).slice(0,60)); return; }
+  }else{
+    const t=(document.getElementById("wpWord")||{}).value||"";
+    if(norm(t)!==norm(WORD)){ say("warn","اكتب العبارة كما هي تمامًا."); return; }
+  }
+
+  const what=scope==="all"
+    ? `سيُمسح ${toAr(CASES.length)} قضية من هذا الجهاز، وتُعلَّم بالحذف على الخادم فتختفي من بقية أجهزتك.`
+    : `سيُمسح ${toAr(CASES.length)} قضية من هذا الجهاز وحده.`;
+  if(!confirm("تأكيد أخير — لا تراجع:\n\n"+what+(alsoKeys?"\nوتُمسح معها المفاتيح وبيانات المشروع.":"")))
+    { say("dim","أُلغي. لم يُمسح شيء."); return; }
+
+  btn.disabled=true; btn.textContent="يمسح…";
+  let n=0;
+  try{
+    if(scope==="all" && sbIn()){
+      const r=await sbFetch("/rest/v1/cases?select=id&deleted_at=is.null");
+      const ids=r.ok?(await r.json()).map(x=>x.id):[];
+      if(ids.length){
+        const iso=new Date().toISOString();
+        const rows=ids.map(id=>({id,payload:{},deleted_at:iso,updated_at:iso}));
+        const w=await sbFetch("/rest/v1/cases?on_conflict=id",{method:"POST",
+          headers:{Prefer:"resolution=merge-duplicates,return=minimal"},
+          body:JSON.stringify(rows)});
+        if(!w.ok) throw new Error("الخادم ردّ "+w.status);
+        n=ids.length;
+      }
+      if(alsoKeys && SB.uid)
+        await sbFetch("/rest/v1/settings?user_id=eq."+SB.uid,
+          {method:"DELETE",headers:{Prefer:"return=minimal"}});
+    }
+
+    CASES=[]; TOMB=[]; cur=null; curIdx=-1;
+    try{ localStorage.removeItem("qadaya"); localStorage.removeItem("qtomb"); }catch(e){}
+
+    if(alsoKeys){
+      AI={prov:"deepseek",max:8000,p:{}};
+      try{ localStorage.removeItem("aicfg"); }catch(e){}
+      paintAI();
+      SB={url:SB_URL||"",key:SB_KEY||"",tok:"",ref:"",exp:0,email:"",uid:"",last:0};
+      sbSave();
+    }
+
+    showList(); paintCloud(); paintWipe();
+    const el=document.getElementById("wpPass")||document.getElementById("wpWord");
+    if(el) el.value="";
+    say("ok","تم المسح."+(n?` وعُلِّم ${toAr(n)} صفًّا بالحذف على الخادم.`:""));
+    toast("مُسح كل شيء");
+  }catch(e){
+    say("warn","تعذّر إتمام المسح: "+String(e.message||e).slice(0,70)+" — راجع اتصالك وأعد المحاولة.");
+  }
+  btn.disabled=false; btn.textContent="امسح نهائيًا";
 }
 
 /* ===================== AI SETTINGS ===================== */
@@ -2955,6 +3086,7 @@ function openDocs(i){
   document.getElementById("caseListCard").style.display="none";
   document.getElementById("caseEditCard").style.display="none";
   document.getElementById("caseDocCard").style.display="";
+  const dz=document.getElementById("dangerCard"); if(dz) dz.style.display="none";
   const t=CASE_TYPES[cur.type]||CASE_TYPES.other;
   document.getElementById("docTitle").textContent=cur.title||t.n;
   document.getElementById("docLead").innerHTML=
@@ -3168,6 +3300,7 @@ load();
 renderCases();
 loadAI();
 sbLoad();
+paintWipe();
 
 /* ===================== التثبيت على الجوال ===================== */
 /* عامل الخدمة يعمل على http(s) فقط — ولا يُسجَّل عند فتح الملف من القرص */
