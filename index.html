@@ -2067,7 +2067,7 @@ function sbLoad(){
 async function sbFetch(path,opt,noRetry){
   opt=opt||{};
   const h=Object.assign({apikey:SB.key,"Content-Type":"application/json"},opt.headers||{});
-  if(SB.tok) h.Authorization="Bearer "+SB.tok;
+  h.Authorization="Bearer "+(SB.tok||SB.key);
   const r=await fetch(SB.url+path,Object.assign({},opt,{headers:h}));
   if(r.status===401 && SB.ref && !noRetry){
     if(await sbRefresh()) return sbFetch(path,opt,true);
@@ -2131,34 +2131,49 @@ function sbSaveCfg(){
 /* نداء تشخيصي: يقول أين تعطّل الاتصال بالضبط */
 async function sbTest(){
   const m=document.getElementById("sbMsg");
-  if(m) m.textContent="يفحص الاتصال…";
-  const target=SB.url+"/rest/v1/";
+  const say=(c,t,sub)=>{ if(m) m.innerHTML=`<span style="color:var(--${c})">${t}</span>`+
+    (sub?`<br><span class="mono" style="font-size:.8rem;opacity:.7">${sub}</span>`:""); };
+  if(!sbOn()){ say("warn","أدخل العنوان والمفتاح أولًا."); return false; }
+  say("dim","يفحص…");
+
+  /* ١ — العنوان والمفتاح: مسار لا يحتاج صلاحيات على الجداول */
+  const a=SB.url+"/auth/v1/settings";
+  let j=null;
   try{
-    const r=await fetch(target,{headers:{apikey:SB.key}});
-    const body=(await r.text()).slice(0,200);
-    if(r.ok||r.status===404){
-      if(m) m.innerHTML=`<span style="color:var(--ok)">الاتصال سليم — المشروع يستجيب.</span>`;
-      return true;
-    }
+    const r=await fetch(a,{headers:{apikey:SB.key,Authorization:"Bearer "+SB.key}});
     if(r.status===401||r.status===403){
-      if(m) m.innerHTML=`<span style="color:var(--warn)">العنوان صحيح لكن المفتاح مرفوض
-        (${r.status}). انسخ Publishable key من Project Settings ← API Keys.</span>`;
+      say("warn","المفتاح مرفوض ("+r.status+"). انسخ <b>Publishable key</b> كاملًا من "+
+        "Project Settings ← API Keys — يبدأ بـ sb_publishable_ ولا تقتطع منه شيئًا.",a);
       return false;
     }
-    if(m) m.innerHTML=`<span style="color:var(--warn)">ردّ الخادم ${r.status}: ${body}</span>
-      <br><span class="mono" style="font-size:.8rem;opacity:.75">${target}</span>`;
-    return false;
+    if(!r.ok){ say("warn","ردّ الخادم "+r.status+": "+(await r.text()).slice(0,140),a); return false; }
+    j=await r.json().catch(()=>null);
   }catch(e){
-    if(m) m.innerHTML=`<span style="color:var(--warn)">تعذّر الوصول:
-      ${String(e.message||e).slice(0,90)}</span>
-      <br><span class="mono" style="font-size:.8rem;opacity:.75">${target}</span>`;
+    say("warn","تعذّر الوصول إلى المشروع: "+String(e.message||e).slice(0,80)+
+      " — تحقّق من اتصالك ومن أن المشروع غير متوقّف (paused) في Supabase.",a);
     return false;
   }
-}
-function sbForget(){
-  if(!confirm("مسح بيانات المشروع والجلسة من هذا المتصفح؟ القضايا المحلية تبقى.")) return;
-  SB={url:SB_URL||"",key:SB_KEY||"",tok:"",ref:"",exp:0,email:"",uid:"",last:0};
-  sbSave(); paintCloud(); toast("مُسحت");
+
+  /* ٢ — الجداول: يكشف أنك لم تشغّل supabase.sql بعد */
+  const t=SB.url+"/rest/v1/cases?select=id&limit=1";
+  let tables="";
+  try{
+    const r2=await fetch(t,{headers:{apikey:SB.key,Authorization:"Bearer "+(SB.tok||SB.key)}});
+    const b2=(await r2.text()).slice(0,200);
+    if(r2.status===404||/PGRST205|does not exist|could not find the table/i.test(b2)){
+      say("warn","العنوان والمفتاح سليمان، لكن <b>جدول cases غير موجود</b> — "+
+        "لم تُشغّل ملف supabase.sql بعد. افتح Supabase ← SQL Editor ← New query، "+
+        "والصق الملف كاملًا ثم Run.",t);
+      return false;
+    }
+    tables = (r2.ok||r2.status===401||r2.status===403)
+      ? " والجداول موجودة." : " (ردّ الجداول: "+r2.status+")";
+  }catch(e){}
+
+  const conf = j && j.mailer_autoconfirm===false;
+  say("ok","الاتصال سليم — المشروع يستجيب والمفتاح مقبول."+tables+
+    (conf?" ملاحظة: مشروعك يطلب تأكيد البريد، فبعد «حساب جديد» افتح رسالة التأكيد ثم ادخل.":""));
+  return true;
 }
 
 /* ---- الدخول والتسجيل ---- */
