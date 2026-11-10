@@ -1,0 +1,3009 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دليل المسار القضائي — التركات والعقار</title>
+<style>
+:root{
+  --bg:#0f1419; --panel:#161d26; --panel2:#1d2630; --line:#2a3645;
+  --txt:#e8eef5; --dim:#9aa9bb; --accent:#c9a227; --accent2:#e0b94a;
+  --ok:#3fa86b; --warn:#d4803a; --danger:#c75a5a; --info:#4a7fb5;
+  --r:14px;
+}
+[data-theme="light"]{
+  --bg:#f4f6f9; --panel:#ffffff; --panel2:#eef2f7; --line:#d8e0ea;
+  --txt:#16202c; --dim:#5c6b7d; --accent:#8a6d16; --accent2:#a9861f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Segoe UI","Tajawal","Noto Naskh Arabic",system-ui,sans-serif;
+  background:var(--bg); color:var(--txt); line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 80px}
+
+/* ---------- header ---------- */
+header{
+  background:linear-gradient(160deg,#1a2430,#0f1419);
+  border-bottom:1px solid var(--line); padding:34px 0 28px; margin-bottom:26px;
+}
+[data-theme="light"] header{background:linear-gradient(160deg,#fff,#e9eef5)}
+.hd{max-width:1080px;margin:0 auto;padding:0 18px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.seal{
+  width:46px;height:46px;border-radius:12px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--accent),#7d6414);
+  display:grid;place-items:center;font-size:22px;color:#10151b;font-weight:700;
+}
+h1{font-size:1.5rem;font-weight:700;letter-spacing:-.3px}
+.sub{color:var(--dim);font-size:.92rem;margin-top:4px}
+.tools{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  background:var(--panel2);color:var(--txt);border:1px solid var(--line);
+  padding:9px 16px;border-radius:10px;cursor:pointer;font-size:.9rem;
+  font-family:inherit;transition:.15s;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent2)}
+.btn.on{background:var(--accent);color:#10151b;border-color:var(--accent);font-weight:600}
+
+/* ---------- disclaimer ---------- */
+.legal{
+  background:rgba(199,90,90,.09); border:1px solid rgba(199,90,90,.4);
+  border-right:4px solid var(--danger); border-radius:var(--r);
+  padding:16px 20px; margin-bottom:26px; font-size:.9rem;
+}
+.legal strong{color:var(--danger)}
+
+/* ---------- tabs ---------- */
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;
+  border-bottom:1px solid var(--line);padding-bottom:0}
+nav.tabs button{
+  background:none;border:none;border-bottom:3px solid transparent;
+  color:var(--dim);padding:11px 16px;cursor:pointer;font-size:.95rem;
+  font-family:inherit;transition:.15s;
+}
+nav.tabs button:hover{color:var(--txt)}
+nav.tabs button.on{color:var(--accent2);border-bottom-color:var(--accent);font-weight:600}
+section.page{display:none}
+section.page.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--r);padding:22px;margin-bottom:18px;
+}
+.card h2{font-size:1.15rem;margin-bottom:6px}
+.card h3{font-size:1rem;margin:18px 0 8px;color:var(--accent2)}
+.card p{color:var(--dim);font-size:.93rem}
+.card p.lead{color:var(--txt)}
+
+/* ---------- wizard ---------- */
+.q{margin-bottom:22px}
+.q .qt{font-weight:600;margin-bottom:12px;display:flex;gap:10px;align-items:baseline}
+.q .qn{
+  background:var(--accent);color:#10151b;width:24px;height:24px;flex:0 0 auto;
+  border-radius:7px;display:grid;place-items:center;font-size:.8rem;font-weight:700;
+}
+.opts{display:grid;gap:9px}
+.opt{
+  display:flex;gap:12px;align-items:flex-start;background:var(--panel2);
+  border:1px solid var(--line);border-radius:11px;padding:13px 16px;cursor:pointer;
+  transition:.15s;
+}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:rgba(201,162,39,.12)}
+.opt input{margin-top:7px;accent-color:var(--accent);flex:0 0 auto}
+.opt .ow{display:flex;flex-direction:column}
+.opt .ot{display:block;font-size:.94rem}
+.opt .od{display:block;font-size:.84rem;color:var(--dim);margin-top:2px;line-height:1.6}
+
+/* ---------- result ---------- */
+.result{
+  background:linear-gradient(150deg,rgba(201,162,39,.14),transparent);
+  border:1px solid var(--accent);border-radius:var(--r);padding:22px;margin-top:8px;
+}
+.result .court{font-size:1.25rem;font-weight:700;color:var(--accent2);margin-bottom:4px}
+.result .basis{font-size:.87rem;color:var(--dim)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.chip{
+  background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+  padding:5px 13px;font-size:.82rem;color:var(--dim);
+}
+.chip.k{border-color:var(--accent);color:var(--accent2)}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-right:30px;margin-top:10px}
+.tl:before{content:"";position:absolute;right:9px;top:10px;bottom:10px;
+  width:2px;background:var(--line)}
+.step{position:relative;margin-bottom:16px}
+.step:before{
+  content:"";position:absolute;right:-26px;top:16px;width:14px;height:14px;
+  border-radius:50%;background:var(--bg);border:3px solid var(--accent);
+}
+.step.adm:before{border-color:var(--info)}
+.step.crit:before{border-color:var(--danger)}
+.step .sh{
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;
+  padding:14px 17px;cursor:pointer;
+}
+.step .sh:hover{border-color:var(--accent)}
+.step .st{font-weight:600;font-size:.97rem;display:flex;justify-content:space-between;
+  gap:12px;align-items:baseline;flex-wrap:wrap}
+.step .sm{font-size:.82rem;color:var(--dim);font-weight:400}
+.step .sb{display:none;padding:14px 17px 4px;font-size:.9rem;color:var(--dim)}
+.step.open .sb{display:block}
+.step .sb ul{margin:8px 0 10px;padding-right:20px}
+.step .sb li{margin-bottom:5px}
+.tag{
+  display:inline-block;font-size:.73rem;padding:2px 9px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);
+  margin-inline-start:6px;
+}
+.tag.d{border-color:var(--danger);color:var(--danger)}
+.tag.i{border-color:var(--info);color:var(--info)}
+.tag.o{border-color:var(--ok);color:var(--ok)}
+
+/* ---------- accordion ---------- */
+.acc{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.acc .ah{background:var(--panel2);padding:15px 18px;cursor:pointer;transition:.15s}
+.acc .ah:hover{background:rgba(201,162,39,.09)}
+.acc.open .ah{background:rgba(201,162,39,.12);border-bottom:1px solid var(--line)}
+.acc .an{font-weight:700;font-size:1.02rem;color:var(--accent2)}
+.acc .ad{font-size:.82rem;color:var(--dim);margin-top:3px}
+.acc .ab{display:none;padding:4px 18px 16px}
+.acc.open .ab{display:block}
+.acc .asum{font-size:.91rem;color:var(--txt);background:var(--panel2);
+  border-right:3px solid var(--accent);border-radius:9px;padding:12px 15px;margin:14px 0}
+.acc h3{font-size:.95rem;margin:16px 0 7px;color:var(--accent2)}
+.acc ul{padding-right:20px;font-size:.9rem;color:var(--dim)}
+.acc li{margin-bottom:7px}
+.acc strong{color:var(--txt)}
+.acc em{color:var(--accent2);font-style:normal;font-weight:600}
+
+/* ---------- calc ---------- */
+.frow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:16px}
+label.fl{display:block;font-size:.86rem;color:var(--dim);margin-bottom:6px}
+input[type=date],select{
+  width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  padding:10px 13px;border-radius:10px;font-family:inherit;font-size:.93rem;
+}
+input[type=date]:focus,select:focus{outline:none;border-color:var(--accent)}
+.chk{display:flex;gap:9px;align-items:center;font-size:.89rem;color:var(--dim);margin-bottom:14px}
+.chk input{accent-color:var(--accent)}
+.out{
+  background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+  padding:20px;margin-top:6px;
+}
+.bigdate{font-size:1.5rem;font-weight:700;color:var(--accent2);margin:4px 0}
+.hijri{font-size:.9rem;color:var(--dim)}
+.left{font-size:.93rem;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.left.urgent{color:var(--danger);font-weight:600}
+.left.gone{color:var(--danger);font-weight:700}
+.left.safe{color:var(--ok)}
+.note{font-size:.85rem;color:var(--dim);margin-top:12px;padding-top:12px;
+  border-top:1px solid var(--line)}
+
+/* ---------- محرّر صفوف الأطراف ---------- */
+.prow{display:grid;grid-template-columns:2fr 1.3fr 1fr 1.3fr auto;gap:8px;margin-bottom:8px}
+.prow input,.prow select{padding:8px 11px;font-size:.89rem}
+.prow .x{background:var(--panel2);border:1px solid var(--line);color:var(--danger);
+  border-radius:9px;cursor:pointer;font-size:1.1rem;line-height:1;padding:0 12px;font-family:inherit}
+.prow .x:hover{background:rgba(199,90,90,.14)}
+.ptools{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px}
+@media(max-width:700px){
+  .prow{grid-template-columns:1fr 1fr;gap:6px}
+  .prow .x{grid-column:span 2}
+}
+
+/* ---------- cases ---------- */
+.bar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.btn.pri{background:var(--accent);color:#10151b;border-color:var(--accent);font-weight:600}
+.btn.pri:hover{background:var(--accent2);color:#10151b}
+.btn.sm{padding:6px 12px;font-size:.83rem}
+.btn.dan{border-color:var(--danger);color:var(--danger)}
+.btn.dan:hover{background:rgba(199,90,90,.12);color:var(--danger)}
+.cases{display:grid;gap:12px}
+.ccard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ccard:hover{border-color:var(--accent)}
+.ct{font-weight:700;font-size:1rem;margin-bottom:3px}
+.cm{font-size:.83rem;color:var(--dim)}
+.cdl{font-size:.86rem;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)}
+.cact{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.empty{text-align:center;color:var(--dim);padding:40px 20px;font-size:.93rem}
+textarea,input[type=text],input[type=number]{
+  width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  padding:10px 13px;border-radius:10px;font-family:inherit;font-size:.93rem;
+  line-height:1.8;resize:vertical;
+}
+textarea:focus,input[type=text]:focus,input[type=number]:focus{outline:none;border-color:var(--accent)}
+.fg{margin-bottom:14px}
+.fset{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.fset>legend{padding:0 9px;font-size:.88rem;color:var(--accent2);font-weight:600}
+.hint{font-size:.8rem;color:var(--dim);margin-top:5px}
+.docout{
+  background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+  padding:18px;margin-top:14px;white-space:pre-wrap;font-size:.9rem;line-height:2;
+  max-height:560px;overflow-y:auto;
+}
+.docout.mono{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:.82rem;line-height:1.8}
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#10151b;padding:11px 24px;border-radius:999px;
+  font-weight:600;font-size:.9rem;z-index:99;box-shadow:0 6px 24px rgba(0,0,0,.35);
+}
+
+/* ---------- tables ---------- */
+.search{
+  width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  padding:12px 16px;border-radius:11px;font-family:inherit;font-size:.95rem;margin-bottom:16px;
+}
+.search:focus{outline:none;border-color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.89rem}
+th{text-align:right;padding:11px 12px;border-bottom:2px solid var(--line);
+  color:var(--accent2);font-weight:600;font-size:.86rem}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--dim)}
+td.m{color:var(--txt);font-weight:600;white-space:nowrap}
+tr:hover td{background:var(--panel2)}
+.vf{font-size:.72rem;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.vf.y{background:rgba(63,168,107,.15);color:var(--ok);border:1px solid rgba(63,168,107,.4)}
+.vf.n{background:rgba(212,128,58,.15);color:var(--warn);border:1px solid rgba(212,128,58,.45)}
+a{color:var(--info)}
+.tblwrap{overflow-x:auto}
+footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
+  padding-top:22px;border-top:1px solid var(--line)}
+
+/* ---------- طباعة المستند بلا نافذة منفصلة ---------- */
+#printArea{display:none}
+@media print{
+  body.printing{background:#fff !important;color:#000 !important}
+  body.printing > *:not(#printArea){display:none !important}
+  body.printing #printArea{
+    display:block;white-space:pre-wrap;
+    font-family:"Traditional Arabic","Simplified Arabic","Segoe UI",serif;
+    font-size:15pt;line-height:2.1;color:#000;padding:0;margin:0;
+  }
+  @page{margin:2.5cm 3cm}
+}
+@media(max-width:600px){
+  h1{font-size:1.22rem}
+  .card{padding:17px}
+  nav.tabs button{padding:10px 11px;font-size:.87rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="hd">
+  <div class="brand">
+    <div class="seal">ع</div>
+    <div>
+      <h1>دليل المسار القضائي</h1>
+      <div class="sub">التركات والأحوال الشخصية · العقار والمحكمة العامة · النزاع مع المنشآت القانونية — المملكة العربية السعودية</div>
+    </div>
+  </div>
+  <div class="tools">
+    <button class="btn" id="themeBtn">تغيير المظهر</button>
+    <button class="btn" onclick="window.print()">طباعة</button>
+    <span class="chip" id="verBadge"></span>
+  </div>
+</div>
+</header>
+
+<div class="wrap">
+
+<div class="legal">
+  <strong>تنبيه نظامي:</strong> هذا الملف أداة تنظيمية واسترشادية فقط، وليس استشارة قانونية ولا بديلاً عن
+  محامٍ مرخّص من وزارة العدل. الأنظمة السعودية تُعدَّل باستمرار، والمواد والمدد الواردة هنا
+  مأخوذة من مصادر منشورة بتواريخها المبينة في تبويب «الأنظمة والمواد» — والمرجع الرسمي الوحيد هو
+  <a href="https://laws.boe.gov.sa" target="_blank" rel="noopener">هيئة الخبراء بمجلس الوزراء</a>.
+  راجع المصدر الرسمي قبل الاعتماد على أي رقم، وبالأخص قبل احتساب مدة اعتراض.
+</div>
+
+<nav class="tabs">
+  <button class="on" data-p="wiz">محرّك المسار</button>
+  <button data-p="cases">قضاياي</button>
+  <button data-p="tarikat">مسار التركات</button>
+  <button data-p="aqar">مسار العقار</button>
+  <button data-p="mihna">مسار المنشأة القانونية</button>
+  <button data-p="calc">حاسبة المُدد</button>
+  <button data-p="laws">الأنظمة والمواد</button>
+  <button data-p="detail">تفصيل الأنظمة</button>
+  <button data-p="docs">قوائم المستندات</button>
+  <button data-p="about">المنهجية</button>
+</nav>
+
+<!-- ============ WIZARD ============ -->
+<section class="page on" id="p-wiz">
+  <div class="card">
+    <h2>تحديد المحكمة المختصة</h2>
+    <p class="lead">أغلب الدعاوى تُرد شكلاً لأنها رُفعت في غير محكمتها المختصة. أجب على الأسئلة لتحديد
+      الجهة المختصة والأنظمة المنطبقة والمسار الإجرائي.</p>
+    <div id="wizBody" style="margin-top:20px"></div>
+    <div id="wizOut"></div>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="page" id="p-cases">
+  <div class="card" id="caseListCard">
+    <h2>قضاياي</h2>
+    <p class="lead">أضف الدعوى مرة واحدة، ثم ولّد منها صحيفة الدعوى أو مذكرة الاعتراض أو طلب
+      التنفيذ — وتتبّع مُددها تلقائيًا.</p>
+    <div class="bar" style="margin-top:18px">
+      <button class="btn pri" onclick="newCase()">+ دعوى جديدة</button>
+      <button class="btn" onclick="exportCases()">تصدير نسخة احتياطية</button>
+      <button class="btn" onclick="document.getElementById('impFile').click()">استيراد</button>
+      <input type="file" id="impFile" accept=".json" style="display:none">
+    </div>
+    <div id="storeWarn"></div>
+    <div class="cases" id="caseList"></div>
+  </div>
+
+  <div class="card" id="cloudCard">
+    <h2>المزامنة السحابية <span class="tag" id="sbState">غير مُفعّلة</span></h2>
+    <p>اختياري. بدونها يعمل التطبيق كاملًا، والقضايا تبقى في هذا المتصفح وحده.
+      وبتفعيلها تُحفظ قضاياك ومسوداتك ومفاتيحك في مشروع Supabase خاص بك، فتصل إليها
+      من أي جهاز.</p>
+    <div id="sbBox" style="margin-top:14px"></div>
+    <div class="legal" style="margin:14px 0 0">
+      <strong>قبل أن تفعّلها:</strong> بيانات قضاياك فيها أسماء وأرقام هويات، وستنتقل إلى
+      خادم Supabase. الحماية تقوم على <strong>RLS</strong>: كل صف مربوط بحسابك ولا يقرؤه
+      غيرك، ومفتاح <code>publishable</code> عامٌّ بطبيعته ولا يفتح شيئًا وحده. ولا تضع
+      مفتاح <code>secret</code> هنا أبدًا — الملف منشور علنًا.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>إعدادات الذكاء الاصطناعي <span class="tag" id="aiState">غير مُفعّل</span></h2>
+    <p>اختياري. بدونه يبقى «مولّد الأمر» يعمل: تنسخ الأمر وتلصقه في أي محادثة.
+      وبمفتاح تُصاغ المذكرة داخل الصفحة مباشرة.</p>
+    <details style="margin-top:14px">
+      <summary style="cursor:pointer;color:var(--accent2);font-size:.92rem">فتح الإعدادات</summary>
+      <div style="margin-top:16px">
+        <div class="frow">
+          <div><label class="fl">المزوّد</label>
+            <select id="aiProv" onchange="provChanged()">
+              <option value="deepseek">DeepSeek</option>
+              <option value="groq">Groq</option>
+              <option value="openai">OpenAI</option>
+            </select></div>
+          <div><label class="fl">النموذج</label>
+            <input type="text" id="aiModel" list="aiModels" placeholder="deepseek-v4-flash">
+            <datalist id="aiModels"></datalist>
+            <button class="btn sm" style="margin-top:7px" onclick="fetchModels()"
+              id="aiFetch">اجلب النماذج المتاحة</button>
+            <div class="hint" id="aiModelHint"></div></div>
+        </div>
+        <div class="fg"><label class="fl">مفتاح API</label>
+          <input type="password" id="aiKey" placeholder="sk-...">
+          <div class="hint">يُحفظ في متصفحك وحده ولا يدخل في ملف الـ HTML ولا في النسخة
+            الاحتياطية. لا تُدخله على جهاز مشترك.</div></div>
+        <div class="frow">
+          <div><label class="fl">سقف المخرجات (وحدات)</label>
+            <input type="number" id="aiMax" min="1000" step="1000" placeholder="8000">
+            <div class="hint">العربية تستهلك وحدات أكثر من الإنجليزية. إن تكرر انقطاع النص
+              ارفعه إلى ١٢٠٠٠ أو أكثر — والتطبيق يُكمل تلقائيًا على أي حال.</div></div>
+          <div><label class="fl">عنوان الـ API <span style="opacity:.6">(للمتقدمين)</span></label>
+            <input type="text" id="aiUrl"></div>
+        </div>
+        <div class="bar">
+          <button class="btn pri" onclick="saveAI()">حفظ الإعدادات</button>
+          <button class="btn dan" onclick="clearAI()">مسح المفتاح</button>
+        </div>
+        <div class="legal" style="margin:14px 0 0">
+          <strong>انتبه:</strong> الاتصال المباشر من المتصفح قد يرفضه المزوّد لأسباب تقنية
+          (CORS) بحسب طريقة فتحك للملف. إن ظهر خطأ اتصال فاستخدم «أمر للذكاء الاصطناعي» —
+          فهو يعمل دائمًا. وفي الحالتين: ما يُنتجه النموذج مسودة تُراجَع، لا مذكرة جاهزة للرفع.
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="card" id="caseEditCard" style="display:none">
+    <h2 id="editTitle">دعوى جديدة</h2>
+    <div id="caseForm" style="margin-top:16px"></div>
+    <div class="bar" style="margin-top:4px">
+      <button class="btn pri" onclick="saveCase()">حفظ</button>
+      <button class="btn" onclick="showList()">رجوع</button>
+    </div>
+  </div>
+
+  <div class="card" id="caseDocCard" style="display:none">
+    <h2 id="docTitle">المستندات</h2>
+    <p class="lead" id="docLead"></p>
+    <div class="bar" style="margin-top:16px" id="docBar"></div>
+    <div class="bar" id="docTools" style="display:none">
+      <button class="btn sm" onclick="copyDoc()">نسخ النص</button>
+      <button class="btn sm" onclick="downloadDoc()">تنزيل ملف</button>
+      <button class="btn sm" onclick="printDoc()">طباعة</button>
+      <button class="btn sm" onclick="showList()">رجوع للقضايا</button>
+    </div>
+    <div id="docWrap"></div>
+  </div>
+</section>
+
+<!-- ============ TARIKAT ============ -->
+<section class="page" id="p-tarikat">
+  <div class="card">
+    <h2>مسار التركات — محاكم الأحوال الشخصية</h2>
+    <p class="lead">اختصاص محاكم الأحوال الشخصية يشمل مسائل الأحوال الشخصية ومنها ما يتصل بالإرث
+      والوصية والقسمة والموضوعات المرتبطة بها. ولاحظ أن كثيرًا من ملفات التركات تُنهى إداريًا
+      دون دعوى قضائية.</p>
+    <h3>الترتيب الشرعي لحقوق التركة</h3>
+    <p>قبل أي قسمة، تُستوفى الحقوق بهذا الترتيب: تجهيز الميت ودفنه، ثم قضاء الديون التي عليه
+      (ويُقدَّم ما فيه رهن وما ضُمن عن غيره)، ثم تنفيذ الوصية إن وُجدت، ثم يُوزَّع الباقي على
+      الورثة بعد حصرهم. أي قسمة قبل سداد الديون معرّضة للنقض.</p>
+    <div class="tl" id="tlTarikat"></div>
+  </div>
+</section>
+
+<!-- ============ AQAR ============ -->
+<section class="page" id="p-aqar">
+  <div class="card">
+    <h2>مسار العقار — المحكمة العامة</h2>
+    <p class="lead">المحكمة العامة هي محكمة الاختصاص الاحتياطي: تختص بالنظر في جميع الدعاوى والقضايا
+      التي لم يرد نص بإسنادها إلى محكمة أخرى. وأوسع ما يُنظر فيها فعليًا هو العقار — فتختص
+      بالمنازعات المتعلقة بالعقار ما لم تكن ذات طبيعة تجارية.</p>
+    <h3>حدّ التمييز بين العام والتجاري</h3>
+    <p>المنازعات الخاصة بالعقارات السكنية أو التي لا تشمل أنشطة تجارية ينظر فيها القضاء العام،
+      أما العقارات المتصلة بنشاط تجاري فتدخل في اختصاص المحاكم التجارية. وهذا أكثر مواضع
+      الخطأ في تحديد الاختصاص في الدعاوى العقارية.</p>
+    <div class="tl" id="tlAqar"></div>
+  </div>
+</section>
+
+<!-- ============ MIHNA ============ -->
+<section class="page" id="p-mihna">
+  <div class="card">
+    <h2>مسار النزاع مع محامٍ أو منشأة قانونية</h2>
+    <p class="lead">مماطلة مكتب مرخَّص في عمل سُدِّد مقابله: هنا <strong>مسارَان منفصلان تمامًا</strong> —
+      تأديبي أمام الهيئة السعودية للمحامين ولجنة تأديب المحامين، ومالي أمام المحكمة العامة.
+      ونصّ وزارة العدل في وصف خدمة الشكوى صريح: الشكوى تخص الحق العام فقط، أما المطالبة في
+      الحق الخاص فمن اختصاص المحاكم. فلا يُرجع التأديبُ مالك، ولا يعاقب القضاءُ المدني مهنيًا.</p>
+
+    <h3>جدول الفرق بين المسارين</h3>
+    <div class="tblwrap" style="margin-top:14px"><table>
+      <thead><tr><th>الوجه</th><th>المسار التأديبي</th><th>المسار المالي</th></tr></thead>
+      <tbody>
+        <tr><td>الجهة</td><td>الهيئة السعودية للمحامين ← لجنة تأديب المحامين بوزارة العدل</td><td>المحكمة العامة (أو محكمة التنفيذ إن كان العقد سندًا تنفيذيًا)</td></tr>
+        <tr><td>طبيعة الحق</td><td>الحق العام</td><td>الحق الخاص</td></tr>
+        <tr><td>من يرفع</td><td>تُقدّم الشكوى ويرفع المدعي العام الدعوى التأديبية (م٣٠)</td><td>أنت بصفتك مدعيًا</td></tr>
+        <tr><td>الإجراءات</td><td>كتابة، والتبليغ قبل الجلسة بـ١٥ يومًا على الأقل (م٣٢)</td><td>مرافعات شرعية كاملة عبر ناجز</td></tr>
+        <tr><td>النتيجة</td><td>إنذار · لوم · إيقاف حتى ٣ سنوات · شطب وإلغاء ترخيص (م٢٩)</td><td>فسخ · رد المبلغ · تسليم المستندات · تعويض · تكاليف قضائية</td></tr>
+        <tr><td>هل يُرجع مالك؟</td><td><strong>لا</strong></td><td><strong>نعم</strong></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>موضع النظر: من يحمل عبء الإثبات</h3>
+    <p>المادة (٢٣) من نظام المحاماة تمنع المحامي — بدون سبب مشروع — من أن يتخلى عما وُكّل عليه قبل
+      انتهاء الدعوى. والمادة (٢٧) تُلزم الموكّل بكامل الأتعاب <em>إذا ثبت أن العزل بسبب غير مشروع</em>.
+      فالعبء في الحالتين على المكتب: أن يُثبت السبب المشروع، وأن يُثبت ما أنجزه فعلًا. ومتى كان
+      العزل لسبب مشروع — كعدم الإنجاز مع استلام المقابل — لم يُلزم الموكّل بكامل الأتعاب،
+      وبقي للمكتب ما يقابل عملًا أنجزه.</p>
+
+    <div class="tl" id="tlMihna"></div>
+  </div>
+</section>
+
+<!-- ============ CALC ============ -->
+<section class="page" id="p-calc">
+  <div class="card">
+    <h2>حاسبة مُدد الاعتراض</h2>
+    <p class="lead">تفويت المدة ولو بيوم واحد يُسقط الحق في الاعتراض ويصير الحكم نهائيًا.
+      المدة تبدأ من تاريخ <strong>تسليم صورة صك الحكم</strong> — لا من تاريخ صدوره.</p>
+
+    <div class="frow" style="margin-top:20px">
+      <div>
+        <label class="fl">تاريخ تسليم صورة صك الحكم</label>
+        <input type="date" id="cDate">
+      </div>
+      <div>
+        <label class="fl">نوع الاعتراض</label>
+        <select id="cType">
+          <option value="30">الاستئناف / التدقيق — ٣٠ يومًا</option>
+          <option value="10">الاستئناف في المسائل المستعجلة — ١٠ أيام</option>
+          <option value="30n">النقض أمام المحكمة العليا — ٣٠ يومًا</option>
+          <option value="15n">النقض في المسائل المستعجلة — ١٥ يومًا</option>
+          <option value="30i">التماس إعادة النظر — ٣٠ يومًا من العلم بالسبب</option>
+        </select>
+      </div>
+    </div>
+    <div class="chk">
+      <input type="checkbox" id="cHol">
+      <label for="cHol">اليوم الأخير يصادف عطلة رسمية (عيد أو إجازة وطنية)</label>
+    </div>
+    <div class="out" id="cOut">
+      <div style="color:var(--dim);font-size:.92rem">أدخل تاريخ تسليم الصك لعرض النتيجة.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAWS ============ -->
+<section class="page" id="p-laws">
+  <div class="card">
+    <h2>الأنظمة المنطبقة</h2>
+    <p>كل نظام هنا مع مرسومه وتاريخه حيث تأكّد، وما لم يتأكّد مُعلَّم ليُراجع من المصدر الرسمي.</p>
+    <div class="tblwrap" style="margin-top:16px">
+      <table id="tLaws"><thead><tr>
+        <th>النظام</th><th>المرسوم والتاريخ</th><th>دوره</th><th>التحقق</th>
+      </tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+  <div class="card">
+    <h2>المواد المفتاحية</h2>
+    <input class="search" id="aSearch" placeholder="ابحث في المواد… مثال: اعتراض، عقار، وصية، تنفيذ">
+    <div class="tblwrap">
+      <table id="tArts"><thead><tr>
+        <th>المادة</th><th>النظام</th><th>المضمون</th><th>التحقق</th>
+      </tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAIL ============ -->
+<section class="page" id="p-detail">
+  <div class="card">
+    <h2>الأنظمة الثلاثة الحاكمة للمسارَين</h2>
+    <p class="lead">نظام المرافعات الشرعية يحكم <em>الإجراء</em>، ونظام الإثبات يحكم <em>الدليل</em>،
+      ونظام التسجيل العيني للعقار يحكم <em>الحق العقاري وتوثيقه</em>. اضغط على أي نظام لعرض بنيته
+      وأحكامه المفتاحية.</p>
+    <div id="detailBody" style="margin-top:18px"></div>
+  </div>
+</section>
+
+<!-- ============ DOCS ============ -->
+<section class="page" id="p-docs">
+  <div class="card">
+    <h2>قوائم المستندات</h2>
+    <p>راجع القائمة قبل القيد — نقص مستند يعني تأجيل جلسة كاملة.</p>
+    <div id="docsBody" style="margin-top:18px"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="page" id="p-about">
+  <div class="card">
+    <h2>المنهجية وحدود الأداة</h2>
+    <h3>كيف بُني هذا الملف</h3>
+    <p>كل رقم مادة ومدة في هذا الملف مخزّن في كائن بيانات واحد في أعلى الكود
+      (<code>DATA</code>)، مع رابط مصدره وحالة التحقق منه. التحديث يتم بتعديل البيانات فقط
+      دون المساس بالواجهة.</p>
+    <h3>ما لا تفعله هذه الأداة</h3>
+    <ul style="color:var(--dim);font-size:.92rem;padding-right:20px;margin-top:8px">
+      <li>لا تُصدر رأيًا في قضيتك ولا تتنبأ بنتيجتها.</li>
+      <li>لا تحسب الأنصبة الشرعية للورثة — ذلك يحتاج فريضة دقيقة من مختص.</li>
+      <li>لا تعرف العطل الرسمية تلقائيًا؛ تعتمد على إدخالك.</li>
+      <li>لا تغني عن محامٍ مرخّص، وبعض الدعاوى يكون الترافع فيها حصرًا على المحامين.</li>
+    </ul>
+    <h3>نقاط تحتاج تحققًا قبل الاعتماد</h3>
+    <div id="verifyList" style="margin-top:8px"></div>
+    <h3>المصادر</h3>
+    <div id="srcList" style="margin-top:8px;font-size:.9rem"></div>
+  </div>
+</section>
+
+<footer>
+  دليل المسار القضائي — أداة استرشادية · آخر تحديث للبيانات: <span id="fDate"></span><br>
+  المرجع الرسمي: هيئة الخبراء بمجلس الوزراء · بوابة ناجز — وزارة العدل
+</footer>
+</div>
+
+<datalist id="cityList"></datalist>
+<div id="printArea"></div>
+
+<script>
+/* ===================================================================
+   DATA — كل المحتوى القابل للتغيير في مكان واحد.
+   عدّل هنا فقط عند صدور تعديل نظامي.
+   verified: true  = تأكّد من مصدر منشور
+   verified: false = يحتاج مراجعة من المصدر الرسمي قبل الاعتماد
+   =================================================================== */
+const DATA = {
+  updated: "٢٠٢٦/١١/١٠",
+
+  laws: [
+    {n:"النظام الأساسي للحكم", d:"أ/٩٠ — ٢٧/٨/١٤١٢هـ", r:"المرجع الدستوري الأعلى", v:true},
+    {n:"نظام القضاء", d:"م/٧٨ — ١٩/٩/١٤٢٨هـ", r:"ترتيب المحاكم ودرجاتها وولايتها، وإنشاء المجلس الأعلى للقضاء", v:true},
+    {n:"نظام المرافعات الشرعية", d:"م/١ — ٢٢/١/١٤٣٥هـ · آخر تعديل ٢٩/١١/١٤٤٤هـ", r:"القواعد الإجرائية العامة: الاختصاص، التبليغ، الجلسات، الأحكام، الاعتراض", v:true},
+    {n:"نظام الأحوال الشخصية", d:"م/٧٣ — ٦/٨/١٤٤٣هـ · ساري من ١٨/١١/١٤٤٣هـ", r:"موضوع الحق في التركات: الوصية والإرث والقسمة والولاية", v:true},
+    {n:"نظام الإثبات", d:"م/٤٣ — ٢٦/٥/١٤٤٣هـ · ساري من ٧/١٢/١٤٤٣هـ", r:"طرق إثبات الحقوق السبع وحجية الدليل الرقمي", v:true},
+    {n:"نظام التسجيل العيني للعقار", d:"م/٩١ — ١٩/٩/١٤٤٣هـ · حلّ محل نظام ١٤٢٣هـ", r:"السجل العقاري والتأشير بالدعاوى العقارية", v:true},
+    {n:"لائحة قسمة الأموال المشتركة", d:"قرار وزير العدل (١٦١٠) — ١٩/٥/١٤٣٩هـ · ٤٨ مادة · سارية", r:"المرجع الإجرائي لدعوى القسمة: الرضائية والإجبارية، والبيع بالمزاد، والمصفي القضائي", v:true},
+    {n:"نظام التكاليف القضائية", d:"م/١٦ — ٣٠/١/١٤٤٣هـ · وله لائحة تنفيذية", r:"سند المطالبة بالمصاريف القضائية وتحميلها على المحكوم عليه", v:true},
+    {n:"نظام التنفيذ", d:"صدر ١٣/٨/١٤٣٣هـ — ٩٨ مادة", r:"استخلاص المحكوم به جبرًا بعد نهائية الحكم", v:true},
+    {n:"نظام المحاكم التجارية", d:"م/٩٣ — ١٥/٨/١٤٤١هـ", r:"يُستبعد به الاختصاص عن المحكمة العامة في العقار التجاري", v:true},
+    {n:"نظام المرافعات أمام ديوان المظالم", d:"م/٣ — ٢٢/١/١٤٣٥هـ", r:"المنازعات الإدارية؛ ويطبّق المرافعات والإثبات فيما لم يرد فيه نص", v:true},
+    {n:"نظام المعاملات المدنية", d:"م/١٩١ — ١٤٤٤هـ", r:"أحكام العقود والالتزامات والملكية والتعويض", v:false},
+    {n:"نظام المحاماة", d:"م/٣٨ — ٢٨/٧/١٤٢٢هـ · وله لائحة تنفيذية", r:"تنظيم الترافع، وواجبات المحامي تجاه موكله، والأتعاب، والعقوبات التأديبية ولجنة التأديب", v:false}
+  ],
+
+  arts: [
+    {a:"٩", l:"نظام القضاء", t:"تتكون المحاكم من: المحاكم العامة، والجزائية، والأحوال الشخصية، والتجارية، والعمالية.", v:true},
+    {a:"٢٥", l:"نظام القضاء", t:"دون إخلال بما يقضي به نظام ديوان المظالم، تختص المحاكم بالفصل في جميع القضايا وفق قواعد الاختصاص المبينة في نظام المرافعات الشرعية ونظام الإجراءات الجزائية.", v:true},
+    {a:"٣١/٢", l:"نظام المرافعات الشرعية", t:"اختصاص المحكمة العامة بالمنازعات المتعلقة بالعقار ما لم تكن ذات طبيعة تجارية. (تخصّ المحكمة العامة وحدها — لا تُستعمل لإسناد اختصاص محكمة أخرى.)", v:false, k:"اختصاص نوعي عقار عامة"},
+    {a:"٣٣", l:"نظام المرافعات الشرعية", t:"تختص محاكم الأحوال الشخصية بالنظر في جميع مسائل الأحوال الشخصية والدعاوى الناشئة عنها، والدعاوى المرفوعة لإيقاع العقوبات المنصوص عليها في نظام الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم.", v:true, k:"اختصاص نوعي احوال شخصية تركة قسمة"},
+    {a:"١٩٧", l:"نظام الأحوال الشخصية", t:"التركة: جميع ما يخلّفه الإنسان بعد وفاته من أموال وحقوق مالية.", v:true, k:"تركة تعريف ارث"},
+    {a:"١/١", l:"لائحة قسمة الأموال المشتركة", t:"المال المشترك: هو المال المملوك لاثنين فأكثر على الشيوع، بموجب عقد أو إرث أو غيرها — فالتركة الشائعة بين الورثة داخلة في نطاق اللائحة صراحةً.", v:true, k:"مال مشترك شيوع ارث تعريف قسمة"},
+    {a:"١/٨", l:"لائحة قسمة الأموال المشتركة", t:"قسمة الإجبار: ما لا ضرر فيها على الشركاء ولا على أحدهم ولا رد عوض — فإن لزم من القسمة ضرر أو رد عوض لم تكن قسمة إجبار، وهنا يأتي البيع بالمزاد.", v:true, k:"قسمة اجبار ضرر رد عوض مزاد"},
+    {a:"١/٩", l:"لائحة قسمة الأموال المشتركة", t:"قائمة الجرد: البيان المعد من المصفي بجميع الأموال المشتركة وما لها وما عليها.", v:true, k:"جرد مصفي اموال"},
+    {a:"١٠", l:"لائحة قسمة الأموال المشتركة", t:"تقتصر الدائرة في نظرها دعوى القسمة على الأموال المتحقق ملكيتها للشركاء؛ وإذا اقتضت القسمة إكمال نواقص وثيقة التملك تولّى ذلك المصفي، وتملك الدائرة الكتابة للجهة المختصة عند عدم وجوده.", v:true, k:"ملكية متحققة نواقص وثيقة تملك"},
+    {a:"٥", l:"لائحة قسمة الأموال المشتركة", t:"لأي شريك أن يرفع دعوى إلى المحكمة المختصة بطلب إخلاء العقار المشترك ممن يضع يده عليه بغير حق، وعلى المصفي أو الحارس القضائي — إن وُجد — رفع هذه الدعوى بحسب المهام المسندة إليه.", v:true, k:"اخلاء عقار مشترك وضع يد"},
+    {a:"٧", l:"لائحة قسمة الأموال المشتركة", t:"يتم التبليغ في دعاوى قسمة الأموال المشتركة وفقًا لأحكام النظام، ويجوز أن يكون التبليغ بوساطة المصفي.", v:true, k:"تبليغ مصفي قسمة"},
+    {a:"٢٠", l:"لائحة قسمة الأموال المشتركة", t:"تتخذ الدائرة عند الاقتضاء جميع ما يجب بصفة مستعجلة للمحافظة على الأموال المشتركة وحراستها، ولها أن تعهد بحفظها إلى الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم.", v:true, k:"اجراء مستعجل حراسة محافظة قاصرين"},
+    {a:"٣", l:"نظام التكاليف القضائية", t:"تُفرض تكاليف قضائية على الدعوى بمبلغ لا يزيد على ما نسبته ٥٪ من قيمة المطالبة على الطرف المحكوم عليه، وبحد أعلى مليون ريال.", v:true, k:"مصاريف تكاليف قضائية محكوم عليه"},
+    {a:"—", l:"نظام التكاليف القضائية", t:"تُفرض تكاليف لا تزيد على عشرة آلاف ريال على طلبات الاستئناف والنقض والتماس إعادة النظر، والطلبات العارضة وطلبات الإدخال والرد.", v:false, k:"تكاليف استئناف نقض التماس"},
+    {a:"٢٦", l:"نظام المحاماة", t:"تُحدَّد أتعاب المحامي وطريقة دفعها باتفاق يعقده مع موكله، فإذا لم يكن هناك اتفاق أو كان الاتفاق مختلفًا فيه أو باطلًا قدّرتها المحكمة التي نظرت القضية. (تنظّم العلاقة بين المحامي وموكله — لا تُلزم الخصم بها تلقائيًا؛ وتحميل الخصم أتعاب المحاماة مطالبة تعويض مستقلة تحتاج إثبات ضرر ومستندات.)", v:false, k:"اتعاب محاماة تعويض خصم"},
+    {a:"٢٣", l:"نظام المحاماة", t:"لا يجوز للمحامي أن يفشي سرًا اؤتمن عليه أو عرفه عن طريق مهنته ولو بعد انتهاء وكالته ما لم يخالف ذلك مقتضى شرعيًا، كما <strong>لا يجوز له بدون سبب مشروع أن يتخلى عما وُكّل عليه قبل انتهاء الدعوى</strong>. (هذه هي المادة الأم في المماطلة والتخلي عن العمل الموكَّل — وعبء إثبات «السبب المشروع» على المحامي.)", v:true, k:"مماطلة تخلي عن الوكالة سر مهني اخلال بالواجب"},
+    {a:"٢٧", l:"نظام المحاماة", t:"للموكّل أن يعزل محاميه، وعليه أن يدفع كامل الأتعاب المتفق عليها <strong>إذا ثبت أن العزل بسبب غير مشروع</strong>، ما لم ترَ المحكمة المختصة غير ذلك. (بمفهوم المخالفة: العزل لسبب مشروع — كعدم الإنجاز مع استلام المقابل — لا يُلزم الموكّل بكامل الأتعاب، ويبقى للمحامي ما يقابل عملًا أنجزه فعلًا.)", v:true, k:"عزل المحامي اتعاب سبب مشروع استرداد"},
+    {a:"٢٩", l:"نظام المحاماة", t:"يعاقب كل مرخّص له يخالف أحكام النظام أو لائحته التنفيذية أو قواعد السلوك المهني، أو يخلّ بواجباته المهنية، أو يرتكب عملًا ينال من شرف المهنة، بإحدى العقوبات: الإنذار، أو اللوم، أو الإيقاف عن مزاولة المهنة لمدة لا تتجاوز ثلاث سنوات، أو شطب الاسم من الجدول وإلغاء الترخيص. (وأوردت تصريحات وزارة العدل كذلك غرامة لا تزيد على ٣٠٠ ألف ريال عن كل مخالفة — تحقّق من نص المادة بعد التعديلات.)", v:false, k:"عقوبات تأديبية انذار لوم ايقاف شطب غرامة"},
+    {a:"٣٠", l:"نظام المحاماة", t:"يرفع المدعي العام الدعوى التأديبية على المحامي من تلقاء نفسه، أو بناءً على طلب وزير العدل أو أي محكمة أو ديوان المظالم أو أي من اللجان المشار إليها في المادة الأولى. (فالشكوى التأديبية لا يرفعها الموكّل بنفسه أمام اللجنة — بل يقدّمها للجهة المختصة فتُحال عبر الادعاء.)", v:true, k:"الدعوى التأديبية المدعي العام احالة شكوى"},
+    {a:"٣١", l:"نظام المحاماة", t:"يشكّل وزير العدل بقرار منه لجنة أو أكثر للنظر في توقيع العقوبات التأديبية الواردة في المادة التاسعة والعشرين، وتسمّى «لجنة التأديب».", v:true, k:"لجنة تأديب المحامين تشكيل"},
+    {a:"٣٢", l:"نظام المحاماة", t:"يُبلَّغ المحامي بالحضور أمام لجنة التأديب بخطاب رسمي تبيَّن فيه المخالفة المنسوبة إليه وأدلتها بإيجاز، وذلك قبل موعد الجلسة المحددة بمدة لا تقل عن خمسة عشر يومًا. (وإجراءات نظر الدعوى التأديبية والمرافعة فيها تكون كتابة وفق قواعد الضبط ورفع الدعوى التأديبية الصادرة من وزير العدل.)", v:true, k:"تبليغ لجنة التأديب خمسة عشر يوما كتابة"},
+    {a:"١٧", l:"نظام المحاكم التجارية", t:"ما لم يتفق الطرفان كتابة على غير ذلك، يكون الاختصاص المكاني للمحكمة التي يقع في نطاق اختصاصها مكان إقامة المدعى عليه، فإن لم يكن له مكان إقامة في المملكة فلمحكمة مكان إقامة المدعي؛ <strong>ويجوز أن تُقام الدعوى في المحكمة التي أُبرم العقد أو نُفّذ أو كان واجب التنفيذ في نطاقها</strong>.", v:true, k:"اختصاص مكاني تجاري مكان ابرام العقد تنفيذ"},
+    {a:"١٦", l:"نظام المحاكم التجارية", t:"تختص المحكمة التجارية بالنظر في: المنازعات التي تنشأ بين التجار بسبب أعمالهم التجارية الأصلية أو التبعية، والدعاوى المقامة على التاجر في منازعات العقود التجارية متى زادت قيمة المطالبة الأصلية على مائة ألف ريال، وجميع منازعات الشركات. (معيار الاستبعاد: مكتب المحاماة منشأة مهنية لا تاجر، والعلاقة بالموكّل مدنية — فتعود للمحكمة العامة. والنصاب تغيّر بموجب اللائحة فتحقّق منه رسميًا.)", v:false, k:"اختصاص نوعي تجاري تاجر نصاب مائة الف شركات"},
+    {a:"—", l:"نظام المعاملات المدنية", t:"يتضمن النظام أحكام العقود والالتزامات: وجوب تنفيذ العقد بما اشتمل عليه، وما يترتب على إخلال أحد المتعاقدين بالتزامه من حق الطرف الآخر في طلب التنفيذ أو الفسخ مع التعويض عن الضرر المتحقق. (رقم المادة غير محقَّق في هذا الملف — لا تستشهد برقم، واكتب [يلزم التحقق من المادة] أو استند إلى نظام المحاماة.)", v:false, k:"فسخ العقد اخلال تعويض التزامات عقود"},
+    {a:"٣١/١", l:"نظام المرافعات الشرعية", t:"تختص المحاكم العامة بالنظر في جميع الدعاوى والقضايا والإنهاءات التي لم يرد نص بإسنادها إلى محكمة أخرى أو إلى ديوان المظالم — فهي محكمة الاختصاص الاحتياطي. (ولهذا تعود إليها المطالبة المالية المدنية التي لا تدخل في اختصاص محكمة متخصصة، كالمطالبة على منشأة قانونية.)", v:false, k:"اختصاص احتياطي عامة مطالبة مالية مدنية"},
+    {a:"١٩٨ (ويذكرها بعض الشرّاح برقم ١٩٩)", l:"نظام الأحوال الشخصية", t:"ترتيب الحقوق المتعلقة بالتركة ترتيبًا إلزاميًا: ما يكفي لتجهيز المتوفى ونقله ودفنه، ثم الديون، ثم الوصايا من الثلث فما دون لغير وارث، ثم الإرث — تأكيدًا على أولوية هذه الحقوق على القسمة.", v:false, k:"ترتيب الحقوق تجهيز ديون وصية قسمة"},
+    {a:"٢٤", l:"نظام المرافعات الشرعية", t:"محاكم المملكة تختص بنظر الدعاوى التي تُرفع على السعودي ولو لم يكن مقيمًا فيها، ويُستثنى من ذلك الدعاوى العينية المتعلقة بعقار واقع خارج المملكة.", v:true, k:"اختصاص دولي عقار"},
+    {a:"٢٥", l:"نظام المرافعات الشرعية", t:"اختصاص محاكم المملكة بالدعاوى التي تُرفع على غير السعودي المقيم فيها، فيما عدا الدعاوى العينية المتعلقة بعقار خارج المملكة.", v:true, k:"اختصاص دولي عقار أجنبي"},
+    {a:"٣٤", l:"نظام المرافعات الشرعية", t:"تُقام الدعوى في المحكمة التي يقع في نطاق اختصاصها محل إقامة المدعى عليه، فإن لم يكن له محل إقامة في المملكة فالاختصاص لمحكمة محل إقامة المدعي؛ ويجوز للمتداعيَين التراضي على إقامتها في بلد آخر بشرط دخولها في الاختصاص النوعي لمحكمته.", v:true, k:"اختصاص مكاني عقار"},
+    {a:"٣٦/٢", l:"نظام المرافعات الشرعية", t:"إذا تعدد المدعى عليهم وتنوعت أماكن إقامتهم، كان الاختصاص للمحكمة التي يقع في نطاق اختصاصها محل إقامة الأكثرية؛ وفي حال التساوي يكون المدعي بالخيار في إقامة الدعوى أمام أي محكمة يقع في نطاق اختصاصها محل إقامة أحدهم. (المصدر: دليل الأسئلة العدلية — وزارة العدل)", v:true, k:"تعدد المدعى عليهم اختصاص مكاني اكثرية تساوي"},
+    {a:"٧١", l:"نظام المرافعات الشرعية", t:"على من يعترض على الاختصاص المكاني للمحكمة أن يقدّم هذا الدفع قبل أي طلب أو دفاع في الدعوى، فإن تأخّر سقط حقه فيه (تنازل ضمني).", v:true, k:"دفع اختصاص مكاني شكلي"},
+    {a:"١٨٥", l:"نظام المرافعات الشرعية", t:"نصاب الدعوى اليسيرة — وأحكامها تؤثر في جواز الاعتراض على الحكم.", v:true, k:"دعوى يسيرة نصاب اعتراض"},
+    {a:"٣٥", l:"نظام المرافعات الشرعية", t:"الاختصاص النوعي للمحاكم التجارية والدوائر التجارية.", v:true},
+    {a:"٣٨", l:"نظام المرافعات الشرعية", t:"تُعد المدينة أو القرية نطاقًا محليًا للمحكمة الموجودة بها، وعند التعدد يحدد وزير العدل النطاق المحلي لكل منها بناءً على اقتراح المجلس الأعلى للقضاء.", v:true},
+    {a:"١٨٧", l:"نظام المرافعات الشرعية", t:"مدة الاعتراض بطلب الاستئناف أو التدقيق ثلاثون يومًا، ويُستثنى الأحكام في المسائل المستعجلة فعشرة أيام؛ فإن لم يُقدَّم الاعتراض خلالها سقط الحق فيه.", v:true},
+    {a:"١٩٣ و١٩٤", l:"نظام المرافعات الشرعية", t:"النقض أمام المحكمة العليا خلال ثلاثين يومًا، وخمسة عشر يومًا في القضايا المستعجلة.", v:true, k:"اعتراض طعن مدة"},
+    {a:"٢٠٠", l:"نظام المرافعات الشرعية", t:"حالات التماس إعادة النظر في الأحكام النهائية، وردت على سبيل الحصر — منها أن يكون الحكم بُني على أوراق ظهر بعد الحكم تزويرها، أو على شهادة قُضي بأنها شهادة زور.", v:true, k:"اعتراض طعن التماس"},
+    {a:"٢٠١", l:"نظام المرافعات الشرعية", t:"مدة التماس إعادة النظر ثلاثون يومًا، وتبدأ من اليوم الذي يثبت فيه علم الملتمس بالواقعة المؤسَّس عليها التماسه؛ وإلا سقط حقه وقضت المحكمة بعدم القبول.", v:true, k:"اعتراض طعن مدة التماس"},
+    {a:"١", l:"نظام الإثبات", t:"تسري أحكام هذا النظام على المعاملات المدنية والتجارية.", v:true, k:"نطاق سريان"},
+    {a:"٢", l:"نظام الإثبات", t:"على المدعي أن يثبت ما يدّعيه من حق، وللمدعى عليه نفيه (عبء الإثبات).", v:true, k:"عبء الإثبات"},
+    {a:"٥", l:"نظام الإثبات", t:"طرق الإثبات: الإقرار، واليمين، والشهادة، والكتابة، والقرائن، والمعاينة، والخبرة.", v:true, k:"طرق الإثبات"},
+    {a:"٦/١", l:"نظام الإثبات", t:"إذا اتفق الخصوم على قواعد محددة في الإثبات فتعمل المحكمة اتفاقهم، ما لم يخالف النظام العام.", v:true, k:"اتفاق الخصوم قواعد"},
+    {a:"٥٢ وما بعدها", l:"نظام الإثبات", t:"الباب الرابع — أحكام الدليل الرقمي.", v:true, k:"دليل رقمي إلكتروني"},
+    {a:"٥٤", l:"نظام الإثبات", t:"يكون للإثبات بالدليل الرقمي حكم الإثبات بالكتابة الوارد في هذا النظام.", v:true, k:"دليل رقمي إلكتروني كتابة"},
+    {a:"٦٦ — ٦٨", l:"نظام الإثبات", t:"القيود الواردة على الشهادة كوسيلة إثبات، وردت على سبيل الحصر (بخلاف ما كان عليه العمل سابقًا وفق نظام المرافعات).", v:true, k:"شهادة شهود قيود"},
+    {a:"—", l:"نظام الإثبات", t:"من تغييرات النظام: تقييد الإثبات بالقرائن بما لا يزيد على مئة ألف ريال، وسؤال الخصم للشاهد مباشرة، وعدم الحاجة إلى إحضار مزكّين للشهود.", v:false, k:"قرائن مئة ألف استجواب تزكية"},
+    {a:"٣٤", l:"نظام التنفيذ", t:"يُبلَّغ المدين بأمر التنفيذ خلال مدة لا تتجاوز خمسة أيام من صدوره، ويُمنح مهلة لا تزيد على خمسة أيام من إبلاغه للوفاء أو تقديم أوجه دفاعه.", v:true},
+    {a:"٨٣", l:"نظام التنفيذ", t:"إذا لم ينفّذ المدين أو لم يفصح عن أموال تكفي للوفاء خلال خمسة أيام من إبلاغه بأمر التنفيذ، يُحبس تنفيذيًا بأمر من قاضي التنفيذ بناءً على طلب الدائن.", v:true},
+    {a:"١٦", l:"نظام التسجيل العيني للعقار", t:"الدعاوى التي يجب التأشير بها في السجل العقاري متى كان محلها عقارًا في منطقة عقارية معلنة — ومن لم يثبت إجراء التأشير تعيَّن عدم سماع دعواه.", v:true, k:"تأشير دعوى سجل عدم سماع"},
+    {a:"١٧ و١٨", l:"نظام التسجيل العيني للعقار", t:"مهلة التسعين يومًا المنصوص عليها فيهما، وتبدأ — بالنسبة إلى الأحكام النهائية الصادرة قبل نفاذ النظام — من تاريخ إعلان قوائم ملّاك العقارات محل تلك الأحكام.", v:true, k:"مهلة تسعين يوما أحكام"},
+    {a:"٣/٥", l:"نظام التسجيل العيني للعقار", t:"امتلاك الجهة المختصة حصريًا للسجل العقاري وبياناته، ولا يحول ذلك دون استفادة الجهات الحكومية منها لغرض مهماتها دون مقابل.", v:true, k:"سجل عقاري ملكية بيانات"},
+    {a:"٣٤", l:"نظام التسجيل العيني للعقار", t:"التسجيل الأول بلا مقابل، وبقية الخدمات بمقابل.", v:false, k:"رسوم تسجيل مقابل"},
+    {a:"٣٩", l:"نظام التسجيل العيني للعقار", t:"يحل هذا النظام محل نظام التسجيل العيني للعقار الصادر عام ١٤٢٣هـ.", v:false, k:"إلغاء النظام القديم"},
+    {a:"مرسوم م/١٢٣", l:"نظام التسجيل العيني للعقار", t:"تعديل المواد (٦، ٩، ١١) من النظام بالمرسوم الملكي رقم (م/١٢٣) وتاريخ ١٠/٦/١٤٤٧هـ — دليل على أن النظام ما زال يُعدَّل.", v:true, k:"تعديل مواد"}
+  ],
+
+  tracks: {
+    tarikat: [
+      {t:"حصر الورثة", k:"adm", m:"إجراء إداري — بوابة ناجز",
+       b:"صك حصر الورثة هو الوثيقة التي تُبنى عليها بقية إجراءات التركة، وخدمة إصداره متاحة عبر ناجز. وكان في السابق يتطلب تقديم دعوى وإنهاء مع الدائرة القضائية، أما الآن فأصبح إلكترونيًا ويخضع لتدقيق وزارة العدل.",
+       l:["يجب إدخال جميع الورثة الشرعيين دون استثناء","أي خطأ هنا يتسلسل إلى كل ما بعده","إن كان في الصك خطأ: دعوى تعديل وثيقة حصر إرث"]},
+
+      {t:"حصر التركة", k:"adm", m:"منصة التركات",
+       b:"بعد حصر الورثة يأتي حصر أصول التركة بالتكامل مع الجهات ذات العلاقة (البنوك، العقار، الشركات).",
+       l:["حسابات المورث تُجمَّد ثم تُنقل للورثة","تُحصر الديون التي على المورث قبل أي قسمة","تُراجع الوصية إن وُجدت"]},
+
+      {t:"سداد الديون ثم تنفيذ الوصية", k:"crit", m:"قبل القسمة — إلزامي",
+       b:"الترتيب الشرعي ملزم: التجهيز والدفن، ثم الديون، ثم الوصية، ثم القسمة على الورثة.",
+       l:["يُقدَّم ما فيه رهن على غيره","ما ضُمن عن غيره يُحسب من الدين","لا وصية لوارث إلا في الحدود المعتبرة نظامًا، ولتجاوز الوصية الحدَّ أحكام خاصة، ومنها ما يتعلق بإجازة الورثة أو بعضهم"]},
+
+      {t:"القسمة بالتراضي", k:"adm", m:"المسار المفضَّل — منصة التركات",
+       b:"إذا اتفق الورثة فالقسمة تتم في كثير من الحالات عبر منصة التركات دون دعوى، وهي أسرع وأقل كلفة وأحفظ للعلاقة الأسرية.",
+       l:["لا تحتاج محكمة ولا جلسات","توثَّق القسمة وتُنقل الملكيات","إن تعذّر الاتفاق انتقل للخطوة التالية"]},
+
+      {t:"دعوى قسمة إجبار", k:"", m:"محكمة الأحوال الشخصية — ناجز",
+       b:"يرفعها أحد الورثة أو أكثر ضد بقيتهم للحصول على نصيبه الشرعي عند تعذّر القسمة بالتراضي. تُرفع عبر ناجز باعتبارها مسار دعاوى القسمة بالإجبار، بخلاف القسمة بالتراضي.",
+       l:["صحيفة الدعوى تتضمن أسماء الورثة وفق صك حصر الورثة والأنصبة الشرعية وتفاصيل التركة","خطأ شائع: عدم إدخال جميع الورثة في أطراف الدعوى وفقًا لصك حصر الورثة","خطأ شائع: الجمع بين قسمة التركة العقارية والمالية في دعوى واحدة — افصلهما"]},
+
+      {t:"نظر الدعوى والإثبات", k:"", m:"جلسات — نظام الإثبات",
+       b:"حصر أصول التركة وتقييمها، ثم إصدار حكم بالقسمة الشرعية حسب الأنصبة المحددة لكل وارث.",
+       l:["طرق الإثبات: الإقرار واليمين والشهادة والكتابة والقرائن والمعاينة والخبرة","الدليل الرقمي له حكم الإثبات بالكتابة","قد تُندب خبرة لتقييم الأصول"]},
+
+      {t:"الحكم والاعتراض", k:"crit", m:"٣٠ يومًا من تسليم الصك",
+       b:"المدة تبدأ من تاريخ تسليم صورة صك الحكم. استخدم حاسبة المُدد.",
+       l:["الاستئناف: ٣٠ يومًا (١٠ في المستعجل)","النقض أمام المحكمة العليا: ٣٠ يومًا (١٥ في المستعجل)","فوات المدة يُسقط الحق ويجعل الحكم نهائيًا"]},
+
+      {t:"التنفيذ", k:"", m:"محكمة التنفيذ",
+       b:"الحكم النهائي يُقدَّم لمحكمة التنفيذ. يُبلَّغ المنفَّذ ضده ويُمنح مهلة لا تزيد على خمسة أيام للوفاء أو تقديم دفاعه، وإلا بدأت الإجراءات الجبرية.",
+       l:["الحجز على الحسابات، والمنع من السفر","الحبس التنفيذي عند عدم التنفيذ أو عدم الإفصاح عن أموال تكفي","منازعات التنفيذ تُنظر وفق أحكام القضاء المستعجل"]}
+    ],
+
+    aqar: [
+      {t:"توثيق المطالبة وجمع المستندات", k:"adm", m:"قبل المحكمة",
+       b:"الدعوى العقارية تُكسب أو تُخسر بالمستندات. ابدأ بالصك والسجل العقاري.",
+       l:["صك الملكية / القيد في السجل العقاري","المخطط والإحداثيات ورقم القطعة","مطالبة ودية موثقة تثبت المطالبة وتاريخها"]},
+
+      {t:"تحديد الاختصاص النوعي", k:"crit", m:"عامة أم تجارية؟",
+       b:"المحكمة العامة تختص بجميع الدعاوى التي لم يرد نص بإسنادها إلى محكمة أخرى، ومنها المنازعات المتعلقة بالعقار ما لم تكن ذات طبيعة تجارية.",
+       l:["عقار سكني أو بلا نشاط تجاري ← المحكمة العامة","عقار متصل بنشاط تجاري ← المحكمة التجارية","نزاع مع جهة حكومية ← ديوان المظالم (المحاكم الإدارية)"]},
+
+      {t:"تحديد الاختصاص المكاني", k:"crit", m:"هنا يقع أكثر اللبس",
+       b:"خلافًا لما يظنه الكثير: <strong>لا أثر لمكان العقار</strong> في تحديد الاختصاص المكاني للدعاوى المقامة داخل المملكة. فالقاعدة في المادة (٣٤) أن الدعوى تُقام في محكمة محل إقامة المدعى عليه — فلو كان العقار في الرياض والمدعى عليه في جدة، فالدعوى في المحكمة العامة بجدة لا بالرياض.",
+       l:["إن لم يكن للمدعى عليه محل إقامة في المملكة فالاختصاص لمحكمة محل إقامة المدعي","يجوز للمتداعيَين التراضي على إقامة الدعوى في بلد آخر، والشرط العقدي بذلك صحيح ومُلزم","مكان العقار يؤثر في الاختصاص الدولي فقط: يُستثنى العقار الواقع خارج المملكة من ولاية محاكمها في الدعاوى العينية","تُعد المدينة أو القرية نطاقًا محليًا للمحكمة الموجودة بها"]},
+
+      {t:"الدفع بعدم الاختصاص المكاني", k:"crit", m:"المادة ٧١ — فرصة واحدة",
+       b:"إن أُقيمت الدعوى عليك في غير المحكمة المختصة مكانًا، فعلى من يعترض أن يقدّم هذا الدفع <strong>قبل أي طلب أو دفاع</strong> في الدعوى.",
+       l:["لو أجبت على الدعوى ثم قلت إن المحكمة غير مختصة، سقط حقك في الدفع","السكوت عن الدفع يُعد تنازلًا ضمنيًا عن حق يرجع للمدعى عليه","ادعاء الجهل بالنظام غير مؤثر في الأحكام"]},
+
+      {t:"التأشير بالدعوى في السجل العقاري", k:"crit", m:"شرط لسماع الدعوى",
+       b:"إذا كان محل الدعوى عقارًا في منطقة عقارية معلنة، فالتأشير بالدعوى في السجل العقاري شرط إجرائي: من لم يقدّم ما يثبت إجراء التأشير تعيَّن <strong>عدم سماع دعواه</strong>.",
+       l:["ينطبق على الدعاوى المنصوص عليها في المادة (١٦) من نظام التسجيل العيني للعقار","الدعاوى المرفوعة قبل نفاذ النظام تُوقف المحكمة نظرها حتى التأشير","تحقّق أولًا: هل عقارك يقع في منطقة عقارية معلنة؟ وإلا فتبقى نظم التوثيق السابقة سارية عليه"]},
+
+      {t:"قيد الدعوى", k:"", m:"بوابة ناجز",
+       b:"تُقيَّد الدعوى إلكترونيًا بصحيفة تتضمن بيانات الطرفين ووصف العقار وصفًا دقيقًا والطلبات محددة.",
+       l:["وصف العقار: الموقع والمساحة والحدود ورقم الصك","الطلبات واضحة ومحددة لا عامة","إرفاق كامل المستندات من البداية"]},
+
+      {t:"التبليغ والمذكرات", k:"", m:"إجراء",
+       b:"تبليغ المدعى عليه، ثم مذكرة جوابية، ثم تبادل المذكرات وتهيئة الدعوى.",
+       l:["بطلان التبليغ سبب شكلي للاعتراض لاحقًا","تابع التبليغات في ناجز بانتظام"]},
+
+      {t:"الإثبات والمعاينة والخبرة", k:"", m:"نظام الإثبات",
+       b:"في الدعاوى العقارية تكثر المعاينة والخبرة الفنية (المساحة، الحدود، التداخل).",
+       l:["الكتابة والسجل العقاري من أقوى الأدلة","المعاينة على الطبيعة في دعاوى التداخل والحدود","الدليل الرقمي له حكم الكتابة"]},
+
+      {t:"الحكم والاعتراض", k:"crit", m:"٣٠ يومًا من تسليم الصك",
+       b:"نفس مدد الاعتراض العامة. المدة من تسليم صورة الصك لا من صدوره.",
+       l:["الاستئناف ٣٠ يومًا (١٠ مستعجل)","النقض ٣٠ يومًا (١٥ مستعجل)","المحكمة العليا تحاكم الحكم من حيث صحة تطبيق القواعد الشرعية والنظامية لا الوقائع"]},
+
+      {t:"التنفيذ وإفراغ الملكية", k:"", m:"محكمة التنفيذ وكتابة العدل",
+       b:"بعد النهائية: التنفيذ، ثم إفراغ الملكية وتحديث السجل العقاري.",
+       l:["مهلة لا تزيد على خمسة أيام من الإبلاغ للوفاء","الإجراءات الجبرية عند الامتناع","الإفراغ لدى كتابة العدل بعد التنفيذ"]}
+    ],
+
+    mihna: [
+      {t:"تحقّق من صفة الجهة أولًا", k:"crit", m:"قبل كل شيء — الهيئة السعودية للمحامين",
+       b:"هذه الخطوة تحدد المسار كله. مكتب المحاماة أو المنشأة القانونية المرخّصة تخضع لرقابة وزارة العدل والهيئة السعودية للمحامين، فيتاح ضدها <strong>مسار تأديبي</strong>. أما مكتب استشارات بسجل تجاري فقط وغير مرخّص للمحاماة فلا مسار تأديبي عدلي عليه، والجهة الرقابية وزارة التجارة، ويبقى لك القضاء.",
+       l:["دليل المحامين: eservice.sba.gov.sa/lawyers — بحث بالاسم أو رقم الترخيص","الاستعلام عن المنشآت القانونية متاح في بوابة الهيئة","احفظ صورة شاشة من نتيجة البحث — تُرفق في الشكوى وفي الدعوى","من يزاول المهنة دون ترخيص فهو منتحل صفة، وله مسار بلاغ مستقل"]},
+
+      {t:"الإعذار الكتابي الموثّق", k:"crit", m:"قبل الشكوى وقبل الدعوى",
+       b:"الإعذار يبني الواقعة ويقطع حجة «لم يطالبني». أرسل مطالبة مكتوبة بمهلة محددة لإنجاز العمل أو رد المبلغ، بوسيلة تُحفظ (رسالة موثقة، بريد، أو خطاب باستلام).",
+       l:["حدّد: ما اتُّفق عليه، وما سُدِّد وتاريخه، وما لم يُنجَز، والمهلة الممنوحة","اطلب صراحةً رد الأصول والمستندات التي سلّمتها","اطلب كشفًا بما أُنجز بأرقام قضايا وتواريخ جلسات — وعدم الجواب نفسه بينة","ألغِ الوكالة في ناجز فورًا إن كانت سارية، وإلا بقي يتصرف باسمك"]},
+
+      {t:"هل عقدك هو العقد الموحد لأتعاب المحاماة؟", k:"crit", m:"نقطة التفرّع — نافذ وناجز",
+       b:"أطلقت وزارة العدل العقد الموحد لأتعاب المحاماة لتنظيم العلاقة بين المحامي وموكله. والعقد <strong>المسجّل في خدمة إنشاء العقود على منصة نافذ يكتسب صفة السند التنفيذي</strong>، ويُتعامل معه عبر محاكم التنفيذ إلكترونيًا من منصة ناجز دون الحاجة إلى رفع دعوى قضائية.",
+       l:["العقد الموحد يُلزم المنشآت القانونية برد الأصول المستلمة كافة من الموكّل","استعمل التنفيذ المباشر للالتزام المحدّد الظاهر في العقد: رد أصول ومستندات، أو دفعة مستحقة","أما رد مبلغ دفعتَه فمبناه الفسخ، والفسخ حكم قضائي — فيبقى في المحكمة العامة","تحقّق من حالة عقدك في نافذ/ناجز قبل أن تختار المسار"]},
+
+      {t:"الشكوى التأديبية — الحق العام", k:"", m:"الهيئة السعودية للمحامين · cx.sba.gov.sa",
+       b:"تتيح وزارة العدل خدمة تقديم شكوى في الحق العام ضد المحامي أو المتدرب أو منتحل الصفة أو المخالف لأحكام نظام المحاماة ولائحته، وتُقدَّم من خلال الهيئة السعودية للمحامين. والبوابة الموحدة تستقبل الشكاوى والبلاغات إلكترونيًا بالنفاذ الوطني الموحد مع رفع الأدلة والمرفقات.",
+       l:["تُقبل الشكوى من ذي صفة متى كان موضوعها متصلًا بخدمة مهنية أو علاقة تعاقدية","كيّف المخالفة بأنها إخلال بالواجبات المهنية والتخلي عن العمل الموكَّل بغير سبب مشروع (م٢٣)","لا تكتب «مماطلة» فقط — اكتب التواريخ: استُلم المبلغ في …، تُعهّد بإنجاز … في مدة …، ولم يُنجَز","العقوبات: الإنذار، اللوم، الإيقاف حتى ثلاث سنوات، الشطب وإلغاء الترخيص (م٢٩)"]},
+
+      {t:"انتبه: التأديب لا يُرجع مالك", k:"crit", m:"فصل ملزم بين المسارين",
+       b:"نصّ وزارة العدل في وصف الخدمة صريح: الشكوى تخص <strong>الحق العام</strong> فقط، أما المطالبة في <strong>الحق الخاص</strong> فمن اختصاص المحاكم. ونظام المحاماة يؤكد الاستقلال: العقوبة التأديبية تُوقَّع «مع عدم الإخلال بدعوى التعويض لمن لحقه ضرر أو أي دعوى أخرى».",
+       l:["قدّم المسارين بالتوازي لا بالتتابع — لا تنتظر نتيجة التأديب","قرار لجنة التأديب يصبح قرينة قوية في دعواك المالية","قرار اللجنة يجب أن يكون مسببًا وتُتلى أسبابه عند النطق به (م٣٣)","الدعوى التأديبية تنقضي بحالات منها صدور قرار نهائي أو شطب المرخّص له"]},
+
+      {t:"الدعوى المالية — المحكمة العامة", k:"", m:"ناجز — لا المحكمة التجارية",
+       b:"مكتب المحاماة منشأة مهنية لا تاجر، والعلاقة بالموكّل مدنية لا تجارية، فتخرج عن اختصاص المحكمة التجارية وتعود للأصل: المحكمة العامة بالاختصاص الاحتياطي. وقد قضت دائرة تجارية فعلًا بعدم اختصاصها في دعوى فسخ عقد خدمات ومطالبة مالية، وانتهت إلى أن المختصة هي المحكمة العامة.",
+       l:["الاختصاص المكاني: مقر المدعى عليه (م٣٤) — لا مقرك","الطلبات: فسخ العقد · رد المبلغ المسدّد · تسليم الأصول والمستندات · التعويض عن ضرر مُثبت · التكاليف القضائية","سندك الموضوعي: م٢٣ و م٢٧ من نظام المحاماة، وأحكام الفسخ والتعويض في نظام المعاملات المدنية","المحكمة التجارية تختص بمنازعات التجار والعقود التجارية — فلا ترفعها هناك ثم تخسر سنة في دفع اختصاص"]},
+
+      {t:"الإثبات", k:"", m:"نظام الإثبات",
+       b:"القضية تُحسم بالكتابة: العقد، وإيصال السداد، والمحادثات. والعبء ينقلب على المكتب في إثبات ما أنجزه فعلًا، لأن الأصل تقدير الأتعاب بقدر الجهد المبذول والنفع الذي عاد على الموكّل والمرحلة التي بلغتها القضية.",
+       l:["العقد أو الاتفاق المكتوب، وإن كان شفهيًا فالمحكمة تقدّر","إيصال أو تحويل بنكي يثبت المبلغ وتاريخه — وهو أقوى دليل على الركن المالي","المحادثات كاملة بتواريخها: الدليل الرقمي له حكم الإثبات بالكتابة","نتيجة البحث في دليل المحامين، وقرار لجنة التأديب إن صدر"]},
+
+      {t:"الحكم والاعتراض ثم التنفيذ", k:"crit", m:"٣٠ يومًا من تسليم الصك",
+       b:"نفس المدد العامة. والمدة من تسليم صورة الصك لا من صدوره. ثم يُقدَّم الحكم النهائي لمحكمة التنفيذ لاستخلاص المبلغ جبرًا.",
+       l:["الاستئناف ٣٠ يومًا (١٠ في المستعجل)","مهلة لا تزيد على خمسة أيام من الإبلاغ للوفاء في التنفيذ","الحجز على الحسابات والمنع من السفر عند الامتناع","إن كان العقد موحدًا ومسجّلًا في نافذ فقد تُغنيك مرحلة التنفيذ المباشر عن هذا كله"]}
+    ]
+  },
+
+  detail: [
+    {
+      n:"نظام المرافعات الشرعية",
+      d:"المرسوم الملكي (م/١) وتاريخ ٢٢/١/١٤٣٥هـ · نُشر ٣/٢/١٤٣٥هـ · ساري · آخر تعديل ٢٩/١١/١٤٤٤هـ",
+      s:"هو الوثيقة الإجرائية التي تنظّم عمل التقاضي في المملكة. له لائحة تنفيذية صدرت بالقرار الوزاري رقم (٣٩٩٣٣) وتاريخ ١٩/٥/١٤٣٥هـ، ولائحة خاصة بطرق الاعتراض على الأحكام صدرت استنادًا إلى المادة (٢٤٠) منه.",
+      sec:[
+        {h:"بنية النظام", p:[
+          "الباب الأول: أحكام عامة — ويشمل فصولًا منها الاستحكام، وإثبات الوفاة وحصر الورثة.",
+          "الباب الثاني: الاختصاص — الفصل الأول: الاختصاص الدولي · الفصل الثاني: الاختصاص النوعي · الفصل الثالث: الاختصاص المكاني.",
+          "أبواب الجلسات والإجراءات والأحكام، ثم طرق الاعتراض، وينتهي بالباب الرابع عشر: أحكام ختامية."
+        ]},
+        {h:"الاختصاص النوعي — من ينظر ماذا", p:[
+          "المادة (٣١/٢): المحكمة العامة تختص بالمنازعات المتعلقة بالعقار ما لم تكن ذات طبيعة تجارية.",
+          "المادة (٣٥): الاختصاص النوعي للمحاكم التجارية والدوائر التجارية. والاختصاص النوعي متعلق بالنظام العام، فلا يصححه اتفاق الخصوم.",
+          "المادة (٢٥) من نظام القضاء تُحيل قواعد الاختصاص إلى هذا النظام ونظام الإجراءات الجزائية."
+        ]},
+        {h:"الاختصاص المكاني — تصحيح لبس شائع", p:[
+          "المادة (٣٤): تُقام الدعوى في محكمة محل إقامة المدعى عليه، فإن لم يكن له محل إقامة في المملكة فمحكمة محل إقامة المدعي، ويجوز التراضي على بلد آخر.",
+          "<strong>لا أثر لمكان العقار</strong> في الاختصاص المكاني داخل المملكة: عقار في الرياض ومدعى عليه في جدة ← الدعوى في جدة.",
+          "المادة (٧١): الدفع بعدم الاختصاص المكاني يجب تقديمه قبل أي طلب أو دفاع، وإلا سقط — فهو حق للمدعى عليه والسكوت عنه تنازل ضمني.",
+          "المادة (٣٨): تُعد المدينة أو القرية نطاقًا محليًا للمحكمة الموجودة بها، وعند تعددها يحدد وزير العدل النطاق بناءً على اقتراح المجلس الأعلى للقضاء."
+        ]},
+        {h:"الاختصاص الدولي", p:[
+          "المادة (٢٤): محاكم المملكة تختص بالدعاوى على السعودي ولو لم يكن مقيمًا، ويُستثنى العقار الواقع خارج المملكة في الدعاوى العينية.",
+          "المادة (٢٥): الدعاوى على غير السعودي المقيم في المملكة، بالاستثناء نفسه."
+        ]},
+        {h:"طرق الاعتراض ومُددها", p:[
+          "المادة (١٨٧): الاستئناف أو التدقيق ٣٠ يومًا، و١٠ أيام في المسائل المستعجلة، وفوات المدة يُسقط الحق.",
+          "المادتان (١٩٣) و(١٩٤): النقض أمام المحكمة العليا ٣٠ يومًا، و١٥ يومًا في المستعجل.",
+          "المادة (٢٠٠): حالات التماس إعادة النظر — واردة على سبيل الحصر، ومنها أن يُبنى الحكم على أوراق ظهر تزويرها بعده، أو على شهادة قُضي بأنها زور.",
+          "المادة (٢٠١): مدة الالتماس ٣٠ يومًا، تبدأ من ثبوت علم الملتمس بالواقعة المؤسَّس عليها التماسه.",
+          "المادة (١٨٥): نصاب الدعوى اليسيرة — يؤثر في جواز الاعتراض أصلًا."
+        ]}
+      ]
+    },
+    {
+      n:"نظام الإثبات",
+      d:"المرسوم الملكي (م/٤٣) وتاريخ ٢٦/٥/١٤٤٣هـ · قرار مجلس الوزراء (٢٨٣) وتاريخ ٢٤/٥/١٤٤٣هـ · نُشر ٤/٦/١٤٤٣هـ · ساري من ٧/١٢/١٤٤٣هـ",
+      s:"قبل هذا النظام كانت قواعد الإثبات موزّعة داخل نظام المرافعات الشرعية. وبصدوره خصّص المنظّم السعودي نظامًا مستقلًا للإثبات يشمل جوانبه الإجرائية والموضوعية.",
+      sec:[
+        {h:"الأحكام العامة", p:[
+          "المادة (١): تسري أحكام النظام على المعاملات المدنية والتجارية.",
+          "المادة (٢): على المدعي أن يثبت ما يدّعيه من حق، وللمدعى عليه نفيه.",
+          "المادة (٦/١): إذا اتفق الخصوم على قواعد محددة في الإثبات عملت المحكمة اتفاقهم، ما لم يخالف النظام العام."
+        ]},
+        {h:"طرق الإثبات السبع — المادة (٥)", p:[
+          "<strong>الإقرار</strong>: اعتراف الخصم بالحق المدعى به؛ متى صدر من عاقل بالغ مختار ثبت الحق وانتهى النزاع في تلك النقطة.",
+          "<strong>الكتابة</strong>: من أقوى الطرق، وتشمل السندات الكتابية بنوعيها.",
+          "<strong>الشهادة</strong>: ويُشترط في الشاهد أن يكون عاقلًا بالغًا غير ممنوع من الشهادة نظامًا.",
+          "<strong>القرائن</strong> · <strong>المعاينة</strong> · <strong>الخبرة</strong> · <strong>اليمين</strong>."
+        ]},
+        {h:"الدليل الرقمي — الباب الرابع", p:[
+          "نُظّمت أحكامه في المواد من (٥٢) وما بعدها.",
+          "المادة (٥٤): يكون للإثبات بالدليل الرقمي حكم الإثبات بالكتابة الوارد في هذا النظام — وهذا توسيع جوهري لنطاق الأدلة المقبولة."
+        ]},
+        {h:"أبرز ما استجد عن نظام المرافعات", p:[
+          "استجواب الخصوم أمام القاضي، وسؤال الخصم للشاهد مباشرة.",
+          "عدم الحاجة إلى إحضار مزكّين للشهود.",
+          "تقييد الإثبات بالقرائن بما لا يزيد على مئة ألف ريال. <span class='tag n'>يُراجع</span>",
+          "قيود على الشهادة وردت على سبيل الحصر في المواد (٦٦ — ٦٨)، بخلاف الإطلاق السابق.",
+          "غرامة تصل إلى عشرة آلاف ريال لمن يدّعي عدم صحة مستند مكتوب أو توقيع منسوب له ويثبت خلاف ذلك. <span class='tag n'>يُراجع</span>"
+        ]},
+        {h:"أثره على الجهات الأخرى", p:[
+          "تُطبَّق أحكام نظام المرافعات الشرعية ونظام الإثبات على الدعاوى أمام محاكم ديوان المظالم فيما لم يرد فيه حكم في نظامها، بما لا يتعارض مع طبيعة المنازعة الإدارية."
+        ]}
+      ]
+    },
+    {
+      n:"نظام التسجيل العيني للعقار",
+      d:"المرسوم الملكي (م/٩١) وتاريخ ١٩/٩/١٤٤٣هـ · قرار مجلس الوزراء (٥٣٧) وتاريخ ١٨/٩/١٤٤٣هـ · نُشر ١٢/١٠/١٤٤٣هـ · نفذ بعد ٩٠ يومًا من نشره",
+      s:"⚠ <strong>تنبيه جوهري:</strong> هذا النظام حلّ محل نظام التسجيل العيني للعقار الصادر بالمرسوم (م/٦) وتاريخ ١١/٢/١٤٢٣هـ، والنظام القديم ولائحته <strong>ملغيان</strong>. كثير من المواقع ما زال ينشر نصوص النظام القديم — فتأكد دائمًا من رقم المرسوم قبل الاستشهاد. والجهة المختصة هي الهيئة العامة للعقار.",
+      sec:[
+        {h:"نطاق التطبيق — اقرأه قبل أي شيء", p:[
+          "النظام لا ينطبق على كل العقارات، بل على الواقعة في <strong>المناطق العقارية المعلنة</strong> وفق أحكامه.",
+          "ويستمر العمل بنظم توثيق العقار السابقة على العقارات التي لا تقع في تلك المناطق.",
+          "فالسؤال الأول عمليًا: هل عقارك داخل منطقة عقارية معلنة أم لا؟"
+        ]},
+        {h:"التأشير بالدعوى — مصيدة إجرائية", p:[
+          "المادة (١٦) تحدد الدعاوى التي يجب التأشير بها في السجل العقاري.",
+          "على المحاكم التي تنظر تلك الدعاوى المرفوعة قبل نفاذ النظام، ومحلها عقار في منطقة معلنة، وقف نظرها حتى التأشير.",
+          "ويُمنح المدعون مهلة ثلاثون يومًا من تاريخ إعلان قوائم ملّاك العقارات محل الدعوى.",
+          "فإن لم يُقدَّم في أول جلسة بعد انتهاء المهلة ما يثبت إجراء التأشير — <strong>تعيَّن عدم سماع الدعوى</strong>."
+        ]},
+        {h:"مهلة التسعين يومًا", p:[
+          "المادتان (١٧) و(١٨): تبدأ التسعون يومًا — بالنسبة إلى الأحكام النهائية الصادرة قبل نفاذ النظام — من تاريخ إعلان قوائم ملّاك العقارات محل تلك الأحكام.",
+          "وتُسجَّل جميع التصرفات التي تمت في شأن العقارات الموصوفة على الخارطة غير مكتملة الإنجاز قبل نفاذ النظام، الواقعة في منطقة معلنة، خلال تسعين يومًا من نفاذه."
+        ]},
+        {h:"السجل وبياناته", p:[
+          "الفقرة (٥) من المادة (٣) : امتلاك الجهة المختصة حصريًا للسجل العقاري وبياناته، ولا يحول ذلك دون استفادة الجهات الحكومية منها لغرض مهماتها دون مقابل.",
+          "المادة (٣٤): التسجيل الأول بلا مقابل، وبقية الخدمات بمقابل. <span class='tag n'>يُراجع</span>",
+          "المادة (٣٨): أساس إصدار اللائحة التنفيذية."
+        ]},
+        {h:"اللائحة التنفيذية وتعديلاتها", p:[
+          "اللائحة التنفيذية صدرت بقرار مجلس إدارة الهيئة العامة للعقار رقم (١/٢٠/ت/٢٢) وتاريخ ٢٧/١/١٤٤٤هـ.",
+          "عُدّلت المواد (٦، ٩، ١١) من النظام بالمرسوم الملكي رقم (م/١٢٣) وتاريخ ١٠/٦/١٤٤٧هـ.",
+          "ثم عُدّلت اللائحة بقرار مجلس إدارة الهيئة رقم (٣/٣٩/م/٢٦) وتاريخ ١٧/٤/١٤٤٨هـ.",
+          "والخلاصة: هذا أكثر الأنظمة الثلاثة تغيّرًا — راجع موقع الهيئة العامة للعقار قبل الاعتماد على أي مادة منه."
+        ]}
+      ]
+    }
+  ],
+
+  docs: {
+    "دعوى قسمة تركة (إجبار)": [
+      "صك حصر الورثة (أصل وصورة)",
+      "صحيفة دعوى بأسماء جميع الورثة وفق الصك والأنصبة الشرعية",
+      "بيان تفصيلي بأصول التركة (عقارات، حسابات، أسهم، مركبات)",
+      "صكوك ملكية العقارات محل القسمة",
+      "كشوف الحسابات البنكية للمورث",
+      "شهادة الوفاة",
+      "ما يثبت ديون المورث إن وُجدت",
+      "الوصية إن وُجدت",
+      "وكالة شرعية إن كان الترافع بوكيل"
+    ],
+    "تعديل وثيقة حصر إرث": [
+      "صك حصر الورثة الحالي",
+      "ما يثبت الخطأ أو الوارث المغفل (هوية، شهادة ميلاد، وثيقة زواج)",
+      "شهادة الوفاة",
+      "صحيفة دعوى تبيّن وجه التعديل المطلوب"
+    ],
+    "دعوى محاسبة في تركة": [
+      "صك حصر الورثة",
+      "ما يثبت وضع يد المدعى عليه على أصول التركة أو ريعها",
+      "بيان بالأصول محل المحاسبة",
+      "عقود الإيجار أو ما يثبت الريع إن وُجد"
+    ],
+    "دعوى منازعة ملكية عقار": [
+      "صك الملكية أو ما يثبت سند الحيازة",
+      "قيد السجل العقاري إن وُجد",
+      "المخطط والإحداثيات ورقم القطعة والمساحة",
+      "ما يثبت وضع اليد ومدته",
+      "الشهود إن وُجدوا",
+      "المطالبة الودية الموثقة"
+    ],
+    "دعوى تداخل عقارات": [
+      "صكوك الطرفين",
+      "تقرير مساحي معتمد",
+      "المخططات والإحداثيات",
+      "طلب معاينة على الطبيعة"
+    ],
+    "مذكرة اعتراضية (استئناف)": [
+      "صورة من الحكم المعترض عليه",
+      "ما يثبت تاريخ تسليم صورة الصك (لإثبات المدة)",
+      "عرض موجز وموضوعي للوقائع",
+      "أسباب شكلية (بطلان تبليغ، مخالفة قواعد اختصاص…)",
+      "أسباب موضوعية (مخالفة النظام، خطأ في تكييف الواقعة، إغفال بينة)",
+      "الرد على أسباب الحكم الابتدائي نقطة بنقطة",
+      "الطلبات محددة بوضوح",
+      "التوقيع من المعترض أو وكيله، وتُقدَّم إلكترونيًا عبر ناجز"
+    ],
+    "شكوى تأديبية على محامٍ أو منشأة قانونية": [
+      "نتيجة البحث في دليل المحامين تُثبت أن المشكو ضده مرخّص (صورة شاشة)",
+      "العقد أو الاتفاق المكتوب مع المكتب",
+      "إيصال السداد أو إشعار التحويل البنكي بالمبلغ وتاريخه",
+      "بيان مكتوب بنطاق العمل المتفق عليه وما لم يُنجَز منه",
+      "الإعذار الكتابي الموثّق وتاريخه، وما يثبت تسلّمه",
+      "المحادثات والمراسلات كاملة بتواريخها",
+      "صورة الوكالة إن وُجدت، وما يثبت إلغاءها",
+      "بيان بالأصول والمستندات المسلَّمة للمكتب ولم تُرد",
+      "هوية مقدّم الشكوى"
+    ],
+    "دعوى فسخ عقد ورد مبلغ على منشأة قانونية": [
+      "صحيفة دعوى أمام المحكمة العامة بمقر المدعى عليه (المادة ٣٤)",
+      "العقد محل الفسخ (وإن كان الاتفاق شفهيًا فبيان شروطه وبينته)",
+      "إيصال السداد أو إشعار التحويل — سند الركن المالي",
+      "ما يثبت نطاق العمل المتفق عليه (عرض سعر، رسائل، ملحق)",
+      "ما يثبت عدم الإنجاز: خلو ناجز من قيد الدعوى، أو عدم جواب المكتب عن كشف الأعمال",
+      "الإعذار الموثّق والمهلة الممنوحة",
+      "ما يثبت الضرر إن طُلب تعويض (فوات ميعاد، سقوط دعوى، كلفة بديلة)",
+      "السجل التجاري أو سجل المنشأة القانونية للمدعى عليه",
+      "قرار لجنة التأديب إن صدر — قرينة مؤيدة"
+    ],
+    "طلب تنفيذ عقد أتعاب موحد (سند تنفيذي)": [
+      "العقد الموحد لأتعاب المحاماة المسجّل في منصة نافذ",
+      "ما يثبت التسجيل واكتساب صفة السند التنفيذي",
+      "تحديد الالتزام المطلوب تنفيذه بدقة كما ورد في العقد (رد أصول ومستندات / مبلغ محدد)",
+      "إيصال السداد إن كان الالتزام مرتبطًا به",
+      "الإعذار الموثّق",
+      "بيانات المنفَّذ ضده كاملة",
+      "تقديم الطلب عبر ناجز إلى محكمة التنفيذ"
+    ],
+    "طلب تنفيذ": [
+      "السند التنفيذي (صك الحكم النهائي)",
+      "ما يثبت نهائية الحكم",
+      "بيانات المنفَّذ ضده كاملة",
+      "طلب التنفيذ عبر ناجز"
+    ]
+  },
+
+  sources: [
+    ["هيئة الخبراء بمجلس الوزراء — الأنظمة السعودية","https://laws.boe.gov.sa"],
+    ["وزارة العدل — بوابة ناجز","https://najiz.sa"],
+    ["الهيئة العامة للعقار — نظام التسجيل العيني للعقار (م/٩١)","https://rega.gov.sa/%D8%A7%D9%84%D8%A3%D9%86%D8%B8%D9%85%D8%A9-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%A7%D8%A6%D8%AD-%D9%88%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9/%D8%A7%D9%84%D8%A3%D9%86%D8%B8%D9%85%D8%A9/%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D8%A7%D9%84%D8%B9%D9%8A%D9%86%D9%8A-%D9%84%D9%84%D8%B9%D9%82%D8%A7%D8%B1/"],
+    ["الهيئة العامة للعقار — اللائحة التنفيذية للنظام","https://rega.gov.sa/media/au3mj2du/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9-%D9%84%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D8%A7%D9%84%D8%B9%D9%8A%D9%86%D9%8A-%D9%84%D9%84%D8%B9%D9%82%D8%A7%D8%B1.pdf"],
+    ["أم القرى — تعديل اللائحة التنفيذية لنظام التسجيل العيني للعقار","https://www.uqn.gov.sa/decisions-and-regulations/4002249"],
+    ["وزارة العدل — نظام المرافعات الشرعية ولائحته والأحكام المتعلقة به (PDF)","https://www.moj.gov.sa/Documents/Regulations/pdf/50.2.pdf"],
+    ["مركز قضاء — نظام الإثبات مع الفهارس","https://qadha.org.sa/ar/books"],
+    ["يوسف الفراج — الاختصاص المكاني والعقار","https://www.mohamah.net/law/?p=138570"],
+    ["التماس إعادة النظر: الحالات والمدة","https://manielaw-sa.com/%D9%85%D8%AF%D8%A9-%D8%A7%D9%84%D8%AA%D9%85%D8%A7%D8%B3-%D8%A5%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D9%86%D8%B8%D8%B1/"],
+    ["سعوديبيديا — أنواع المحاكم في السعودية (المصدر: وزارة العدل)","https://saudipedia.com/%D9%85%D8%A7-%D8%A3%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%83%D9%85-%D9%81%D9%8A-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%D8%9F"],
+    ["المادة ١٨٧ من نظام المرافعات الشرعية — مهلة الاعتراض","https://manielaw-sa.com/%D8%A7%D9%84%D9%85%D8%A7%D8%AF%D8%A9-187-%D9%85%D9%86-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%81%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D9%8A%D8%A9"],
+    ["الدليل الشامل للاعتراض على الأحكام","https://manielaw-sa.com/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AD%D9%83%D9%85"],
+    ["اختصاصات المحكمة العامة في السعودية","https://almehleky.sa/%D8%A7%D8%AE%D8%AA%D8%B5%D8%A7%D8%B5%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AD%D9%83%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9/"],
+    ["دعوى قسمة التركة المالية بالإجبار — شورى","https://www.shwra.sa/ar/blogs/%D9%82%D8%B3%D9%85%D8%A9-%D8%A7%D9%84%D8%AA%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%A5%D8%AC%D8%A8%D8%A7%D8%B1"],
+    ["كتابة مذكرة اعتراضية — شورى","https://www.shwra.sa/ar/blogs/%D9%83%D8%AA%D8%A7%D8%A8%D8%A9-%D9%85%D8%B0%D9%83%D8%B1%D8%A9-%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6%D9%8A%D8%A9"],
+    ["نظام التنفيذ وإجراءاته","https://tryadel.sa/blog/%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0-%D8%A7%D9%84%D8%A7%D8%AD%D9%83%D8%A7%D9%85-%D8%A7%D9%84%D9%82%D8%B6%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
+    ["نظام الإثبات — الأدلة وتقارير الخبراء","https://tryadel.sa/blog/%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%A7%D8%AB%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF-%D9%81%D9%8A-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AF%D9%84%D8%A9-%D9%88%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A7%D8%A1"],
+    ["الدليل الاسترشادي للاختصاص في دعاوى المحاكم العامة — مركز قضاء","https://qadha.org.sa/ar/books"],
+    ["نظام الأحوال الشخصية مع الفهارس — مركز قضاء","https://qadha.org.sa/ar/books"],
+    ["وزارة العدل — تقديم شكوى لمخالفة نظام المحاماة ولائحته التنفيذية","https://www.moj.gov.sa/ar/Ministry/Departments/Mohammah/Pages/complaint.aspx"],
+    ["وزارة العدل — الإدارة العامة للمحاماة","https://www.moj.gov.sa/ar/Ministry/Departments/Mohammah"],
+    ["الهيئة السعودية للمحامين — خدمة الشكاوى والبلاغات","https://cx.sba.gov.sa/"],
+    ["الهيئة السعودية للمحامين — البلاغات عن منتحلي المهنة ودليل المحامين","https://sba.gov.sa/violation-report/"],
+    ["الهيئة السعودية للمحامين — الخدمات الإلكترونية وسجل المنشأة القانونية","https://eservice.sba.gov.sa/"],
+    ["الهيئة السعودية للمحامين — نظام المحاماة ولائحته التنفيذية (PDF)","https://sba.gov.sa/wp-content/uploads/2022/05/%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9-%D9%88%D9%84%D8%A7%D9%8A%D9%94%D8%AD%D8%AA%D9%87-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9.pdf"],
+    ["ديوان المظالم — نظام المحاماة (نصوص المواد)","https://www.bog.gov.sa/ScientificContent/JudicialSystems/Pages/JudicalSystemsContent.aspx?SystemTitle=%D9%86%D8%B8%D8%A7%D9%85+%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9"],
+    ["هيئة الخبراء — نظام المحاكم التجارية","https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/38334008-3b70-4c6c-b3af-aba3016a8061/1"],
+    ["البوابة القانونية بوزارة العدل — حكم بعدم اختصاص المحكمة التجارية في فسخ عقد خدمات","https://laws.moj.gov.sa/ar/JudicialDecisionsList/0/tjbF-CmNKqv9dhL9FCesKAsj9YcvE5ltbcM3eSv2Ld-VY39LasWXW0LEf3OB_HHx"],
+    ["أم القرى — اللائحة التنفيذية لنظام المحاماة","https://www.uqn.gov.sa/details?p=26765"]
+  ]
+};
+
+/* ===================== WIZARD ENGINE ===================== */
+const QS = [
+  {id:"root", q:"ما أصل النزاع؟", o:[
+    {v:"mawt", t:"وفاة وتركة", d:"خلاف حول إرث، قسمة، وصية، أو صك حصر ورثة"},
+    {v:"aqar", t:"نزاع على عقار", d:"ملكية، حيازة، تداخل حدود، إخلاء، أو طعن في السجل العقاري"},
+    {v:"mihna", t:"نزاع مع محامٍ أو منشأة قانونية", d:"مماطلة في عمل سُدِّد مقابله، أو أتعاب، أو عدم رد مستندات"},
+    {v:"other", t:"غير ذلك", d:"نزاع مالي أو مدني لا يتعلق بتركة ولا عقار"}
+  ]},
+  {id:"mhLic", q:"هل الجهة مرخّصة من وزارة العدل لمزاولة المحاماة؟", when:a=>a.root==="mihna", o:[
+    {v:"yes", t:"نعم — مرخّصة", d:"ظهرت في دليل المحامين أو سجل المنشآت القانونية"},
+    {v:"no", t:"لا — مكتب استشارات بسجل تجاري فقط", d:"غير مرخّص لمزاولة المحاماة"},
+    {v:"unk", t:"لم أتحقق بعد", d:"هذه أول خطوة — وهي التي تحدد المسار"}
+  ]},
+  {id:"mhWant", q:"ما الذي تريده فعلًا؟", when:a=>a.root==="mihna"&&a.mhLic!=="unk", o:[
+    {v:"mal", t:"استرداد المبلغ الذي دفعته", d:"حق خاص — جهته المحاكم"},
+    {v:"tadib", t:"مساءلته مهنيًا ومعاقبته", d:"حق عام — جهته الهيئة ولجنة التأديب"},
+    {v:"both", t:"الاثنان معًا", d:"المسارَان مستقلان ويُقدَّمان بالتوازي"},
+    {v:"wathaiq", t:"إرجاع مستنداتي وأصولي فقط", d:"أصل صك، وكالة، أوراق سلّمتُها للمكتب"}
+  ]},
+  {id:"mhAqd", q:"هل عقدك هو «العقد الموحد لأتعاب المحاماة» المسجّل في منصة نافذ؟",
+   when:a=>a.root==="mihna"&&a.mhLic==="yes"&&(a.mhWant==="mal"||a.mhWant==="both"||a.mhWant==="wathaiq"), o:[
+    {v:"yes", t:"نعم — مسجّل في نافذ", d:"يكتسب صفة السند التنفيذي"},
+    {v:"no", t:"لا — عقد خاص أو اتفاق شفهي", d:"ليس سندًا تنفيذيًا"},
+    {v:"unk", t:"لم أتحقق بعد", d:"تحقّق في نافذ/ناجز — قد يختصر عليك المسار كله"}
+  ]},
+  {id:"tk", q:"ما طبيعة الطلب في التركة؟", when:a=>a.root==="mawt", o:[
+    {v:"hasr", t:"إصدار أو تعديل صك حصر ورثة", d:"لم يصدر الصك بعد، أو فيه خطأ أو وارث مغفل"},
+    {v:"qisma", t:"قسمة التركة", d:"الصك صادر والمطلوب توزيع الأنصبة"},
+    {v:"muhasaba", t:"محاسبة وارث", d:"أحد الورثة استولى على أصل من التركة أو ريعه"},
+    {v:"wasiyya", t:"نزاع في وصية", d:"صحة الوصية أو تجاوزها الحد المعتبر"}
+  ]},
+  {id:"ittifaq", q:"هل الورثة متفقون على القسمة؟", when:a=>a.tk==="qisma", o:[
+    {v:"yes", t:"نعم، متفقون", d:"لا خلاف جوهري على الأنصبة ولا على الأصول"},
+    {v:"no", t:"لا، هناك خلاف", d:"تعذّر الاتفاق أو امتنع بعضهم"}
+  ]},
+  {id:"nawtk", q:"ما نوع الأصول محل القسمة؟", when:a=>a.tk==="qisma"&&a.ittifaq==="no", o:[
+    {v:"mal", t:"تركة مالية", d:"حسابات بنكية، أسهم، نقد"},
+    {v:"aq", t:"تركة عقارية", d:"أراضٍ، عمائر، وحدات سكنية"},
+    {v:"both", t:"الاثنان معًا", d:"مالية وعقارية"}
+  ]},
+  {id:"aqnoo", q:"ما نوع النزاع العقاري؟", when:a=>a.root==="aqar", o:[
+    {v:"milk", t:"منازعة ملكية", d:"نزاع على من يملك العقار"},
+    {v:"tdkhl", t:"تداخل عقارات أو حدود", d:"تعدٍّ على حدود أو تداخل صكوك"},
+    {v:"hiyaza", t:"حيازة أو إخلاء", d:"وضع يد، أو إخلاء شاغل"},
+    {v:"sijil", t:"طعن في بيانات السجل العقاري", d:"مخالفة البيانات للأصول الشرعية أو تزويرها"}
+  ]},
+  {id:"tijari", q:"هل العقار متصل بنشاط تجاري؟", when:a=>a.root==="aqar"&&a.aqnoo!=="sijil", o:[
+    {v:"no", t:"لا — سكني أو شخصي", d:"لا يرتبط بنشاط تجاري"},
+    {v:"yes", t:"نعم — نشاط تجاري", d:"العقار محل استثمار أو نشاط تجاري بين تجار"},
+    {v:"gov", t:"الخصم جهة حكومية", d:"بلدية، أمانة، وزارة، أو جهة ذات شخصية معنوية عامة"}
+  ]},
+  {id:"othq", q:"من الخصم في النزاع؟", when:a=>a.root==="other", o:[
+    {v:"fard", t:"فرد أو جهة خاصة", d:"نزاع مالي أو مدني عادي"},
+    {v:"tajir", t:"تاجر في عقد تجاري", d:"المطالبة ناشئة عن عقد تجاري"},
+    {v:"gov", t:"جهة حكومية", d:"قرار إداري أو عقد حكومي"},
+    {v:"amal", t:"علاقة عمل", d:"صاحب عمل وعامل"}
+  ]}
+];
+
+function decide(a){
+  // --- تركات ---
+  if(a.root==="mawt"){
+    if(a.tk==="hasr")
+      return {c:"إجراء إداري عبر بوابة ناجز — وليس دعوى",
+        b:"صك حصر الورثة يُصدر إلكترونيًا عبر ناجز ويخضع لتدقيق وزارة العدل، بعد أن كان يتطلب دعوى وإنهاءً لدى الدائرة القضائية. وإن كان الصك صادرًا وفيه خطأ، فالمسار دعوى تعديل وثيقة حصر إرث أمام محكمة الأحوال الشخصية.",
+        laws:["نظام الأحوال الشخصية","نظام المرافعات الشرعية"], tr:"tarikat", ct:"tahsr",
+        docs:["تعديل وثيقة حصر إرث"], tag:"إداري"};
+
+    if(a.tk==="qisma" && a.ittifaq==="yes")
+      return {c:"منصة التركات — قسمة بالتراضي دون دعوى",
+        b:"القسمة بالتراضي تتم في كثير من الحالات عبر منصة التركات، بخلاف القسمة بالإجبار التي تُرفع عبر ناجز. هذا المسار أسرع وأقل كلفة — لا تدخل المحكمة ما دام الاتفاق قائمًا.",
+        laws:["نظام الأحوال الشخصية"], tr:"tarikat", ct:null, docs:[], tag:"إداري"};
+
+    if(a.tk==="qisma" && a.ittifaq==="no"){
+      const warn = a.nawtk==="both"
+        ? "تحذير: من الأخطاء الشائعة الجمع بين قسمة التركة العقارية والمالية في دعوى واحدة — افصلهما في دعويين."
+        : "";
+      return {c:"محكمة الأحوال الشخصية — دعوى قسمة تركة بالإجبار",
+        b:"يرفعها أحد الورثة أو أكثر ضد بقية الورثة للحصول على نصيبه الشرعي عند تعذّر القسمة بالتراضي، وتُرفع عبر ناجز. "+warn,
+        laws:["نظام الأحوال الشخصية","نظام المرافعات الشرعية","نظام الإثبات","نظام التنفيذ"],
+        tr:"tarikat", ct:"qisma", docs:["دعوى قسمة تركة (إجبار)"], tag:"قضائي"};
+    }
+
+    if(a.tk==="muhasaba")
+      return {c:"محكمة الأحوال الشخصية — دعوى محاسبة في تركة",
+        b:"تُرفع عند استيلاء أحد الورثة على عقار من التركة أو على ريعها. المطلوب إثبات وضع اليد ومقدار الريع، ثم الحكم بالتسليم والمحاسبة.",
+        laws:["نظام الأحوال الشخصية","نظام الإثبات","نظام المعاملات المدنية"],
+        tr:"tarikat", ct:"muhasaba", docs:["دعوى محاسبة في تركة"], tag:"قضائي"};
+
+    if(a.tk==="wasiyya")
+      return {c:"محكمة الأحوال الشخصية — نزاع في وصية",
+        b:"نظام الأحوال الشخصية يتضمن أحكامًا تفصيلية للوصية، منها قاعدة لا وصية لوارث إلا في الحدود المعتبرة نظامًا، وأحكام تجاوز الوصية للحد المقرر وما يتعلق بإجازة الورثة أو بعضهم بحسب الحالة.",
+        laws:["نظام الأحوال الشخصية","نظام الإثبات"], tr:"tarikat", ct:"wasiyya", docs:[], tag:"قضائي"};
+  }
+
+  // --- عقار ---
+  if(a.root==="aqar"){
+    if(a.aqnoo==="sijil")
+      return {c:"المحكمة العامة — مع الهيئة العامة للعقار",
+        b:"ينطبق نظام التسجيل العيني للعقار الصادر بالمرسوم (م/٩١) وتاريخ ١٩/٩/١٤٤٣هـ، وهو الساري وقد حلّ محل نظام ١٤٢٣هـ — فانتبه ألا تعتمد على نصوص النظام الملغى. والجهة المختصة بالسجل هي الهيئة العامة للعقار. والاختصاص المكاني يخضع للقاعدة العامة في المادة (٣٤): محكمة محل إقامة المدعى عليه، لا موقع العقار.",
+        laws:["نظام التسجيل العيني للعقار","نظام المرافعات الشرعية","نظام الإثبات"],
+        tr:"aqar", ct:"milk", docs:["دعوى منازعة ملكية عقار"], tag:"قضائي"};
+
+    if(a.tijari==="gov")
+      return {c:"ديوان المظالم — المحاكم الإدارية",
+        b:"النزاع مع جهة إدارية يخرج عن ولاية المحاكم العامة. وتطبَّق على الدعاوى المرفوعة أمام محاكم ديوان المظالم أحكام نظام المرافعات الشرعية ونظام الإثبات فيما لم يرد فيه حكم في نظامها، بما لا يتعارض مع طبيعة المنازعة الإدارية.",
+        laws:["نظام المرافعات أمام ديوان المظالم","نظام المرافعات الشرعية","نظام الإثبات"],
+        tr:"aqar", ct:null, docs:[], tag:"إداري قضائي"};
+
+    if(a.tijari==="yes")
+      return {c:"المحكمة التجارية",
+        b:"العقار المتصل بنشاط تجاري يخرج عن المحكمة العامة. فالمنازعات الخاصة بالعقارات السكنية أو التي لا تشمل أنشطة تجارية ينظر فيها القضاء العام، أما ذات الطبيعة التجارية فللمحاكم التجارية. وانتبه: بعض الدعاوى التجارية يجب اللجوء فيها إلى المصالحة والوساطة قبل نظر الدعوى.",
+        laws:["نظام المحاكم التجارية","نظام المرافعات الشرعية","نظام الإثبات"],
+        tr:"aqar", ct:null, docs:[], tag:"قضائي"};
+
+    const names={milk:"منازعة ملكية عقار",tdkhl:"تداخل عقارات",hiyaza:"حيازة أو إخلاء"};
+    return {c:"المحكمة العامة — "+(names[a.aqnoo]||"دعوى عقارية"),
+      b:"المحكمة العامة تختص بجميع الدعاوى التي لم يرد نص بإسنادها إلى محكمة أخرى، وتختص بالمنازعات المتعلقة بالعقار ما لم تكن ذات طبيعة تجارية.",
+      laws:["نظام المرافعات الشرعية","نظام المعاملات المدنية","نظام الإثبات","نظام التنفيذ"],
+      tr:"aqar", ct:(a.aqnoo==="tdkhl"?"tdkhl":a.aqnoo==="hiyaza"?"hiyaza":"milk"),
+      docs:[a.aqnoo==="tdkhl"?"دعوى تداخل عقارات":"دعوى منازعة ملكية عقار"], tag:"قضائي"};
+  }
+
+  // --- نزاع مع منشأة قانونية ---
+  if(a.root==="mihna"){
+    if(a.mhLic==="unk")
+      return {c:"ابدأ بالتحقق من الترخيص — قبل أي إجراء",
+        b:"هذه الخطوة تحدد المسار كله ولا يصح تجاوزها. ابحث في دليل المحامين على بوابة الهيئة السعودية للمحامين (eservice.sba.gov.sa/lawyers) بالاسم أو برقم الترخيص، أو استعلم عن المنشأة القانونية. فالمرخّص له يخضع لنظام المحاماة ولمسار التأديب أمام الهيئة ثم لجنة تأديب المحامين، وغير المرخّص لا يخضع له وجهته وزارة التجارة، ومن يزاول المهنة دون ترخيص فله مسار بلاغ انتحال صفة مستقل. احفظ صورة شاشة من نتيجة البحث — تُرفق في الشكوى وفي الدعوى.",
+        laws:["نظام المحاماة"], tr:"mihna", ct:null, docs:[], tag:"تحقق أولًا"};
+
+    if(a.mhLic==="no")
+      return {c:"المحكمة العامة — ولا مسار تأديبي عدلي",
+        b:"المكتب غير المرخّص للمحاماة لا تختص به لجنة تأديب المحامين. فيبقى لك مسارَان: شكوى لوزارة التجارة بصفتها الجهة الرقابية على السجل التجاري، وبلاغ انتحال صفة إن ثبت أنه زاول أعمال المحاماة دون ترخيص؛ ثم الدعوى المالية أمام المحكمة العامة بالاختصاص الاحتياطي، لأن المطالبة مدنية لا تجارية ولا تدخل في اختصاص محكمة متخصصة. والاختصاص المكاني لمحكمة مقرّ المدعى عليه (المادة ٣٤).",
+        laws:["نظام المرافعات الشرعية","نظام المعاملات المدنية","نظام الإثبات","نظام التنفيذ"],
+        tr:"mihna", ct:"mhFaskh", docs:["دعوى فسخ عقد ورد مبلغ على منشأة قانونية"], tag:"قضائي"};
+
+    if(a.mhWant==="tadib")
+      return {c:"الهيئة السعودية للمحامين ← لجنة تأديب المحامين",
+        b:"تتيح وزارة العدل خدمة تقديم شكوى في الحق العام ضد المحامي أو المتدرب أو منتحل الصفة أو المخالف لأحكام نظام المحاماة ولائحته، وتُقدَّم من خلال الهيئة السعودية للمحامين، والبوابة الموحدة تستقبلها إلكترونيًا بالنفاذ الوطني مع رفع الأدلة. ويرفع المدعي العام الدعوى التأديبية (المادة ٣٠)، وينظرها لجنة التأديب المشكَّلة بقرار وزير العدل (المادة ٣١) كتابةً، ويُبلَّغ المحامي قبل الجلسة بمدة لا تقل عن خمسة عشر يومًا (المادة ٣٢). والعقوبات: الإنذار أو اللوم أو الإيقاف حتى ثلاث سنوات أو الشطب وإلغاء الترخيص (المادة ٢٩). <strong>وانتبه: هذا المسار لا يُرجع مالك</strong> — نصّ وزارة العدل أن المطالبة في الحق الخاص من اختصاص المحاكم.",
+        laws:["نظام المحاماة"], tr:"mihna", ct:"mhShakwa",
+        docs:["شكوى تأديبية على محامٍ أو منشأة قانونية"], tag:"تأديبي — حق عام"};
+
+    if(a.mhAqd==="unk")
+      return {c:"تحقّق من عقدك في نافذ قبل أن تختار",
+        b:"إن كان عقدك هو العقد الموحد لأتعاب المحاماة المسجّل في خدمة إنشاء العقود على منصة نافذ، فهو يكتسب صفة السند التنفيذي ويُتعامل معه عبر محاكم التنفيذ إلكترونيًا من منصة ناجز دون الحاجة إلى رفع دعوى قضائية — وهذا يختصر عليك شهورًا. وإن لم يكن كذلك فالمسار دعوى أمام المحكمة العامة. فافتح ناجز/نافذ وتحقّق أولًا.",
+        laws:["نظام التنفيذ","نظام المحاماة"], tr:"mihna", ct:null, docs:[], tag:"تحقق أولًا"};
+
+    if(a.mhWant==="wathaiq")
+      return a.mhAqd==="yes"
+        ? {c:"محكمة التنفيذ — دون دعوى",
+           b:"العقد الموحد يُلزم المنشآت القانونية برد الأصول المستلمة كافة من الموكّل، والعقد المسجّل في نافذ سند تنفيذي يُنفَّذ عبر محاكم التنفيذ إلكترونيًا من ناجز دون رفع دعوى. فقدّم طلب تنفيذ بالالتزام المحدّد: تسليم الأصول والمستندات. وألغِ الوكالة في ناجز إن كانت سارية.",
+           laws:["نظام التنفيذ","نظام المحاماة"], tr:"mihna", ct:"mhTanfeeth",
+           docs:["طلب تنفيذ عقد أتعاب موحد (سند تنفيذي)"], tag:"تنفيذ"}
+        : {c:"المحكمة العامة — دعوى بتسليم الأصول والمستندات",
+           b:"بلا سند تنفيذي يبقى المسار القضائي. ابدأ بإعذار كتابي موثّق يطالب بتسليم الأصول في مهلة محددة، ثم ارفع الدعوى أمام المحكمة العامة بمقر المكتب (المادة ٣٤). وسندك أن المحامي لا يجوز له بدون سبب مشروع أن يتخلى عما وُكّل عليه (المادة ٢٣). وقدّم معها شكوى تأديبية فالمسارَان مستقلان.",
+           laws:["نظام المحاماة","نظام المرافعات الشرعية","نظام الإثبات","نظام المعاملات المدنية"],
+           tr:"mihna", ct:"mhFaskh", docs:["دعوى فسخ عقد ورد مبلغ على منشأة قانونية"], tag:"قضائي"};
+
+    const par = a.mhWant==="both"
+      ? " <strong>وقدّم معها الشكوى التأديبية بالتوازي لا بالتتابع</strong> — فالمسارَان مستقلان، والعقوبة التأديبية تُوقَّع مع عدم الإخلال بدعوى التعويض لمن لحقه ضرر أو أي دعوى أخرى، وقرار اللجنة يصبح قرينة مؤيدة في دعواك المالية."
+      : "";
+
+    if(a.mhAqd==="yes")
+      return {c:"مسارَان: محكمة التنفيذ للمستندات، والمحكمة العامة لرد المبلغ",
+        b:"عقدك سند تنفيذي: استعمل محكمة التنفيذ مباشرة عبر ناجز للالتزام المحدّد الظاهر في العقد — رد الأصول والمستندات، أو دفعة محددة مستحقة — دون رفع دعوى. أما ردّ مبلغ دفعتَه فمبناه فسخ العقد، والفسخ حكم قضائي لا يُستخلص بالتنفيذ، فيبقى أمام المحكمة العامة بمقر المكتب (المادة ٣٤)."+par,
+        laws:["نظام التنفيذ","نظام المحاماة","نظام المعاملات المدنية","نظام المرافعات الشرعية","نظام الإثبات"],
+        tr:"mihna", ct:"mhFaskh",
+        docs:["طلب تنفيذ عقد أتعاب موحد (سند تنفيذي)","دعوى فسخ عقد ورد مبلغ على منشأة قانونية"],
+        tag:"تنفيذ وقضائي"};
+
+    return {c:"المحكمة العامة — دعوى فسخ ورد مبلغ",
+      b:"المنشأة القانونية منشأة مهنية لا تاجر، والعلاقة بالموكّل مدنية لا تجارية، فتخرج عن المحكمة التجارية وتعود للمحكمة العامة بالاختصاص الاحتياطي — وقد قضت دائرة تجارية فعلًا بعدم اختصاصها في دعوى فسخ عقد خدمات ومطالبة مالية. والاختصاص المكاني لمحكمة مقرّ المدعى عليه (المادة ٣٤). وسندك الموضوعي: المادة (٢٣) تمنع المحامي بدون سبب مشروع من أن يتخلى عما وُكّل عليه قبل انتهاء الدعوى، والمادة (٢٧) لا تُلزم الموكّل بكامل الأتعاب إلا إذا ثبت أن العزل بسبب غير مشروع — فالعبء على المكتب في إثبات ما أنجزه."+par,
+      laws:["نظام المحاماة","نظام المعاملات المدنية","نظام المرافعات الشرعية","نظام الإثبات","نظام التنفيذ"],
+      tr:"mihna", ct:"mhFaskh",
+      docs:a.mhWant==="both"
+        ? ["دعوى فسخ عقد ورد مبلغ على منشأة قانونية","شكوى تأديبية على محامٍ أو منشأة قانونية"]
+        : ["دعوى فسخ عقد ورد مبلغ على منشأة قانونية"],
+      tag:"قضائي"};
+  }
+
+  // --- غير ذلك ---
+  if(a.root==="other"){
+    if(a.othq==="gov") return {c:"ديوان المظالم — المحاكم الإدارية", b:"المنازعة الإدارية تخرج عن ولاية المحاكم العامة.", laws:["نظام المرافعات أمام ديوان المظالم"], tr:null, docs:[], tag:"خارج نطاق هذا الملف"};
+    if(a.othq==="amal") return {c:"المحكمة العمالية", b:"منازعات علاقة العمل من اختصاص المحاكم العمالية، وهي إحدى محاكم الدرجة الأولى.", laws:["نظام العمل"], tr:null, docs:[], tag:"خارج نطاق هذا الملف"};
+    if(a.othq==="tajir") return {c:"المحكمة التجارية", b:"الدعاوى المقامة على التاجر في منازعات العقود التجارية — مع مراعاة الحدّ النصابي للمطالبة، وهو رقم تغيّر بموجب اللائحة التنفيذية ويجب التحقق منه من المصدر الرسمي.", laws:["نظام المحاكم التجارية"], tr:null, docs:[], tag:"خارج نطاق هذا الملف"};
+    return {c:"المحكمة العامة — بالاختصاص الاحتياطي", b:"تختص المحكمة العامة بالنظر في جميع الدعاوى والقضايا التي لم يرد نص بإسنادها إلى محكمة أخرى.", laws:["نظام المرافعات الشرعية","نظام المعاملات المدنية","نظام الإثبات"], tr:"aqar", ct:"other", docs:[], tag:"قضائي"};
+  }
+  return null;
+}
+
+let ans={};
+function renderWiz(){
+  const body=document.getElementById("wizBody");
+  body.innerHTML="";
+  let n=0;
+  for(const q of QS){
+    if(q.when && !q.when(ans)) continue;
+    n++;
+    const d=document.createElement("div"); d.className="q";
+    d.innerHTML=`<div class="qt"><span class="qn">${n}</span><span>${q.q}</span></div>`;
+    const ol=document.createElement("div"); ol.className="opts";
+    for(const o of q.o){
+      const lab=document.createElement("label");
+      lab.className="opt"+(ans[q.id]===o.v?" sel":"");
+      lab.innerHTML=`<input type="radio" name="${q.id}" ${ans[q.id]===o.v?"checked":""}>
+        <span class="ow"><span class="ot">${o.t}</span><span class="od">${o.d}</span></span>`;
+      lab.onclick=()=>{
+        // امسح الإجابات اللاحقة عند تغيير إجابة سابقة
+        const i=QS.findIndex(x=>x.id===q.id);
+        QS.slice(i+1).forEach(x=>delete ans[x.id]);
+        ans[q.id]=o.v; renderWiz();
+      };
+      ol.appendChild(lab);
+    }
+    d.appendChild(ol); body.appendChild(d);
+    if(ans[q.id]===undefined) break;   // لا تعرض السؤال التالي قبل الإجابة
+  }
+  const r=decide(ans);
+  const out=document.getElementById("wizOut");
+  if(!r){ out.innerHTML=""; return; }
+  out.innerHTML=`<div class="result">
+    <div class="court">${r.c}</div>
+    <div class="basis">${r.b}</div>
+    <div class="chips">
+      <span class="chip k">${r.tag}</span>
+      ${r.laws.map(l=>`<span class="chip">${l}</span>`).join("")}
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+      ${r.ct?`<button class="btn pri" onclick="startCase('${r.ct}')">ابدأ هذه الدعوى الآن ←</button>`:""}
+      ${r.tr?`<button class="btn" onclick="go('${r.tr}')">عرض المسار الكامل خطوة بخطوة</button>`:""}
+      ${r.docs.length?`<button class="btn" onclick="go('docs')">المستندات المطلوبة</button>`:""}
+    </div>
+    ${!r.ct?`<div class="hint" style="margin-top:12px">${
+      r.tag==="إداري"
+        ? "هذا المسار لا يحتاج دعوى قضائية، فلا يوجد ما تنشئه هنا."
+        : r.tag==="تحقق أولًا"
+        ? "أكمل هذه الخطوة أولًا ثم ارجع وأعد الإجابة — فالجواب يتغيّر بها، ولا يصح إنشاء الدعوى قبلها."
+        : "هذا المسار خارج نطاق محرّر القضايا في هذا الملف، وهو يغطي التركات والعقار والنزاع مع المنشآت القانونية."
+    }</div>`:""}
+  </div>`;
+}
+
+/* ===================== TIMELINE ===================== */
+function renderTL(id,steps){
+  const el=document.getElementById(id); el.innerHTML="";
+  steps.forEach((s,i)=>{
+    const d=document.createElement("div");
+    d.className="step "+(s.k||"");
+    d.innerHTML=`<div class="sh"><div class="st">
+        <span>${i+1}. ${s.t}</span><span class="sm">${s.m}</span></div></div>
+      <div class="sb"><p>${s.b}</p><ul>${s.l.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+    d.querySelector(".sh").onclick=()=>d.classList.toggle("open");
+    el.appendChild(d);
+  });
+}
+
+/* ===================== CALC ===================== */
+const AR=["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+const toAr=s=>String(s).replace(/\d/g,d=>AR[d]);
+const GD=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+
+function hijri(d){
+  try{
+    // التنسيق العربي يضيف "هـ" تلقائيًا — لا تضفها مرة ثانية
+    return new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura",
+      {day:"numeric",month:"long",year:"numeric"}).format(d);
+  }catch(e){return "";}
+}
+function greg(d){
+  return new Intl.DateTimeFormat("ar-SA-u-ca-gregory",
+    {day:"numeric",month:"long",year:"numeric"}).format(d)+"م";
+}
+
+function calc(){
+  const v=document.getElementById("cDate").value;
+  const out=document.getElementById("cOut");
+  if(!v){out.innerHTML='<div style="color:var(--dim);font-size:.92rem">أدخل تاريخ تسليم الصك لعرض النتيجة.</div>';return;}
+
+  const sel=document.getElementById("cType");
+  const days=parseInt(sel.value,10);
+  const kind=sel.options[sel.selectedIndex].text;
+
+  // المدة تبدأ من اليوم التالي لتسليم الصك
+  const start=new Date(v+"T00:00:00");
+  let last=new Date(start); last.setDate(last.getDate()+days);
+
+  // امتداد لأول يوم عمل إذا صادف اليوم الأخير عطلة
+  let shifted=false, reason="";
+  const hol=document.getElementById("cHol").checked;
+  if(hol){ last.setDate(last.getDate()+1); shifted=true; reason="عطلة رسمية"; }
+  while(last.getDay()===5||last.getDay()===6){   // الجمعة والسبت
+    last.setDate(last.getDate()+1); shifted=true;
+    if(!reason) reason="نهاية الأسبوع";
+  }
+
+  const today=new Date(); today.setHours(0,0,0,0);
+  const left=Math.round((last-today)/86400000);
+
+  let st,cls;
+  if(left<0){ st=`انقضت المدة منذ ${toAr(Math.abs(left))} يومًا — سقط الحق في الاعتراض وصار الحكم نهائيًا.`; cls="gone"; }
+  else if(left===0){ st="اليوم هو آخر يوم للاعتراض. قدّم اعتراضك اليوم."; cls="urgent"; }
+  else if(left<=5){ st=`متبقٍ ${toAr(left)} أيام فقط — الوقت حرج.`; cls="urgent"; }
+  else { st=`متبقٍ ${toAr(left)} يومًا.`; cls="safe"; }
+
+  out.innerHTML=`
+    <div style="color:var(--dim);font-size:.85rem">آخر يوم لتقديم ${kind.split("—")[0].trim()}</div>
+    <div class="bigdate">${GD[last.getDay()]} ${greg(last)}</div>
+    <div class="hijri">${hijri(last)}</div>
+    <div class="left ${cls}">${st}</div>
+    ${shifted?`<div class="note">صادف اليوم الأخير ${reason}، فامتدت المهلة إلى أول يوم عمل بعدها.</div>`:""}
+    <div class="note">
+      بدء الحساب من تاريخ تسليم صورة صك الحكم — وهو التاريخ المدوَّن في أعلى كل صفحة من الصك.
+      وأيام العطلة الرسمية تدخل في حساب المدة إذا كانت في بدايتها أو منتصفها، أما إذا صادف اليوم
+      الأخير عطلةً رسمية فتمتد المهلة إلى أول يوم عمل بعدها.
+      <br><strong>هذه الحاسبة استرشادية</strong> — تحقق من التاريخ مع محاميك أو من المحكمة قبل الاعتماد عليه،
+      ولا تنتظر آخر يوم.
+    </div>`;
+}
+
+/* ===================== RENDER TABLES ===================== */
+function fill(){
+  document.getElementById("fDate").textContent=DATA.updated;
+  document.getElementById("verBadge").textContent="بيانات "+DATA.updated;
+
+  const lb=document.querySelector("#tLaws tbody");
+  lb.innerHTML=DATA.laws.map(l=>`<tr>
+    <td class="m">${l.n}</td><td>${l.d}</td><td>${l.r}</td>
+    <td><span class="vf ${l.v?"y":"n"}">${l.v?"متحقَّق":"يُراجع"}</span></td></tr>`).join("");
+
+  const ab=document.querySelector("#tArts tbody");
+  const paint=f=>{
+    ab.innerHTML=DATA.arts.filter(a=>!f||
+      (a.a+" "+a.l+" "+a.t+" "+(a.k||"")).toLowerCase().includes(f.toLowerCase()))
+      .map(a=>`<tr><td class="m">${a.a}</td><td>${a.l}</td><td>${a.t}</td>
+      <td><span class="vf ${a.v?"y":"n"}">${a.v?"متحقَّق":"يُراجع"}</span></td></tr>`).join("")
+      || `<tr><td colspan="4" style="text-align:center;padding:22px">لا نتائج</td></tr>`;
+  };
+  paint("");
+  document.getElementById("aSearch").oninput=e=>paint(e.target.value);
+
+  renderTL("tlTarikat",DATA.tracks.tarikat);
+  renderTL("tlAqar",DATA.tracks.aqar);
+  renderTL("tlMihna",DATA.tracks.mihna);
+
+  const db=document.getElementById("detailBody");
+  db.innerHTML=DATA.detail.map(L=>`<div class="acc">
+      <div class="ah"><div class="an">${L.n}</div><div class="ad">${L.d}</div></div>
+      <div class="ab"><div class="asum">${L.s}</div>
+        ${L.sec.map(s=>`<h3>${s.h}</h3><ul>${s.p.map(x=>`<li>${x}</li>`).join("")}</ul>`).join("")}
+      </div></div>`).join("");
+  db.querySelectorAll(".acc").forEach(a=>
+    a.querySelector(".ah").onclick=()=>a.classList.toggle("open"));
+
+  document.getElementById("docsBody").innerHTML=Object.entries(DATA.docs)
+    .map(([k,v])=>`<h3>${k}</h3><ul style="color:var(--dim);font-size:.92rem;padding-right:20px">
+      ${v.map(x=>`<li>${x}</li>`).join("")}</ul>`).join("");
+
+  const need=[...DATA.laws.filter(l=>!l.v).map(l=>l.n+" — المرسوم أو تاريخه"),
+              ...DATA.arts.filter(a=>!a.v).map(a=>"المادة "+a.a+" من "+a.l)];
+  document.getElementById("verifyList").innerHTML=
+    `<ul style="color:var(--warn);font-size:.9rem;padding-right:20px">
+      ${need.map(x=>`<li>${x}</li>`).join("")}</ul>
+     <p style="margin-top:8px">هذه البنود لم يتأكد ترقيمها أو تاريخها من نص رسمي مباشر،
+     فلا تعتمد عليها قبل مراجعة موقع هيئة الخبراء.</p>`;
+
+  document.getElementById("cityList").innerHTML=
+    CITIES.map(c=>`<option value="${c}">`).join("");
+
+  document.getElementById("srcList").innerHTML=
+    `<ul style="padding-right:20px">${DATA.sources.map(
+      ([t,u])=>`<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`).join("")}</ul>`;
+}
+
+/* ===================== CASES ===================== */
+const CASE_TYPES={
+  qisma:{n:"قسمة تركة بالإجبار",tr:"tarikat",court:"محكمة الأحوال الشخصية",
+    laws:["نظام الأحوال الشخصية","لائحة قسمة الأموال المشتركة","نظام المرافعات الشرعية","نظام الإثبات"],need:["deceased"]},
+  muhasaba:{n:"محاسبة في تركة",tr:"tarikat",court:"محكمة الأحوال الشخصية",
+    laws:["نظام الأحوال الشخصية","لائحة قسمة الأموال المشتركة","نظام الإثبات","نظام المعاملات المدنية"],need:["deceased"]},
+  tahsr:{n:"تعديل وثيقة حصر إرث",tr:"tarikat",court:"محكمة الأحوال الشخصية",
+    laws:["نظام الأحوال الشخصية","نظام المرافعات الشرعية"],need:["deceased"]},
+  wasiyya:{n:"نزاع في وصية",tr:"tarikat",court:"محكمة الأحوال الشخصية",
+    laws:["نظام الأحوال الشخصية","نظام الإثبات"],need:["deceased"]},
+  milk:{n:"منازعة ملكية عقار",tr:"aqar",court:"المحكمة العامة",
+    laws:["نظام المرافعات الشرعية","نظام المعاملات المدنية","نظام الإثبات","نظام التسجيل العيني للعقار"],need:["prop"]},
+  tdkhl:{n:"تداخل عقارات",tr:"aqar",court:"المحكمة العامة",
+    laws:["نظام المرافعات الشرعية","نظام الإثبات","نظام التسجيل العيني للعقار"],need:["prop"]},
+  hiyaza:{n:"حيازة أو إخلاء عقار",tr:"aqar",court:"المحكمة العامة",
+    laws:["نظام المرافعات الشرعية","نظام المعاملات المدنية","نظام الإثبات"],need:["prop"]},
+  mhFaskh:{n:"فسخ عقد مع منشأة قانونية ورد مبلغ",tr:"mihna",court:"المحكمة العامة",
+    laws:["نظام المحاماة","نظام المعاملات المدنية","نظام المرافعات الشرعية","نظام الإثبات"],need:["office"]},
+  mhTanfeeth:{n:"تنفيذ عقد أتعاب موحد (سند تنفيذي)",tr:"mihna",court:"محكمة التنفيذ",
+    laws:["نظام التنفيذ","نظام المحاماة","نظام المرافعات الشرعية"],need:["office"]},
+  mhShakwa:{n:"شكوى تأديبية على مرخَّص له",tr:"mihna",court:"الهيئة السعودية للمحامين ← لجنة تأديب المحامين",
+    laws:["نظام المحاماة"],need:["office"],noAlways:true},
+  other:{n:"دعوى أخرى",tr:"aqar",court:"المحكمة العامة",
+    laws:["نظام المرافعات الشرعية","نظام الإثبات"],need:[]}
+};
+
+let CASES=[], cur=null, curDoc="", curIdx=-1;
+
+/* بصمة بيانات القضية — كل ما يُغذّي الصياغة، عدا الاسم والمسودات نفسها */
+function caseHash(c){
+  const o={};
+  Object.keys(c||{}).sort().forEach(k=>{
+    if(k!=="drafts"&&k!=="_i"&&k!=="_id"&&k!=="_ts"&&k!=="title") o[k]=c[k];
+  });
+  const s=JSON.stringify(o);
+  let h=0;
+  for(let i=0;i<s.length;i++){ h=((h<<5)-h+s.charCodeAt(i))|0; }
+  return String(h);
+}
+function draftsOf(c){ return (c&&c.drafts)||{}; }
+
+/* تطبيع عربي للمقارنة: الهمزات، التاء المربوطة، التشكيل، المسافات */
+function norm(s){
+  return (s||"").replace(/[ً-ْـ]/g,"")
+    .replace(/[إأآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه")
+    .replace(/[^ء-ي0-9 ]/g," ").replace(/\s+/g," ").trim();
+}
+
+/* مدن تُستخدم لفحص الاختصاص المكاني فقط */
+const CITIES=["الرياض","جده","مكه","المدينه","الدمام","الخبر","الظهران","الطائف","الباحه",
+  "ابها","خميس مشيط","نجران","جازان","تبوك","حائل","بريده","عنيزه","القصيم","الاحساء",
+  "الهفوف","ينبع","الجبيل","عرعر","سكاكا","القريات","رابغ","بيشه","الخرج","المجمعه",
+  "الدوادمي","شقراء","الزلفي","القنفذه","الليث","املج","ضباء","النماص","محايل","صبيا",
+  "ابو عريش","القطيف","سيهات","راس تنوره","حفر الباطن","الرس","البكيريه","المذنب","الدلم"];
+function cityIn(s){ const n=norm(s); return CITIES.find(c=>n.includes(c)); }
+
+/* فحوص ما قبل الرفع — تلتقط الأخطاء التي تُرد بها الدعوى شكلاً */
+function checkCase(c){
+  const w=[], t=CASE_TYPES[c.type]||CASE_TYPES.other;
+  const defs=(c.defs||"").split("\n").map(x=>x.trim()).filter(Boolean);
+  const pn=norm(c.pName);
+
+  if(!defs.length) w.push("لم تُدخل أي مدعى عليه.");
+
+  if(pn && pn.length>2 && defs.some(d=>{
+      const dn=norm(d);
+      return dn===pn || dn.split(" ").slice(0,4).join(" ")===pn || dn.startsWith(pn+" ");
+    }))
+    w.push("اسم المدعي يظهر ضمن المدعى عليهم — لا يصح أن يكون الشخص خصمًا لنفسه. احذفه من الصندوق.");
+
+  const seen={}, dup=[];
+  defs.forEach(d=>{ const k=norm(d); if(k){ if(seen[k]) dup.push(d); seen[k]=1; } });
+  if(dup.length) w.push("تكرار في المدعى عليهم: "+dup.join("، "));
+
+  // الاختصاص المكاني: مدن المدعى عليهم مقابل مدينة الدعوى
+  const dc=defs.map(cityIn).filter(Boolean);
+  const cc=c.city?cityIn(c.city):null;
+  if(dc.length && cc && !dc.includes(cc)){
+    const uniq=[...new Set(dc)];
+    const tie=uniq.length>1 && uniq.every(x=>dc.filter(y=>y===x).length===dc.filter(y=>y===uniq[0]).length);
+    w.push(`لا أحد من المدعى عليهم يقيم في «${c.city}»، بل في ${uniq.join(" و")}. `
+      +`والدعوى تُقام في محكمة محل إقامة المدعى عليه (المادة ٣٤)، وعند تعددهم في محكمة `
+      +`محل إقامة الأكثرية، وعند التساوي فالمدعي بالخيار بين محاكمهم (المادة ٣٦/٢). `
+      +(tie?`وهم متساوون هنا، فلك الخيار بين ${uniq.join(" و")} — `:``)
+      +`أما «${c.city}» فلا تسندها هذه القواعد. راجع هذا مع محامٍ قبل القيد.`);
+  }
+
+  const co=(c.coPl||"").split("\n").map(x=>x.trim()).filter(Boolean);
+  if(co.some(x=>defs.some(d=>norm(d)===norm(x))))
+    w.push("أحد المدّعين معك مُدرَج أيضًا في المدعى عليهم — اختر له صفة واحدة.");
+
+  if(t.need.includes("deceased")){
+    const n=Number(c.heirCount||0), parties=defs.length+co.length+1;
+    if(n>0 && parties!==n)
+      w.push(`صك حصر الورثة يضم ${toAr(n)} وارثًا، وأطراف الدعوى ${toAr(parties)} `
+        +`(المدعي + ${toAr(co.length)} مدّعين معه + ${toAr(defs.length)} مدعى عليهم). `
+        +`في دعوى القسمة يجب أن يكون جميع الورثة أطرافًا — ومن يوافقك منهم يُضاف `
+        +`في «المدّعون معي» لا في المدعى عليهم.`);
+    if(!c.dDeed) w.push("رقم صك حصر الورثة غير مدخل — وهو أساس دعوى القسمة.");
+    if(c.dDeath && c.dDeedDate && c.dDeedDate < c.dDeath)
+      w.push("تاريخ صك حصر الورثة أسبق من تاريخ الوفاة — راجع التاريخين، فالصك لا يصدر قبل الوفاة.");
+  }
+  if(t.need.includes("prop") && !c.prDesc)
+    w.push("وصف العقار غير مدخل — الدعوى العقارية تحتاج وصفًا دقيقًا للعقار.");
+
+  if(t.need.includes("office")){
+    if(!c.oName) w.push("اسم المكتب أو المنشأة غير مدخل — لا تقوم الدعوى ولا الشكوى بدونه.");
+    if(!c.oLicChk)
+      w.push("لم تتحقق من الترخيص بعد — ابحث في دليل المحامين (eservice.sba.gov.sa/lawyers). هذه الخطوة تحدد المسار: المرخّص له مسار تأديبي، وغير المرخّص جهته وزارة التجارة.");
+    else if(c.oLicChk==="n" && c.type==="mhShakwa")
+      w.push("اخترت شكوى تأديبية والمنشأة غير مرخّصة للمحاماة — لجنة تأديب المحامين لا تختص بها. المسار: بلاغ انتحال صفة إن زاولت المهنة دون ترخيص، وشكوى لوزارة التجارة، مع الدعوى المالية أمام المحكمة العامة.");
+    if(!c.cAmt) w.push("المبلغ المسدَّد غير مدخل — وهو ركن المطالبة المالية.");
+    if(c.cAmt && !c.cPayRef && !c.cPayDate)
+      w.push("المبلغ مذكور بلا إيصال ولا تاريخ سداد — أضف مرجع التحويل، فهو أقوى دليل على الركن المالي.");
+    if(!(c.cScope||"").trim())
+      w.push("نطاق العمل المتفق عليه فارغ — بدونه لا يمكن إثبات ما لم يُنجَز، لأن القياس يكون على المتفق عليه.");
+    if(!c.cNotice)
+      w.push("لا يوجد تاريخ إعذار كتابي موثّق — أعذر بمهلة محددة قبل الرفع؛ الإعذار يقطع حجة «لم يطالبني».");
+    if(c.cWakala==="y")
+      w.push("الوكالة ما زالت سارية — ألغها في ناجز الآن، فالمكتب يتصرف باسمك حتى تُلغى.");
+    if(!c.cUnified)
+      w.push("لم تتحقق من كون العقد هو «العقد الموحد لأتعاب المحاماة» المسجّل في نافذ — تحقّق أولًا، فالعقد المسجّل سند تنفيذي يُنفَّذ من ناجز دون دعوى.");
+    if(c.cUnified==="y" && c.type==="mhFaskh")
+      w.push("عقدك موحد ومسجّل في نافذ: استعمل محكمة التنفيذ مباشرة لرد الأصول والمستندات وللالتزام المحدّد في العقد. وأبقِ دعوى الفسخ ورد المبلغ أمام المحكمة العامة، لأن مبناها الفسخ وهو حكم قضائي.");
+    if(c.cUnified==="n" && c.type==="mhTanfeeth")
+      w.push("اخترت مسار التنفيذ والعقد ليس العقد الموحد المسجّل في نافذ — فلا سند تنفيذي. المسار الصحيح: دعوى فسخ ورد مبلغ أمام المحكمة العامة.");
+    if(c.type==="mhShakwa")
+      w.push("تذكير: الشكوى التأديبية حق عام ولا تُرجع مالك — نصّ وزارة العدل أن المطالبة في الحق الخاص من اختصاص المحاكم. قدّم المسارين بالتوازي.");
+  }
+
+  if(!(c.facts||"").trim()) w.push("خانة الوقائع فارغة — المستند لن يتجاوز الفراغات بدونها.");
+  else if(norm(c.facts).length<40)
+    w.push(t.need.includes("office")
+      ? "الوقائع مختصرة جدًا — اسردها بالترتيب الزمني: تاريخ العقد، ثم السداد، ثم المهلة المتفق عليها، ثم المطالبات والإعذار، ثم ما لم يُنجَز حتى تاريخ اليوم."
+      : "الوقائع مختصرة جدًا — اسردها بالترتيب الزمني: الوفاة، ثم طلب القسمة، ثم الرفض وصيغته.");
+  if(!(c.requests||"").trim()) w.push("خانة الطلبات فارغة.");
+  else if((c.requests||"").split("\n").some(x=>
+      /[\d٠-٩][\d٠-٩\s–—-]{7,}/.test(x)))
+    w.push("يبدو أن سطرًا في «الطلبات» يحوي اسم طرف ورقم هوية — أسماء الأطراف مكانها صناديق الأطراف لا الطلبات.");
+  return w;
+}
+function warnBox(w,extra){
+  if(!w.length) return "";
+  return `<div class="legal" style="margin:${extra||"14px 0"}">
+    <strong>تحقّق قبل الرفع:</strong>
+    <div style="margin-top:8px">${w.map(x=>"• "+x).join("<br>")}</div></div>`;
+}
+function staleCount(c){
+  const h=caseHash(c), d=draftsOf(c);
+  return Object.keys(d).filter(k=>d[k].h!==h).length;
+}
+
+function store(){
+  try{ localStorage.setItem("qadaya",JSON.stringify(CASES)); return true; }
+  catch(e){ return false; }
+}
+function load(){
+  try{ CASES=JSON.parse(localStorage.getItem("qadaya")||"[]"); }
+  catch(e){ CASES=[]; }
+}
+function storeCheck(){
+  let ok=false;
+  try{ localStorage.setItem("__t","1"); localStorage.removeItem("__t"); ok=true; }catch(e){}
+  document.getElementById("storeWarn").innerHTML = ok ? "" :
+    `<div class="legal" style="margin-bottom:16px"><strong>تنبيه:</strong>
+     متصفحك لا يسمح بالحفظ المحلي في هذا الوضع، فالقضايا ستضيع عند إغلاق الصفحة.
+     استخدم «تصدير نسخة احتياطية» قبل الإغلاق.</div>`;
+}
+function toast(m){
+  const d=document.createElement("div"); d.className="toast"; d.textContent=m;
+  document.body.appendChild(d); setTimeout(()=>d.remove(),2200);
+}
+
+/* ---- مهلة الاعتراض لبطاقة القضية ---- */
+function deadline(dateStr,days){
+  if(!dateStr) return null;
+  const s=new Date(dateStr+"T00:00:00");
+  let l=new Date(s); l.setDate(l.getDate()+days);
+  while(l.getDay()===5||l.getDay()===6) l.setDate(l.getDate()+1);
+  const t=new Date(); t.setHours(0,0,0,0);
+  return {d:l,left:Math.round((l-t)/86400000)};
+}
+
+/* ---- عرض القائمة ---- */
+function showList(){
+  document.getElementById("caseListCard").style.display="";
+  document.getElementById("caseEditCard").style.display="none";
+  document.getElementById("caseDocCard").style.display="none";
+  renderCases();
+}
+function renderCases(){
+  storeCheck();
+  const el=document.getElementById("caseList");
+  if(!CASES.length){
+    el.innerHTML=`<div class="empty">لا توجد قضايا بعد. ابدأ بـ«دعوى جديدة».</div>`; return;
+  }
+  el.innerHTML=CASES.map((c,i)=>{
+    const t=CASE_TYPES[c.type]||CASE_TYPES.other;
+    let dl="";
+    if(c.jDelivery){
+      const r=deadline(c.jDelivery,c.jUrgent?10:30);
+      if(r){
+        const cls=r.left<0?"gone":(r.left<=5?"urgent":"safe");
+        const txt=r.left<0?`انقضت مهلة الاعتراض منذ ${toAr(Math.abs(r.left))} يومًا`
+          :(r.left===0?"اليوم آخر يوم للاعتراض":`متبقٍ للاعتراض ${toAr(r.left)} يومًا`);
+        dl=`<div class="cdl left ${cls}" style="border:none;padding:0">${txt}
+            — ${GD[r.d.getDay()]} ${greg(r.d)} / ${hijri(r.d)}</div>`;
+      }
+    }
+    const nd=Object.keys(draftsOf(c)).length, st=staleCount(c);
+    const dr=nd?`<div class="cm" style="margin-top:6px">مسودات محفوظة: ${toAr(nd)}${
+      st?` <span style="color:var(--warn)">— ${toAr(st)} منها قبل تحديث البيانات</span>`:""}</div>`:"";
+    const wn=checkCase(c).length;
+    return `<div class="ccard">
+      <div class="ct">${c.title||t.n}${wn?` <span class="tag d">${toAr(wn)} تنبيه</span>`:""}</div>
+      <div class="cm">${t.n} · ${t.court}${c.city?" ب"+c.city:""}</div>
+      ${dr}${dl}
+      <div class="cact">
+        <button class="btn sm" onclick="quickReview(${i})">معاينة</button>
+        <button class="btn sm pri" onclick="openDocs(${i})">المستندات</button>
+        <button class="btn sm" onclick="editCase(${i})">تعديل</button>
+        <button class="btn sm dan" onclick="delCase(${i})">حذف</button>
+      </div></div>`;
+  }).join("");
+}
+
+/* ---- النموذج ---- */
+function newCase(){ cur={type:"qisma",requests:"",evidence:""}; renderForm("دعوى جديدة"); }
+
+/* من محرّك المسار إلى محرّر القضايا — بنوع الدعوى الذي حدده المحرّك */
+function startCase(ct){
+  const t=CASE_TYPES[ct]||CASE_TYPES.other;
+  cur={type:ct,requests:"",evidence:""};
+  go("cases");
+  renderForm("دعوى جديدة — "+t.n);
+  toast("المحكمة المختصة: "+t.court);
+  const el=document.getElementById("caseEditCard");
+  if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function editCase(i){ cur=JSON.parse(JSON.stringify(CASES[i])); cur._i=i; renderForm("تعديل الدعوى"); }
+function delCase(i){
+  if(!confirm("حذف هذه الدعوى نهائيًا؟")) return;
+  const gone=CASES[i]&&CASES[i]._id;
+  CASES.splice(i,1);
+  if(gone){ TOMB.push({id:gone,ts:Date.now()}); tombSave(); }
+  store(); renderCases(); toast("حُذفت"); sbPush();
+}
+
+/* ===== محرّر الأطراف: حقول منفصلة، والتخزين يبقى سطرًا لكل طرف ===== */
+const RELS=["ابن","بنت","زوجة","زوج","أب","أم","أخ","أخت","حفيد","حفيدة","عم","عمة","خال","خالة"];
+const ROLES=["المنشأة القانونية","المحامي المسؤول","الشريك","المدير","الموظف المختص","مكتب استشارات"];
+const RELSETS={};
+let ROWS={};
+
+function parseRow(line){
+  const parts=(line||"").split(/\s*[—–\-]\s*/).map(s=>s.trim()).filter(Boolean);
+  const r={n:"",id:"",rel:"",city:""};
+  parts.forEach((p,i)=>{
+    if(i===0){ r.n=p; return; }
+    if(/^[\d٠-٩\s]+$/.test(p)){ if(!r.id) r.id=p; return; }
+    if(RELS.concat(ROLES).some(x=>norm(x)===norm(p))){ if(!r.rel) r.rel=p; return; }
+    if(cityIn(p)){ if(!r.city) r.city=p; return; }
+    if(!r.city) r.city=p; else r.n+=" "+p;
+  });
+  return r;
+}
+const fmtRow=r=>[r.n,r.id,r.rel,r.city].map(x=>(x||"").trim()).filter(Boolean).join(" — ");
+
+function partyEditor(key,label,hint,rels){
+  RELSETS[key]=rels||RELS;
+  return `<div class="fg"><label class="fl">${label}</label>
+    <div id="rows_${key}"></div>
+    <div class="ptools">
+      <button class="btn sm" onclick="addRow('${key}')">+ إضافة طرف</button>
+      <button class="btn sm" onclick="toggleText('${key}')" id="tg_${key}">تحرير كنص</button>
+    </div>
+    <textarea id="txt_${key}" rows="4" style="display:none"
+      oninput="fromText('${key}')" placeholder="سطر لكل طرف"></textarea>
+    <input type="hidden" id="f_${key}">
+    <div class="hint">${hint}</div></div>`;
+}
+function initRows(key,val){
+  ROWS[key]=(val||"").split("\n").map(x=>x.trim()).filter(Boolean).map(parseRow);
+  if(!ROWS[key].length) ROWS[key]=[{n:"",id:"",rel:"",city:""}];
+  renderRows(key);
+}
+function renderRows(key){
+  const el=document.getElementById("rows_"+key);
+  if(!el) return;
+  const esc=s=>(s||"").replace(/"/g,"&quot;");
+  el.innerHTML=ROWS[key].map((r,i)=>`<div class="prow">
+    <input type="text" placeholder="الاسم الثلاثي" value="${esc(r.n)}"
+      oninput="setRow('${key}',${i},'n',this.value)">
+    <input type="text" placeholder="رقم الهوية" value="${esc(r.id)}"
+      oninput="setRow('${key}',${i},'id',this.value)">
+    <select onchange="setRow('${key}',${i},'rel',this.value)">
+      <option value="">${(RELSETS[key]||RELS)===RELS?"الصلة…":"الصفة…"}</option>
+      ${(RELSETS[key]||RELS).map(x=>`<option ${r.rel===x?"selected":""}>${x}</option>`).join("")}
+    </select>
+    <input type="text" list="cityList" placeholder="المدينة" value="${esc(r.city)}"
+      oninput="setRow('${key}',${i},'city',this.value)">
+    <button class="x" onclick="delRow('${key}',${i})" title="حذف">&times;</button>
+  </div>`).join("");
+  sync(key);
+}
+function setRow(key,i,f,v){ ROWS[key][i][f]=v; sync(key); }
+function addRow(key){ ROWS[key].push({n:"",id:"",rel:"",city:""}); renderRows(key); }
+function delRow(key,i){
+  ROWS[key].splice(i,1);
+  if(!ROWS[key].length) ROWS[key]=[{n:"",id:"",rel:"",city:""}];
+  renderRows(key);
+}
+function sync(key){
+  const v=ROWS[key].map(fmtRow).filter(Boolean).join("\n");
+  const h=document.getElementById("f_"+key); if(h) h.value=v;
+  const t=document.getElementById("txt_"+key); if(t && t.style.display==="none") t.value=v;
+  if(key==="defs") fillRequests(true);
+}
+function toggleText(key){
+  const t=document.getElementById("txt_"+key), r=document.getElementById("rows_"+key),
+        b=document.getElementById("tg_"+key);
+  if(t.style.display==="none"){
+    t.value=ROWS[key].map(fmtRow).filter(Boolean).join("\n");
+    t.style.display=""; r.style.display="none"; b.textContent="تحرير كحقول";
+  }else{
+    fromText(key);
+    initRows(key,t.value);
+    t.style.display="none"; r.style.display=""; b.textContent="تحرير كنص";
+  }
+}
+function fromText(key){
+  const t=document.getElementById("txt_"+key);
+  const h=document.getElementById("f_"+key); if(h) h.value=t.value.trim();
+}
+
+const F=(l,k,ph,t)=>`<div class="fg"><label class="fl">${l}</label>
+  <input type="${t||'text'}" id="f_${k}" placeholder="${ph||''}" value="${(cur[k]||"").toString().replace(/"/g,'&quot;')}"></div>`;
+const T=(l,k,ph,r)=>`<div class="fg"><label class="fl">${l}</label>
+  <textarea id="f_${k}" rows="${r||4}" placeholder="${ph||''}">${cur[k]||""}</textarea></div>`;
+
+function renderForm(title){
+  document.getElementById("caseListCard").style.display="none";
+  document.getElementById("caseDocCard").style.display="none";
+  document.getElementById("caseEditCard").style.display="";
+  document.getElementById("editTitle").textContent=title;
+  const t=CASE_TYPES[cur.type]||CASE_TYPES.qisma;
+
+  document.getElementById("caseForm").innerHTML=`
+  <fieldset class="fset"><legend>أساسيات</legend>
+    ${F("اسم مختصر للقضية (لك وحدك)","title","مثال: تركة الوالد — قسمة")}
+    <div class="fg"><label class="fl">نوع الدعوى</label>
+      <select id="f_type" onchange="cur=collect();cur.type=this.value;renderForm('${title}')">
+        ${Object.entries(CASE_TYPES).map(([k,v])=>
+          `<option value="${k}" ${cur.type===k?"selected":""}>${v.n} — ${v.court}</option>`).join("")}
+      </select>
+      <div class="hint">المحكمة المختصة: <strong>${t.court}</strong></div></div>
+    ${F("المدينة","city","مثال: جدة")}
+    <div class="hint" style="margin-top:-6px">تذكير: الاختصاص المكاني يتبع محل إقامة المدعى عليه،
+      لا موقع العقار (المادة ٣٤).</div>
+  </fieldset>
+
+  <fieldset class="fset"><legend>الأطراف</legend>
+    ${F("اسم المدعي","pName")}
+    ${F("هوية المدعي","pId")}
+    ${F("جوال المدعي","pTel")}
+    ${F("صفة المدعي","pCap","أصالة عن نفسي / وكالة بموجب الوكالة رقم …")}
+    ${t.need.includes("office")?"":partyEditor("coPl","المدّعون معي — من يوافقك من الورثة (اختياري)",
+      "الوارث الموافق ينضم مدعيًا معك لا خصمًا، فيصير طرفًا في الدعوى دون أن تخاصمه.")}
+    ${partyEditor("defs",
+      t.need.includes("deceased")?"المدعى عليهم — وهم بقية الورثة عدا المدعي"
+        :t.need.includes("office")?"المدعى عليه — المنشأة القانونية ومن يمثّلها"
+        :"المدعى عليهم",
+      t.need.includes("office")
+        ? `اكتب المنشأة باسمها النظامي، وإن أردت إضافة المحامي المسؤول شخصيًا فاجعله سطرًا ثانيًا.
+           والمدينة هنا مقرّ المكتب — وهي التي تحدد المحكمة المختصة مكانيًا (المادة ٣٤).`
+        : t.need.includes("deceased")
+        ? `في دعاوى التركات يجب إدخال <strong>جميع</strong> الورثة الواردين في صك حصر
+           الورثة عدا المدعي — وإغفال أحدهم من أشهر أسباب رد دعوى القسمة.
+           والمدينة هنا تحدد المحكمة المختصة مكانيًا.`
+        : `المدينة هنا تحدد المحكمة المختصة مكانيًا (المادة ٣٤).`,
+      t.need.includes("office")?ROLES:null)}
+  </fieldset>
+
+  ${t.need.includes("deceased")?`<fieldset class="fset"><legend>بيانات المورّث والتركة</legend>
+    ${F("اسم المورّث","dName")}
+    ${F("تاريخ الوفاة","dDeath",'',"date")}
+    ${F("رقم صك حصر الورثة","dDeed")}
+    ${F("تاريخ صك حصر الورثة","dDeedDate",'',"date")}
+    ${F("عدد الورثة في صك حصر الورثة","heirCount","مثال: ٥ — اكتبه بالأرقام","number")}
+    <div class="hint" style="margin-top:-8px">يُستخدم للتحقق من اكتمال أطراف الدعوى. اتركه فارغًا
+      إن لم ترغب في هذا الفحص.</div>
+    ${T("أصول التركة محل الدعوى","dAssets","١- عقار رقم … بمدينة …\n٢- حساب بنكي لدى …",3)}
+    <div class="hint">لا تجمع بين قسمة التركة العقارية والمالية في دعوى واحدة — افصلهما.</div>
+  </fieldset>`:""}
+
+  ${t.need.includes("prop")?`<fieldset class="fset"><legend>بيانات العقار</legend>
+    ${T("وصف العقار","prDesc","الموقع، المساحة، الحدود، رقم القطعة والمخطط",3)}
+    ${F("رقم الصك","prDeed")}
+    ${F("تاريخ الصك","prDeedDate",'',"date")}
+    <div class="fg"><label class="fl">هل العقار في منطقة عقارية معلنة؟</label>
+      <select id="f_prZone">
+        <option value="" ${!cur.prZone?"selected":""}>لم أتحقق بعد</option>
+        <option value="y" ${cur.prZone==="y"?"selected":""}>نعم — يلزم التأشير بالدعوى</option>
+        <option value="n" ${cur.prZone==="n"?"selected":""}>لا — تسري نظم التوثيق السابقة</option>
+      </select>
+      <div class="hint">إن كانت «نعم» فعدم التأشير يؤدي إلى عدم سماع الدعوى.</div></div>
+  </fieldset>`:""}
+
+  ${t.need.includes("office")?`<fieldset class="fset"><legend>بيانات المنشأة والترخيص</legend>
+    ${F("اسم المكتب أو المنشأة","oName","مثال: مكتب … للمحاماة والاستشارات القانونية")}
+    ${F("اسم المحامي المسؤول","oLawyer")}
+    ${F("رقم الترخيص أو سجل المنشأة","oLic")}
+    <div class="fg"><label class="fl">هل تحقّقت من الترخيص في دليل المحامين؟</label>
+      <select id="f_oLicChk">
+        <option value="" ${!cur.oLicChk?"selected":""}>لم أتحقق بعد</option>
+        <option value="y" ${cur.oLicChk==="y"?"selected":""}>نعم — مرخّص من وزارة العدل</option>
+        <option value="n" ${cur.oLicChk==="n"?"selected":""}>لا — غير مرخّص للمحاماة</option>
+      </select>
+      <div class="hint">ابحث في <strong>eservice.sba.gov.sa/lawyers</strong> واحفظ صورة شاشة.
+        غير المرخّص لا مسار تأديبي عدلي عليه، والجهة وزارة التجارة.</div></div>
+  </fieldset>
+
+  <fieldset class="fset"><legend>العقد والمبلغ والإعذار</legend>
+    ${F("تاريخ العقد أو الاتفاق","cDate",'',"date")}
+    ${F("المبلغ المسدَّد (ريال)","cAmt","مثال: ١٥٠٠٠")}
+    ${F("تاريخ السداد","cPayDate",'',"date")}
+    ${F("مرجع الإيصال أو التحويل","cPayRef","رقم الإيصال / رقم عملية التحويل")}
+    <div class="fg"><label class="fl">هل العقد هو «العقد الموحد لأتعاب المحاماة» المسجّل في نافذ؟</label>
+      <select id="f_cUnified">
+        <option value="" ${!cur.cUnified?"selected":""}>لم أتحقق بعد</option>
+        <option value="y" ${cur.cUnified==="y"?"selected":""}>نعم — مسجّل في نافذ</option>
+        <option value="n" ${cur.cUnified==="n"?"selected":""}>لا — عقد خاص أو اتفاق شفهي</option>
+      </select>
+      <div class="hint">العقد المسجّل في نافذ يكتسب صفة السند التنفيذي ويُنفَّذ عبر محاكم
+        التنفيذ من ناجز دون رفع دعوى — فقد يختصر عليك المسار كله.</div></div>
+    ${T("نطاق العمل المتفق عليه","cScope","١- رفع دعوى … أمام …\n٢- متابعة الجلسات حتى الحكم",3)}
+    ${T("ما أُنجز فعلًا — إن أُنجز شيء","cDone","لا شيء / قيد الدعوى فقط دون متابعة",2)}
+    ${F("تاريخ الإعذار الكتابي الموثّق","cNotice",'',"date")}
+    <div class="hint" style="margin-top:-8px">الإعذار يقطع حجة «لم يطالبني» — إن لم تُعذر بعد فأعذر
+      قبل الرفع.</div>
+    ${T("الأصول والمستندات التي سلّمتها ولم تُرد","cDocs","أصل صك رقم …\nأصل الوكالة",2)}
+    <div class="fg"><label class="fl">هل الوكالة ما زالت سارية؟</label>
+      <select id="f_cWakala">
+        <option value="" ${!cur.cWakala?"selected":""}>لم أتحقق بعد</option>
+        <option value="y" ${cur.cWakala==="y"?"selected":""}>نعم — ما زالت سارية</option>
+        <option value="n" ${cur.cWakala==="n"?"selected":""}>لا — أُلغيت في ناجز</option>
+      </select>
+      <div class="hint">ما دامت سارية فهو يتصرف باسمك — ألغِها في ناجز قبل أي خطوة.</div></div>
+  </fieldset>`:""}
+
+  <fieldset class="fset"><legend>الوقائع والطلبات</legend>
+    ${T("الوقائع — اسردها بالترتيب الزمني","facts","في تاريخ … حصل …\nثم بتاريخ … امتنع المدعى عليه عن …",7)}
+    ${T("الطلبات — كل طلب في سطر","requests","اضغط «اقترح الطلبات» ليملأها التطبيق بأسماء خصومك، ثم حرّرها",5)}
+    <div style="margin-top:-8px;margin-bottom:14px">
+      <button class="btn sm" onclick="fillRequests(false)">اقترح الطلبات</button>
+      <span class="hint" style="display:inline-block;margin-right:10px">
+        تُبنى من نوع الدعوى وأسماء المدعى عليهم — وهي مسودة لك أن تعدّلها أو تحذفها.</span>
+    </div>
+    ${T("المستندات والأدلة — كل مستند في سطر","evidence","صورة صك حصر الورثة\nصورة صك العقار",4)}
+  </fieldset>
+
+  <fieldset class="fset"><legend>الحكم — إن صدر حكم وتريد الاعتراض</legend>
+    ${F("رقم الحكم","jNo")}
+    ${F("تاريخ صدور الحكم","jDate",'',"date")}
+    ${F("تاريخ تسلّم صورة صك الحكم","jDelivery",'',"date")}
+    <div class="hint" style="margin-top:-6px">هذا التاريخ هو ما تُحسب منه المدة — لا تاريخ الصدور.</div>
+    ${F("المحكمة والدائرة مصدرة الحكم","jCourt","الدائرة … بالمحكمة العامة بـ…")}
+    ${T("منطوق الحكم","jText","",3)}
+    <div class="fg"><label class="fl">طبيعة القضية</label>
+      <select id="f_jUrgent">
+        <option value="" ${!cur.jUrgent?"selected":""}>عادية — مهلة الاستئناف ٣٠ يومًا</option>
+        <option value="1" ${cur.jUrgent?"selected":""}>مستعجلة — مهلة الاستئناف ١٠ أيام</option>
+      </select></div>
+    ${T("أسباب اعتراضك الشكلية","objForm","بطلان التبليغ، مخالفة قواعد الاختصاص…",3)}
+    ${T("أسباب اعتراضك الموضوعية","objSub","مخالفة الحكم للنظام، خطأ في تكييف الواقعة، إغفال بيّنة…",4)}
+  </fieldset>`;
+
+  AUTOREQ="";              // طلبات القضية المحفوظة تُعدّ من تحرير المستخدم
+  initRows("defs", cur.defs);
+  initRows("coPl", cur.coPl);
+}
+
+/* اسم الطرف دون رقم الهوية الملحق به */
+const nameOnly=s=>(s||"").replace(/\s*[—–-]\s*[\d٠-٩][\s\S]*$/,"").trim();
+const andList=a=>a.length<2?(a[0]||""):a.slice(0,-1).join("، ")+" و"+a[a.length-1];
+
+/* طلبات مقترحة بحسب نوع الدعوى وأسماء الأطراف — مسودة تُحرَّر */
+function suggestRequests(c){
+  const d=andList((c.defs||"").split("\n").map(x=>nameOnly(x)).filter(Boolean));
+  const kh=d?` (${d})`:"";
+  const deed=c.dDeed?`رقم (${c.dDeed})`:"رقم (……)";
+  const mor=c.dName?` ${c.dName}`:"";
+  const prop=c.prDesc?` الموصوف في صحيفة الدعوى`:"";
+  const L=[];
+  switch(c.type){
+    case "qisma":
+      L.push(`الحكم بقسمة تركة المورّث${mor} قسمة شرعية بين الورثة حسب أنصبتهم الواردة في صك حصر الورثة ${deed}`);
+      L.push(`إلزام المدعى عليهم${kh} بتسليم المدعي نصيبه الشرعي من التركة`);
+      L.push(`وفي حال تعذّر القسمة عينًا، الحكم ببيع أصول التركة بالمزاد العلني وقسمة ثمنها بين الورثة بحسب أنصبتهم`);
+      break;
+    case "muhasaba":
+      L.push(`إلزام المدعى عليهم${kh} بتقديم حساب مفصل عن إدارتهم لأصول التركة وما استوفوه من ريعها`);
+      L.push(`إلزامهم بتسليم المدعي نصيبه الشرعي من الريع المستحق عن المدة من …… إلى ……`);
+      L.push(`إلزامهم بتسليم ما تحت أيديهم من أصول التركة إلى الورثة`);
+      break;
+    case "tahsr":
+      L.push(`الحكم بتعديل صك حصر الورثة ${deed} بـ[إضافة / حذف / تصحيح] …… `);
+      L.push(`إصدار صك حصر ورثة معدَّل وفق ما يثبت لدى فضيلتكم`);
+      break;
+    case "wasiyya":
+      L.push(`الحكم بـ[بيان المطلوب بشأن الوصية: إبطالها كليًا أو جزئيًا / تنفيذها / تفسيرها]`);
+      L.push(`إلزام المدعى عليهم${kh} بما يترتب على ذلك`);
+      break;
+    case "milk":
+      L.push(`الحكم بثبوت ملكية المدعي للعقار${prop}`);
+      L.push(`إلزام المدعى عليهم${kh} بالتسليم ورفع اليد عن العقار`);
+      L.push(`إلزامهم بتعويض المدعي عما لحقه من ضرر [إن وُجد]`);
+      break;
+    case "tdkhl":
+      L.push(`الحكم بإزالة التداخل بين العقارين وتثبيت الحدود وفق التقرير المساحي المعتمد`);
+      L.push(`إلزام المدعى عليهم${kh} بإزالة ما أحدثوه داخل حدود عقار المدعي`);
+      break;
+    case "hiyaza":
+      L.push(`الحكم بإخلاء العقار${prop} وتسليمه للمدعي خاليًا من الشواغل`);
+      L.push(`إلزام المدعى عليهم${kh} بأجرة المثل عن مدة وضع اليد من …… إلى ……`);
+      break;
+    case "mhFaskh": {
+      const amt=c.cAmt?` وقدره (${c.cAmt}) ريال`:` وقدره (……) ريال`;
+      const cd=c.cDate?` المؤرَّخ في ${dd(c.cDate)}`:` المؤرَّخ في ……`;
+      L.push(`الحكم بفسخ العقد${cd} المبرم بين المدعي والمدعى عليه، لإخلاله بالتزامه بتنفيذ العمل المتفق عليه`);
+      L.push(`إلزام المدعى عليه${kh} برد المبلغ المسدَّد${amt}${c.cPayDate?` والمسدَّد بتاريخ ${dd(c.cPayDate)}`:""}`);
+      L.push(`إلزامه بتسليم كامل الأصول والمستندات المستلمة من المدعي`);
+      L.push(`إلزامه بتعويض المدعي عما لحقه من ضرر [يُحدَّد ويُثبت — وإلا فاحذف هذا الطلب]`);
+      break;
+    }
+    case "mhTanfeeth": {
+      const amt=c.cAmt?` وقدره (${c.cAmt}) ريال`:``;
+      L.push(`تنفيذ الالتزام الوارد في العقد الموحد لأتعاب المحاماة المسجّل في منصة نافذ، بصفته سندًا تنفيذيًا`);
+      L.push(`إلزام المنفَّذ ضده${kh} بتسليم كامل الأصول والمستندات المستلمة من طالب التنفيذ`);
+      if(amt) L.push(`إلزامه بأداء المبلغ المستحق بموجب العقد${amt}`);
+      L.push(`اتخاذ إجراءات التنفيذ النظامية عند عدم الوفاء خلال المهلة المقررة`);
+      return L.join("\n");   // لا تكاليف قضائية في طلب التنفيذ
+    }
+    case "mhShakwa": {
+      L.push(`النظر في مخالفة المشكو ضده لأحكام نظام المحاماة ولائحته التنفيذية وقواعد السلوك المهني`);
+      L.push(`تكييف الواقعة بأنها إخلال بالواجبات المهنية وتخلٍّ عن العمل الموكَّل بغير سبب مشروع (المادة ٢٣)`);
+      L.push(`إحالة المشكو ضده إلى الجهة المختصة لاتخاذ الإجراءات التأديبية النظامية`);
+      L.push(`إحاطتي بما يُتخذ في الشكوى`);
+      L.push(`[ملاحظة: الشكوى حق عام — المطالبة بالمبلغ تُقدَّم مستقلة أمام المحكمة المختصة]`);
+      return L.join("\n");   // لا تكاليف قضائية في الشكوى
+    }
+    default:
+      L.push(`الحكم بـ…… `);
+      L.push(`إلزام المدعى عليهم${kh} بـ…… `);
+  }
+  const many=(c.defs||"").split("\n").filter(x=>x.trim()).length!==1;
+  L.push(many
+    ? `تحميل المدعى عليهم ما تقدّره المحكمة من التكاليف القضائية باعتبارهم الطرف المحكوم عليه`
+    : `تحميل المدعى عليه ما تقدّره المحكمة من التكاليف القضائية باعتباره الطرف المحكوم عليه`);
+  return L.join("\n");
+}
+
+let AUTOREQ="";   // آخر نص اقترحه التطبيق — لنعرف إن كان المستخدم حرّره
+function fillRequests(auto){
+  const el=document.getElementById("f_requests");
+  if(!el) return;
+  const s=suggestRequests(collect());
+  if(auto){
+    const v=el.value.trim();
+    if(v && v!==AUTOREQ.trim()) return;   // حرّرها المستخدم — لا تمسّها
+  }
+  else if(el.value.trim() && el.value.trim()!==AUTOREQ.trim()
+          && !confirm("خانة الطلبات ليست فارغة — استبدال محتواها بالمقترح؟")) return;
+  el.value=s; AUTOREQ=s;
+  if(!auto) toast("طلبات مقترحة — حرّرها بما يناسب قضيتك");
+}
+
+function collect(){
+  const o=cur._i!==undefined?{_i:cur._i}:{};
+  document.querySelectorAll("#caseForm [id^=f_]").forEach(e=>{
+    o[e.id.slice(2)]=e.value.trim();
+  });
+  return o;
+}
+function saveCase(){
+  const o=collect();
+  if(!o.pName){ toast("اكتب اسم المدعي على الأقل"); return; }
+  if(o._i!==undefined){
+    const i=o._i; delete o._i;
+    o.drafts=draftsOf(CASES[i]);          // المسودات المحفوظة لا تُمحى بالتعديل
+    o._id=CASES[i]._id||uuid(); o._ts=Date.now();
+    CASES[i]=o;
+  }
+  else { o._id=uuid(); o._ts=Date.now(); CASES.push(o); }
+  const ok=store();
+  const wn=checkCase(o).length;
+  showList();
+  toast(!ok?"حُفظت مؤقتًا — صدّر نسخة احتياطية"
+        :wn?`حُفظت — ${toAr(wn)} تنبيه يحتاج مراجعة`:"حُفظت");
+  sbPush();
+}
+
+/* التنزيل يعمل عند فتح الملف محليًا؛ وفي بعض العارضات يُمنع — فنوفّر بديل النسخ دائمًا */
+function trySave(text,name,mime){
+  try{
+    const b=new Blob(["﻿"+text],{type:(mime||"text/plain")+";charset=utf-8"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(b); a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+    return true;
+  }catch(e){ return false; }
+}
+function exportCases(){
+  if(!CASES.length){ toast("لا توجد قضايا"); return; }
+  const j=JSON.stringify(CASES,null,2);
+  trySave(j,"qadaya-backup.json","application/json");
+  curDoc=j;
+  document.getElementById("caseListCard").style.display="none";
+  document.getElementById("caseEditCard").style.display="none";
+  document.getElementById("caseDocCard").style.display="";
+  document.getElementById("docTitle").textContent="نسخة احتياطية";
+  document.getElementById("docLead").innerHTML=
+    `إن لم ينزل الملف تلقائيًا — وهذا يحدث في بعض العارضات — فانسخ النص أدناه
+     واحفظه في ملف باسم <code>qadaya-backup.json</code>، ويمكنك استيراده لاحقًا.`;
+  document.getElementById("docBar").innerHTML=
+    `<button class="btn" onclick="showList()">رجوع</button>`;
+  document.getElementById("docTools").style.display="flex";
+  document.getElementById("docWrap").innerHTML=`<div class="docout mono" id="docBox"></div>`;
+  document.getElementById("docBox").textContent=j;
+}
+document.getElementById("impFile").onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{
+      const d=JSON.parse(r.result);
+      if(!Array.isArray(d)) throw 0;
+      d.forEach(c=>{ c._id=c._id||uuid(); c._ts=Date.now(); });
+      CASES=CASES.concat(d); store(); renderCases(); toast("استُوردت "+toAr(d.length)+" قضية");
+      sbPush();
+    }catch(x){ toast("ملف غير صالح"); } };
+  r.readAsText(f); e.target.value="";
+};
+
+/* ===================== CLOUD — Supabase ===================== */
+/* املأ القيمتين هنا لتثبيتهما في الملف، أو اتركهما فارغتين وأدخلهما من واجهة التطبيق.
+   ضع مفتاح publishable وحده — ولا تضع أبدًا مفتاح secret: هذا الملف منشور علنًا. */
+const SB_URL="";
+const SB_KEY="";
+
+let SB={url:"",key:"",tok:"",ref:"",exp:0,email:"",uid:"",last:0};
+let TOMB=[];                 /* شواهد الحذف: [{id,ts}] */
+let SYNCING=false, PUSHT=null;
+
+const uuid=()=>{
+  try{ if(crypto&&crypto.randomUUID) return crypto.randomUUID(); }catch(e){}
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{
+    const r=Math.random()*16|0; return (c==="x"?r:(r&0x3|0x8)).toString(16);
+  });
+};
+const sbOn=()=>!!(SB.url&&SB.key);
+const sbIn=()=>sbOn()&&!!SB.tok;
+
+function sbSave(){ try{ localStorage.setItem("sbcfg",JSON.stringify(SB)); }catch(e){} }
+function tombSave(){
+  const cut=Date.now()-90*86400000;
+  TOMB=TOMB.filter(t=>t.ts>cut);
+  try{ localStorage.setItem("qtomb",JSON.stringify(TOMB)); }catch(e){}
+}
+function sbLoad(){
+  try{ SB=Object.assign(SB,JSON.parse(localStorage.getItem("sbcfg")||"{}")); }catch(e){}
+  try{ TOMB=JSON.parse(localStorage.getItem("qtomb")||"[]"); }catch(e){ TOMB=[]; }
+  if(SB_URL) SB.url=SB_URL;
+  if(SB_KEY) SB.key=SB_KEY;
+  SB.url=(SB.url||"").trim().replace(/\/+$/,"");
+  paintCloud();
+  if(sbIn()) sbSync(false);
+}
+
+/* ---- نداء واحد إلى المشروع، مع تجديد الجلسة عند انتهائها ---- */
+async function sbFetch(path,opt,noRetry){
+  opt=opt||{};
+  const h=Object.assign({apikey:SB.key,"Content-Type":"application/json"},opt.headers||{});
+  if(SB.tok) h.Authorization="Bearer "+SB.tok;
+  const r=await fetch(SB.url+path,Object.assign({},opt,{headers:h}));
+  if(r.status===401 && SB.ref && !noRetry){
+    if(await sbRefresh()) return sbFetch(path,opt,true);
+  }
+  return r;
+}
+async function sbRefresh(){
+  try{
+    const r=await fetch(SB.url+"/auth/v1/token?grant_type=refresh_token",{
+      method:"POST",headers:{apikey:SB.key,"Content-Type":"application/json"},
+      body:JSON.stringify({refresh_token:SB.ref})});
+    if(!r.ok){ sbClearSession(); return false; }
+    sbSetSession(await r.json()); return true;
+  }catch(e){ return false; }
+}
+function sbSetSession(j){
+  SB.tok=j.access_token||""; SB.ref=j.refresh_token||SB.ref;
+  SB.exp=Date.now()+((j.expires_in||3600)*1000);
+  SB.email=(j.user&&j.user.email)||SB.email;
+  SB.uid=(j.user&&j.user.id)||SB.uid;
+  sbSave(); paintCloud();
+}
+function sbClearSession(){ SB.tok=""; SB.ref=""; SB.exp=0; SB.uid=""; sbSave(); paintCloud(); }
+
+/* ---- حفظ عنوان المشروع ومفتاحه ---- */
+function sbSaveCfg(){
+  const u=(document.getElementById("sbUrl").value||"").trim().replace(/\/+$/,"");
+  const k=(document.getElementById("sbKey").value||"").trim();
+  if(!/^https:\/\/[^\s]+/.test(u)){ toast("العنوان يبدأ بـ https://"); return; }
+  if(/^sb_secret_|^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(k) && k.indexOf("sb_publishable_")<0){
+    if(!confirm("هذا لا يبدو مفتاح publishable. المفتاح السري لا يوضع هنا أبدًا. أمتابع؟")) return;
+  }
+  SB.url=u; SB.key=k; sbSave(); paintCloud(); toast("حُفظ المشروع");
+}
+function sbForget(){
+  if(!confirm("مسح بيانات المشروع والجلسة من هذا المتصفح؟ القضايا المحلية تبقى.")) return;
+  SB={url:SB_URL||"",key:SB_KEY||"",tok:"",ref:"",exp:0,email:"",uid:"",last:0};
+  sbSave(); paintCloud(); toast("مُسحت");
+}
+
+/* ---- الدخول والتسجيل ---- */
+async function sbAuth(kind){
+  const em=(document.getElementById("sbEmail").value||"").trim();
+  const pw=document.getElementById("sbPass").value||"";
+  if(!em||!pw){ toast("أدخل البريد وكلمة المرور"); return; }
+  if(pw.length<6){ toast("كلمة المرور ستة أحرف فأكثر"); return; }
+  const b=document.getElementById(kind==="signup"?"sbUp":"sbGo");
+  b.disabled=true; const t0=b.textContent; b.textContent="…";
+  try{
+    const path=kind==="signup"?"/auth/v1/signup":"/auth/v1/token?grant_type=password";
+    const r=await fetch(SB.url+path,{method:"POST",
+      headers:{apikey:SB.key,"Content-Type":"application/json"},
+      body:JSON.stringify({email:em,password:pw})});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok) throw new Error(j.msg||j.error_description||j.message||("خطأ "+r.status));
+    if(!j.access_token){
+      toast("أُنشئ الحساب — افتح بريدك وأكّد التسجيل ثم ادخل");
+      b.disabled=false; b.textContent=t0; return;
+    }
+    SB.email=em; sbSetSession(j);
+    toast(kind==="signup"?"أُنشئ الحساب ودخلت":"أهلًا — يزامن الآن");
+    await sbSync(true);
+  }catch(e){ toast(String(e.message||e).slice(0,80)); }
+  b.disabled=false; b.textContent=t0;
+}
+function sbOut(){
+  if(!confirm("خروج؟ القضايا المحلية تبقى في هذا المتصفح.")) return;
+  sbClearSession(); toast("خرجت");
+}
+
+/* ---- المزامنة ---- */
+const sbClean=c=>{ const o={}; Object.keys(c).forEach(k=>{ if(k!=="_i"&&k!=="_id"&&k!=="_ts") o[k]=c[k]; }); return o; };
+
+function sbPush(){                      /* دفع مؤجَّل بعد أي تعديل */
+  if(!sbIn()) return;
+  clearTimeout(PUSHT);
+  PUSHT=setTimeout(()=>sbSync(false),1200);
+}
+
+async function sbSync(manual){
+  if(!sbIn()){ if(manual) toast("سجّل الدخول أولًا"); return; }
+  if(SYNCING) return;
+  SYNCING=true; paintCloud("يزامن…");
+  try{
+    let r=await sbFetch("/rest/v1/cases?select=id,payload,updated_at,deleted_at");
+    if(!r.ok) throw new Error("قراءة "+r.status+": "+(await r.text()).slice(0,110));
+    const rows=await r.json();
+    const byId={}; rows.forEach(x=>byId[x.id]=x);
+
+    /* اسحب — الأحدث يفوز، وشاهد الحذف البعيد يُزيل النسخة المحلية */
+    rows.forEach(x=>{
+      const rts=Date.parse(x.updated_at)||0;
+      const i=CASES.findIndex(c=>c._id===x.id);
+      if(x.deleted_at){
+        if(i>=0 && (CASES[i]._ts||0)<=rts) CASES.splice(i,1);
+        return;
+      }
+      const inc=Object.assign({},x.payload||{});
+      inc._id=x.id; inc._ts=rts;
+      if(i<0){
+        /* لا تُعِد ما حذفتُه هنا بعد آخر تعديل بعيد */
+        if(TOMB.some(t=>t.id===x.id && t.ts>=rts)) return;
+        CASES.push(inc);
+      }
+      else if((CASES[i]._ts||0)<rts) CASES[i]=inc;
+    });
+
+    /* ادفع — وما كان شاهدَ حذف بعيدًا أحدث لا يُبعث من جديد */
+    const up=[];
+    CASES.forEach(c=>{
+      if(!c._id){ c._id=uuid(); c._ts=c._ts||Date.now(); }
+      if(!c._ts) c._ts=Date.now();
+      const x=byId[c._id];
+      const rts=x?(Date.parse(x.updated_at)||0):-1;
+      if(x&&x.deleted_at&&rts>=c._ts) return;
+      if(c._ts>rts) up.push({id:c._id,payload:sbClean(c),deleted_at:null,
+        updated_at:new Date(c._ts).toISOString()});
+    });
+
+    /* شواهد الحذف تُرفع صفوفًا مُعلَّمة لا تُمحى، فلا تعود من جهاز آخر */
+    const pushed=[];
+    TOMB.forEach(t=>{
+      if(CASES.some(c=>c._id===t.id)) return;          /* عاد بتعديل أحدث */
+      const x=byId[t.id];
+      if(x&&x.deleted_at) { pushed.push(t.id); return; } /* مثبَّت على الخادم */
+      const iso=new Date(t.ts).toISOString();
+      up.push({id:t.id,payload:{},deleted_at:iso,updated_at:iso});
+      pushed.push(t.id);
+    });
+
+    if(up.length){
+      r=await sbFetch("/rest/v1/cases?on_conflict=id",{method:"POST",
+        headers:{Prefer:"resolution=merge-duplicates,return=minimal"},
+        body:JSON.stringify(up)});
+      if(!r.ok) throw new Error("كتابة "+r.status+": "+(await r.text()).slice(0,110));
+      TOMB=TOMB.filter(t=>pushed.indexOf(t.id)<0);
+    }
+    TOMB=TOMB.filter(t=>!CASES.some(c=>c._id===t.id));
+    tombSave();
+
+    await sbSyncAI();
+    store(); renderCases();
+    SB.last=Date.now(); sbSave(); paintCloud();
+    if(manual) toast("تمت المزامنة — "+toAr(CASES.length)+" قضية");
+  }catch(e){
+    paintCloud("تعذّرت المزامنة");
+    toast(String(e.message||e).slice(0,80));
+  }
+  SYNCING=false;
+}
+
+/* ---- إعدادات الذكاء الاصطناعي ومفاتيحه ---- */
+async function sbSyncAI(){
+  let r=await sbFetch("/rest/v1/settings?select=ai,updated_at&limit=1");
+  if(!r.ok) return;
+  const rows=await r.json();
+  const x=rows[0];
+  const rts=x?(Date.parse(x.updated_at)||0):-1;
+  const lts=AI._ts||0;
+  if(rts>lts && x && x.ai && x.ai.p){
+    AI=Object.assign({prov:"deepseek",max:8000,p:{}},x.ai);
+    AI._ts=rts;
+    try{ localStorage.setItem("aicfg",JSON.stringify(AI)); }catch(e){}
+    paintAI();
+  }else if(lts>rts){
+    await sbFetch("/rest/v1/settings?on_conflict=user_id",{method:"POST",
+      headers:{Prefer:"resolution=merge-duplicates,return=minimal"},
+      body:JSON.stringify([{user_id:SB.uid,ai:AI,updated_at:new Date(lts).toISOString()}])});
+  }
+}
+
+/* ---- الواجهة ---- */
+function paintCloud(busy){
+  const box=document.getElementById("sbBox"), st=document.getElementById("sbState");
+  if(!box) return;
+  const esc=x=>(x||"").replace(/"/g,"&quot;");
+  if(busy){ st.textContent=busy; st.className="tag"; }
+  else if(sbIn()){
+    st.textContent="مُفعّلة · "+SB.email; st.className="tag o";
+  }else if(sbOn()){ st.textContent="المشروع جاهز — لم تدخل"; st.className="tag n"; }
+  else { st.textContent="غير مُفعّلة"; st.className="tag"; }
+
+  if(!sbOn()){
+    box.innerHTML=`<div class="fg"><label class="fl">عنوان المشروع (Project URL)</label>
+        <input type="text" id="sbUrl" placeholder="https://xxxxxxxx.supabase.co" value="${esc(SB.url)}">
+        <div class="hint">من Supabase ← Project Settings ← Data API</div></div>
+      <div class="fg"><label class="fl">المفتاح العام (Publishable key)</label>
+        <input type="password" id="sbKey" placeholder="sb_publishable_..." value="${esc(SB.key)}">
+        <div class="hint">من Project Settings ← API Keys. لا تضع <code>sb_secret_</code> هنا.</div></div>
+      <div class="bar"><button class="btn pri" onclick="sbSaveCfg()">حفظ المشروع</button></div>`;
+    return;
+  }
+  if(!sbIn()){
+    box.innerHTML=`<div class="frow">
+        <div><label class="fl">البريد</label>
+          <input type="email" id="sbEmail" autocomplete="username" value="${esc(SB.email)}"></div>
+        <div><label class="fl">كلمة المرور</label>
+          <input type="password" id="sbPass" autocomplete="current-password"></div>
+      </div>
+      <div class="bar">
+        <button class="btn pri" id="sbGo" onclick="sbAuth('login')">دخول</button>
+        <button class="btn" id="sbUp" onclick="sbAuth('signup')">حساب جديد</button>
+        <button class="btn" onclick="sbForget()">تغيير المشروع</button>
+      </div>
+      <div class="hint">أول مرة: «حساب جديد». إن طلب المشروع تأكيد البريد فافتح رسالة
+        التأكيد ثم ادخل.</div>`;
+    return;
+  }
+  const when=SB.last?`آخر مزامنة ${new Date(SB.last).toLocaleString("ar-SA")}`:"لم تتم مزامنة بعد";
+  box.innerHTML=`<div class="hint" style="margin-bottom:12px">${when} ·
+      ${toAr(CASES.length)} قضية محليًا</div>
+    <div class="bar">
+      <button class="btn pri" onclick="sbSync(true)">مزامنة الآن</button>
+      <button class="btn" onclick="sbOut()">خروج</button>
+      <button class="btn dan" onclick="sbForget()">مسح المشروع من المتصفح</button>
+    </div>`;
+}
+
+/* ===================== AI SETTINGS ===================== */
+const PROV={
+  deepseek:{url:"https://api.deepseek.com/v1/chat/completions",model:"deepseek-v4-flash",
+    hint:"بدائل: deepseek-v4-pro · deepseek-reasoner — أو اضغط «اجلب النماذج»."},
+  groq:{url:"https://api.groq.com/openai/v1/chat/completions",model:"openai/gpt-oss-120b",
+    hint:"بدائل: moonshotai/kimi-k2-instruct-0905 · llama-3.3-70b-versatile — Groq يحدّث نماذجه دوريًا، فاضغط «اجلب النماذج». المفتاح يبدأ بـ gsk_"},
+  openai:{url:"https://api.openai.com/v1/chat/completions",model:"gpt-5.6-terra",
+    hint:"بدائل: gpt-5.6-sol · gpt-5.5 · chat-latest — أو اضغط «اجلب النماذج»."}
+};
+/* لكل مزوّد مفتاحه ونموذجه وعنوانه — تبديل المزوّد لا يفقدك شيئًا */
+let AI={prov:"deepseek",max:8000,p:{}};
+
+function cfg(prov){
+  const k=prov||AI.prov, d=PROV[k]||PROV.deepseek, s=(AI.p&&AI.p[k])||{};
+  return {key:s.key||"", model:s.model||d.model, url:s.url||d.url, hint:d.hint};
+}
+function loadAI(){
+  try{
+    const raw=JSON.parse(localStorage.getItem("aicfg")||"{}");
+    if(raw.p){ AI=Object.assign(AI,raw); }
+    else if(raw.prov){                       // ترقية من الصيغة القديمة ذات المفتاح الواحد
+      AI.prov=raw.prov; AI.max=raw.max||8000; AI.p={};
+      AI.p[raw.prov]={key:raw.key||"",model:raw.model||"",url:raw.url||""};
+      try{ localStorage.setItem("aicfg",JSON.stringify(AI)); }catch(e){}
+    }
+  }catch(e){}
+  AI.p=AI.p||{};
+  paintAI();
+}
+
+/* يرسم الحقول من حالة AI الحالية — بلا قراءة من التخزين */
+function paintAI(){
+  const g=id=>document.getElementById(id);
+  if(!g("aiProv")) return;
+  const c=cfg();
+  g("aiProv").value=AI.prov;
+  g("aiModel").value=c.model;
+  g("aiUrl").value=c.url;
+  g("aiMax").value=AI.max||8000;
+  g("aiKey").value=c.key;
+  g("aiModelHint").textContent=c.hint;
+  const saved=Object.keys(AI.p||{}).filter(k=>AI.p[k]&&AI.p[k].key).length;
+  g("aiState").textContent=c.key?("مُفعّل · "+c.model)
+    :(saved?"مفتاح هذا المزوّد غير مدخل":"غير مُفعّل");
+  g("aiState").className="tag"+(c.key?" o":(saved?" n":""));
+}
+function provChanged(){
+  AI.prov=document.getElementById("aiProv").value;
+  document.getElementById("aiModels").innerHTML="";
+  paintAI();
+}
+/* جلب قائمة النماذج الحيّة من المزوّد — الأسماء تتغيّر فلا تُحفظ في الكود */
+async function fetchModels(){
+  const key=document.getElementById("aiKey").value.trim();
+  if(!key){ toast("أدخل المفتاح أولًا"); return; }
+  const url=(document.getElementById("aiUrl").value||"")
+    .replace(/\/(chat\/completions|responses)\/?$/,"/models");
+  const btn=document.getElementById("aiFetch");
+  btn.disabled=true; btn.textContent="يجلب…";
+  try{
+    const r=await fetch(url,{headers:{Authorization:"Bearer "+key}});
+    if(!r.ok) throw new Error("خطأ "+r.status+" من المزوّد");
+    const j=await r.json();
+    const ids=((j&&j.data)||[]).map(m=>m&&m.id).filter(Boolean).sort();
+    if(!ids.length) throw new Error("لم تُرجع القائمة أي نموذج");
+    document.getElementById("aiModels").innerHTML=
+      ids.map(i=>`<option value="${i}">`).join("");
+    document.getElementById("aiModelHint").textContent=
+      "وُجد "+toAr(ids.length)+" نموذجًا — اضغط حقل النموذج لاختيار أحدها.";
+    toast("وُجد "+toAr(ids.length)+" نموذجًا");
+  }catch(e){
+    toast("تعذّر الجلب: "+String(e.message||e).slice(0,50));
+  }
+  btn.disabled=false; btn.textContent="اجلب النماذج المتاحة";
+}
+
+function saveAI(){
+  const k=document.getElementById("aiProv").value;
+  AI.prov=k;
+  AI.max=Number(document.getElementById("aiMax").value)||8000;
+  AI.p=AI.p||{};
+  AI.p[k]={key:document.getElementById("aiKey").value.trim(),
+           model:document.getElementById("aiModel").value.trim(),
+           url:document.getElementById("aiUrl").value.trim()};
+  AI._ts=Date.now();
+  try{ localStorage.setItem("aicfg",JSON.stringify(AI)); }catch(e){}
+  paintAI(); sbPush();
+  toast(AI.p[k].key?("حُفظ مفتاح "+k):"حُفظ بلا مفتاح");
+}
+function clearAI(){
+  const k=AI.prov;
+  if(AI.p&&AI.p[k]) AI.p[k].key="";
+  AI._ts=Date.now();
+  try{ localStorage.setItem("aicfg",JSON.stringify(AI)); }catch(e){}
+  paintAI(); toast("مُسح مفتاح "+k+" وحده"); sbPush();
+}
+
+/* نداء واحد — مع بديل للعنوان عند خطأ 404 */
+async function aiOnce(msgs){
+  const c=cfg();
+  const model=c.model, KEY=c.key;
+  let urls=[c.url];
+  if(urls[0].includes("/v1/chat/completions"))
+    urls.push(urls[0].replace("/v1/chat/completions","/chat/completions"));
+  let last="";
+  for(const u of urls){
+    let r;
+    try{
+      r=await fetch(u,{method:"POST",
+        headers:{"Content-Type":"application/json","Authorization":"Bearer "+KEY},
+        body:JSON.stringify({model,messages:msgs,
+          max_tokens:Number(AI.max)||8000,temperature:0.3})});
+    }catch(e){
+      throw new Error("تعذّر الاتصال بالمزوّد. غالبًا منعُ المتصفح للطلب (CORS) أو انقطاع الشبكة.\n"
+        +"استخدم «أمر للذكاء الاصطناعي» بدلًا منه — فهو يعمل دائمًا.");
+    }
+    if(r.ok){
+      const j=await r.json();
+      const ch=j&&j.choices&&j.choices[0];
+      const t=ch&&ch.message&&ch.message.content;
+      if(!t) throw new Error("ردّ المزوّد بلا نص. جرّب نموذجًا آخر.");
+      return {text:t, fin:(ch.finish_reason||"")};
+    }
+    last=await r.text().catch(()=>"");
+    if(r.status===401||r.status===403)
+      throw new Error("المفتاح مرفوض (خطأ "+r.status+") من مزوّد «"+AI.prov+"».\n"
+        +"تأكد أن المفتاح يخص هذا المزوّد تحديدًا: مفاتيح Groq تبدأ بـ gsk_ "
+        +"ومفاتيح OpenAI وDeepSeek بـ sk-. ثم تحقّق من رصيد حسابك.");
+    if(r.status===429)
+      throw new Error("تجاوزت حد الاستخدام أو الرصيد (خطأ ٤٢٩). حاول لاحقًا.");
+    if(r.status!==404)
+      throw new Error("خطأ "+r.status+" من المزوّد:\n"+last.slice(0,400));
+  }
+  throw new Error("العنوان أو اسم النموذج غير صحيح (خطأ ٤٠٤).\n"
+    +"راجع اسم النموذج في الإعدادات — أسماء النماذج تتغيّر.\n"+last.slice(0,300));
+}
+
+/* النداء الكامل — يُكمل تلقائيًا إذا قُطع النص لبلوغ سقف المخرجات */
+async function callAI(sys,usr,onStep){
+  let out="", fin="";
+  for(let round=0; round<5; round++){
+    const msgs=[{role:"system",content:sys},{role:"user",content:usr}];
+    if(out){
+      msgs.push({role:"assistant",content:out});
+      msgs.push({role:"user",content:
+        "النص انقطع لبلوغ حد الطول. أكمل من الحرف الذي توقفت عنده تمامًا، "
+        +"دون إعادة ما كتبته، ودون مقدمة أو اعتذار، ودون تكرار العنوان."});
+    }
+    const r=await aiOnce(msgs);
+    out += (out?"":"")+r.text;
+    fin = r.fin;
+    if(onStep) onStep(out, fin==="length", round+1);
+    if(fin!=="length") break;
+  }
+  return {text:out, truncated:fin==="length"};
+}
+
+/* ===================== DOCUMENT TEMPLATES ===================== */
+const nl=s=>(s||"").split("\n").map(x=>x.trim()).filter(Boolean);
+const numbered=s=>nl(s).map((x,i)=>`${toAr(i+1)}- ${x}`).join("\n");
+const dd=s=>{ if(!s) return "……………"; const d=new Date(s+"T00:00:00");
+  return `${hijri(d)} الموافق ${greg(d)}`; };
+const v=(s,f)=>s||f||"……………";
+
+/* أنظمة عامة تُرفق مع كل دعوى مهما كان نوعها */
+const ALWAYS=["نظام التكاليف القضائية","نظام المحاماة"];
+function artsFor(names,t){
+  if(t&&t.noAlways) return DATA.arts.filter(a=>names.includes(a.l));
+  return DATA.arts.filter(a=>names.includes(a.l)||ALWAYS.includes(a.l));
+}
+function basisBlock(c){
+  const t=CASE_TYPES[c.type]||CASE_TYPES.other;
+  return t.laws.map(l=>"- "+l).join("\n");
+}
+function header(c,to){
+  return `بسم الله الرحمن الرحيم\n\n${to}\nالسلام عليكم ورحمة الله وبركاته، وبعد:\n`;
+}
+function parties(c){
+  const co=nl(c.coPl), df=nl(c.defs);
+  let s=`المدعي${co.length?" الأول":""}: ${v(c.pName)}، هوية وطنية رقم (${v(c.pId)})`
+    +`، جوال (${v(c.pTel)})` + (c.pCap?`، ${c.pCap}`:"");
+  if(co.length)
+    s+="\n"+co.map((x,i)=>`المدعي (${toAr(i+2)}): ${x}`).join("\n");
+  s+="\n"+(df.map((x,i)=>`المدعى عليه${df.length>1?" ("+toAr(i+1)+")":""}: ${x}`).join("\n")
+          || "المدعى عليه: ……………");
+  return s;
+}
+function signature(c){
+  const today=new Date();
+  return `\n\nمقدمه/ ${v(c.pName)}\nالتاريخ: ${hijri(today)} الموافق ${greg(today)}\nالتوقيع: ..........................`;
+}
+
+const DOCS={
+  review:{n:"معاينة البيانات",build(c){
+    const t=CASE_TYPES[c.type]||CASE_TYPES.other;
+    const L=[], S=(k,v)=>{ if(v&&String(v).trim()) L.push(`${k}: ${v}`); };
+    const H=x=>{ L.push(""); L.push("── "+x+" ──"); };
+    const LIST=(k,s)=>{ const a=nl(s); if(a.length){ L.push(k+":");
+      a.forEach((x,i)=>L.push(`  ${toAr(i+1)}- ${x}`)); } };
+
+    L.push(`معاينة بيانات القضية`);
+    L.push(`${c.title||t.n}`);
+    L.push(`حُرّرت في ${greg(new Date())} الموافق ${hijri(new Date())}`);
+
+    H("أساسيات");
+    S("نوع الدعوى", t.n);
+    S("المحكمة المختصة", t.court);
+    S("المدينة", c.city);
+
+    H("الأطراف");
+    S("المدعي", c.pName);
+    S("  هوية المدعي", c.pId);
+    S("  جوال المدعي", c.pTel);
+    S("  صفة المدعي", c.pCap);
+    LIST("المدّعون معه", c.coPl);
+    LIST("المدعى عليهم", c.defs);
+
+    if(c.dName||c.dDeed||c.dAssets){
+      H("المورّث والتركة");
+      S("اسم المورّث", c.dName);
+      if(c.dDeath) S("تاريخ الوفاة", dd(c.dDeath));
+      S("رقم صك حصر الورثة", c.dDeed);
+      if(c.dDeedDate) S("تاريخ صك حصر الورثة", dd(c.dDeedDate));
+      S("عدد الورثة في الصك", c.heirCount?toAr(c.heirCount):"");
+      LIST("أصول التركة", c.dAssets);
+    }
+    if(c.prDesc||c.prDeed){
+      H("العقار");
+      S("الوصف", c.prDesc);
+      S("رقم الصك", c.prDeed);
+      if(c.prDeedDate) S("تاريخ الصك", dd(c.prDeedDate));
+      S("منطقة عقارية معلنة", c.prZone==="y"?"نعم — يلزم التأشير بالدعوى"
+        :c.prZone==="n"?"لا":"لم يُتحقق بعد");
+    }
+    if(c.oName||c.cAmt||c.cScope){
+      H("المنشأة القانونية والترخيص");
+      S("اسم المكتب أو المنشأة", c.oName);
+      S("المحامي المسؤول", c.oLawyer);
+      S("رقم الترخيص أو السجل", c.oLic);
+      S("التحقق من الترخيص", c.oLicChk==="y"?"نعم — مرخّص من وزارة العدل"
+        :c.oLicChk==="n"?"لا — غير مرخّص للمحاماة (لا مسار تأديبي عدلي)":"لم يُتحقق بعد");
+
+      H("العقد والمبلغ");
+      if(c.cDate) S("تاريخ العقد", dd(c.cDate));
+      S("المبلغ المسدَّد", c.cAmt?c.cAmt+" ريال":"");
+      if(c.cPayDate) S("تاريخ السداد", dd(c.cPayDate));
+      S("مرجع الإيصال أو التحويل", c.cPayRef);
+      S("العقد الموحد المسجّل في نافذ", c.cUnified==="y"?"نعم — سند تنفيذي يُنفَّذ من ناجز دون دعوى"
+        :c.cUnified==="n"?"لا — عقد خاص أو اتفاق شفهي":"لم يُتحقق بعد");
+      LIST("نطاق العمل المتفق عليه", c.cScope);
+      LIST("ما أُنجز فعلًا", c.cDone);
+      if(c.cNotice) S("تاريخ الإعذار الموثّق", dd(c.cNotice));
+      S("الوكالة", c.cWakala==="y"?"ما زالت سارية — يلزم إلغاؤها في ناجز"
+        :c.cWakala==="n"?"أُلغيت في ناجز":"لم يُتحقق بعد");
+      LIST("أصول ومستندات لم تُرد", c.cDocs);
+    }
+
+    H("الوقائع");
+    L.push(c.facts||"(فارغة)");
+    H("الطلبات");
+    L.push(c.requests?numbered(c.requests):"(فارغة)");
+    H("المستندات والأدلة");
+    L.push(c.evidence?numbered(c.evidence):"(فارغة)");
+
+    if(c.jNo||c.jDelivery||c.jDate){
+      H("الحكم والاعتراض");
+      S("رقم الحكم", c.jNo);
+      if(c.jDate) S("تاريخ الصدور", dd(c.jDate));
+      if(c.jDelivery) S("تاريخ تسلّم صورة الصك", dd(c.jDelivery));
+      S("المحكمة والدائرة", c.jCourt);
+      S("منطوق الحكم", c.jText);
+      S("طبيعة القضية", c.jUrgent?"مستعجلة — مهلة الاستئناف ١٠ أيام":"عادية — مهلة الاستئناف ٣٠ يومًا");
+      if(c.jDelivery){
+        const r=deadline(c.jDelivery, c.jUrgent?10:30);
+        if(r) L.push(`آخر يوم للاعتراض: ${GD[r.d.getDay()]} ${greg(r.d)} الموافق ${hijri(r.d)}`
+          + (r.left<0?` — انقضت المدة منذ ${toAr(Math.abs(r.left))} يومًا`
+            : r.left===0?" — اليوم آخر يوم" : ` — متبقٍ ${toAr(r.left)} يومًا`));
+      }
+      LIST("أسباب شكلية", c.objForm);
+      LIST("أسباب موضوعية", c.objSub);
+    }
+
+    const w=checkCase(c);
+    if(w.length){
+      H("تنبيهات تحتاج مراجعة");
+      w.forEach((x,i)=>L.push(`${toAr(i+1)}- ${x}`));
+    }
+    const dk=Object.keys(draftsOf(c));
+    if(dk.length){
+      H("مسودات محفوظة");
+      dk.forEach(k=>{
+        const d=c.drafts[k];
+        L.push(`• ${k} — ${d.at}${d.h===caseHash(c)?"":" (قبل تحديث البيانات)"}`);
+      });
+    }
+    L.push("");
+    L.push("معاينة داخلية لمراجعة بياناتك — ليست مستندًا يُقدَّم للمحكمة.");
+    return L.join("\n");
+  }},
+
+  da3wa:{n:"صحيفة دعوى",build(c){
+    const t=CASE_TYPES[c.type]||CASE_TYPES.other;
+    let s=header(c,`المكرم/ رئيس ${t.court} ب${v(c.city)}\t\t\t\tالمحترم`);
+    s+=`\nأولًا: أطراف الدعوى\n${parties(c)}\n`;
+    s+=`\nثانيًا: موضوع الدعوى\n${t.n}.\n`;
+    if(c.dName) s+=`\nثالثًا: بيانات المورّث\nتُوفي مورثنا/ ${v(c.dName)} بتاريخ ${dd(c.dDeath)}، وصدر صك حصر الورثة رقم (${v(c.dDeed)}) وتاريخ ${dd(c.dDeedDate)}.\n`
+      + (c.dAssets?`\nوأصول التركة محل هذه الدعوى:\n${numbered(c.dAssets)}\n`:"");
+    if(c.prDesc) s+=`\nثالثًا: بيانات العقار\n${c.prDesc}\nرقم الصك: ${v(c.prDeed)}، وتاريخه ${dd(c.prDeedDate)}.\n`
+      + (c.prZone==="y"?`\nوالعقار واقع في منطقة عقارية معلنة، وقد روعي التأشير بالدعوى في السجل العقاري.\n`:"");
+    s+=`\nرابعًا: الوقائع\n${v(c.facts,"……………")}\n`;
+    s+=`\nخامسًا: السند النظامي\nتستند هذه الدعوى إلى:\n${basisBlock(c)}\n`;
+    s+=`\nسادسًا: الطلبات\nبناءً على ما تقدم، ألتمس من فضيلتكم:\n${c.requests?numbered(c.requests):"……………"}\n`;
+    s+=`\nسابعًا: المرفقات\n${c.evidence?numbered(c.evidence):"……………"}`;
+    return s+signature(c);
+  }},
+
+  i3tirad:{n:"مذكرة اعتراضية (استئناف)",build(c){
+    const days=c.jUrgent?"عشرة أيام":"ثلاثون يومًا";
+    const art=c.jUrgent
+      ? "المادة (١٨٧) من نظام المرافعات الشرعية، التي استثنت الأحكام الصادرة في المسائل المستعجلة فجعلت مدة الاعتراض فيها عشرة أيام"
+      : "المادة (١٨٧) من نظام المرافعات الشرعية، التي جعلت مدة الاعتراض بطلب الاستئناف أو التدقيق ثلاثين يومًا";
+    let s=header(c,`أصحاب الفضيلة/ رئيس وأعضاء محكمة الاستئناف ب${v(c.city)}\t\tحفظكم الله`);
+    s+=`\nمذكرة اعتراضية\n\nبيانات الحكم المعترض عليه:\n`
+      +`المستأنِف: ${v(c.pName)}، هوية وطنية رقم (${v(c.pId)})\n`
+      +`المستأنَف ضده: ${nl(c.defs)[0]||"……………"}\n`
+      +`الدائرة مصدرة الحكم: ${v(c.jCourt)}\n`
+      +`رقم الحكم: (${v(c.jNo)}) وتاريخه ${dd(c.jDate)}\n`
+      +`منطوق الحكم: ${v(c.jText)}\n`;
+    s+=`\nأولًا: قبول الاعتراض شكلًا\nصدر الحكم المعترض عليه بتاريخ ${dd(c.jDate)}، وتسلّمتُ صورة منه بتاريخ ${dd(c.jDelivery)}، ثم تقدمتُ باعتراضي خلال المدة النظامية (${days}) المنصوص عليها في ${art}؛ وبذلك يكون الاعتراض مقبولًا شكلًا.\n`;
+    s+=`\nثانيًا: أسباب الاعتراض الشكلية\n${c.objForm?numbered(c.objForm):"لا يوجد."}\n`;
+    s+=`\nثالثًا: أسباب الاعتراض الموضوعية\n${c.objSub?numbered(c.objSub):"……………"}\n`;
+    s+=`\nرابعًا: الرد على أسباب الحكم الابتدائي\n……………\n`;
+    s+=`\nخامسًا: الطلبات\nلذلك، وبناءً على ما سبق، أطلب من فضيلتكم:\n`
+      +`${toAr(1)}- قبول الاعتراض شكلًا لتقديمه في الموعد النظامي.\n`
+      +`${toAr(2)}- نقض الحكم المعترض عليه لما سبق بيانه من أسباب.\n`
+      +`${toAr(3)}- الحكم مجددًا في الموضوع بما يحقق العدالة.`;
+    return s+signature(c);
+  }},
+
+  naqd:{n:"لائحة نقض / التماس إعادة نظر",build(c){
+    const days=c.jUrgent?"خمسة عشر يومًا":"ثلاثون يومًا";
+    let s=header(c,`أصحاب الفضيلة/ رئيس وأعضاء المحكمة العليا\t\t\tحفظكم الله`);
+    s+=`\nلائحة اعتراض بطلب النقض\n\n`
+      +`الطاعن: ${v(c.pName)}، هوية وطنية رقم (${v(c.pId)})\n`
+      +`المطعون ضده: ${nl(c.defs)[0]||"……………"}\n`
+      +`الحكم المطعون فيه: رقم (${v(c.jNo)}) وتاريخه ${dd(c.jDate)} الصادر من ${v(c.jCourt)}\n`
+      +`تاريخ تسلّم صورة الصك: ${dd(c.jDelivery)}\n`;
+    s+=`\nأولًا: قبول الطعن شكلًا\nقُدّم هذا الطعن خلال المدة النظامية (${days}) المقررة للنقض وفق المادتين (١٩٣) و(١٩٤) من نظام المرافعات الشرعية.\n`;
+    s+=`\nثانيًا: أسباب النقض\nالنقض يقوم على مخالفة الحكم لحكم شرعي أو نظامي أو الخطأ في تطبيقه أو تأويله، أو الخطأ في تكييف الواقعة أو وصفها، لا على إعادة مناقشة الوقائع:\n${c.objSub?numbered(c.objSub):"……………"}\n`;
+    s+=`\nثالثًا: الطلبات\n${toAr(1)}- قبول الطعن شكلًا.\n${toAr(2)}- نقض الحكم المطعون فيه.\n`;
+    s+=`\n${"=".repeat(40)}\n\n`;
+    s+=`صيغة بديلة — التماس إعادة النظر\n\n`
+      +`يُقدَّم للمحكمة مصدرة الحكم، ولا يُقبل إلا إذا تحققت إحدى حالات المادة (٢٠٠) من نظام المرافعات الشرعية، وهي واردة على سبيل الحصر — ومنها أن يكون الحكم قد بُني على أوراق ظهر بعد الحكم تزويرها، أو على شهادة قُضي من الجهة المختصة بعد الحكم بأنها شهادة زور.\n\n`
+      +`ومدة الالتماس ثلاثون يومًا وفق المادة (٢٠١)، وتبدأ من اليوم الذي يثبت فيه علم الملتمس بالواقعة المؤسَّس عليها التماسه — لا من تاريخ الحكم.\n\n`
+      +`حالة الالتماس المنطبقة في قضيتي: ……………\n`
+      +`تاريخ علمي بالواقعة: ……………\n`
+      +`ما يثبت تاريخ العلم: ……………`;
+    return s+signature(c);
+  }},
+
+  jawab:{n:"مذكرة جوابية",build(c){
+    const t=CASE_TYPES[c.type]||CASE_TYPES.other;
+    let s=header(c,`المكرم/ رئيس ${t.court} ب${v(c.city)}\t\t\t\tالمحترم`);
+    s+=`\nمذكرة جوابية\n\nفي الدعوى المقامة ضدي من: ${nl(c.defs)[0]||"……………"}\n`
+      +`المدعى عليه (مقدم المذكرة): ${v(c.pName)}، هوية وطنية رقم (${v(c.pId)})\n`;
+    s+=`\nأولًا: الدفوع الشكلية\nتنبيه: إن كان لديك دفع بعدم الاختصاص المكاني فيجب تقديمه الآن قبل أي طلب أو دفاع في الموضوع، وإلا سقط حقك فيه وفق المادة (٧١) من نظام المرافعات الشرعية.\n${c.objForm?numbered(c.objForm):"……………"}\n`;
+    s+=`\nثانيًا: الرد على الوقائع\n${v(c.facts,"……………")}\n`;
+    s+=`\nثالثًا: الدفوع الموضوعية\n${c.objSub?numbered(c.objSub):"……………"}\n`;
+    s+=`\nرابعًا: مستنداتي\n${c.evidence?numbered(c.evidence):"……………"}\n`;
+    s+=`\nخامسًا: الطلبات\n${toAr(1)}- رد الدعوى.\n${toAr(2)}- ……………`;
+    return s+signature(c);
+  }},
+
+  tanfeeth:{n:"طلب تنفيذ",build(c){
+    let s=header(c,`المكرم/ قاضي محكمة التنفيذ ب${v(c.city)}\t\t\tالمحترم`);
+    s+=`\nطلب تنفيذ\n\n`
+      +`طالب التنفيذ: ${v(c.pName)}، هوية وطنية رقم (${v(c.pId)})، جوال (${v(c.pTel)})\n`
+      +`المنفَّذ ضده: ${nl(c.defs)[0]||"……………"}\n`
+      +`السند التنفيذي: الحكم رقم (${v(c.jNo)}) وتاريخه ${dd(c.jDate)} الصادر من ${v(c.jCourt)}\n`;
+    s+=`\nأولًا: المطلوب تنفيذه\n${c.requests?numbered(c.requests):v(c.jText)}\n`;
+    s+=`\nثانيًا: السند النظامي\nوفق المادة (٣٤) من نظام التنفيذ، يُبلَّغ المدين بأمر التنفيذ خلال مدة لا تتجاوز خمسة أيام من صدوره، ويُمنح مهلة لا تزيد على خمسة أيام من تاريخ إبلاغه للوفاء أو تقديم أوجه دفاعه.\n`
+      +`وإن لم ينفّذ أو لم يفصح عن أموال تكفي للوفاء خلال خمسة أيام من إبلاغه، جاز حبسه تنفيذيًا بأمر من قاضي التنفيذ بناءً على طلب الدائن، وفق المادة (٨٣) من النظام.\n`;
+    s+=`\nثالثًا: الطلبات\n${toAr(1)}- قيد الطلب وإصدار أمر التنفيذ.\n`
+      +`${toAr(2)}- اتخاذ إجراءات التنفيذ الجبري عند الامتناع.\n`
+      +`${toAr(3)}- ……………\n`;
+    s+=`\nرابعًا: المرفقات\n${c.evidence?numbered(c.evidence):"صورة صك الحكم\nما يثبت نهائية الحكم"}`;
+    return s+signature(c);
+  }},
+
+  prompt:{n:"أمر للذكاء الاصطناعي",mono:true,build(c){
+    const t=CASE_TYPES[c.type]||CASE_TYPES.other;
+    const arts=artsFor(t.laws,t);
+    return `أنت مساعد صياغة قانونية متخصص في الأنظمة السعودية. مهمتك صياغة مستند قضائي من البيانات أدناه.
+
+════════ قيود ملزمة — لا تتجاوزها ════════
+١. لا تذكر أي رقم مادة أو مدة نظامية أو اسم نظام غير الوارد في قسم «المواد المتاحة» أدناه.
+٢. إن احتجت مادة ليست في القائمة، اكتب حرفيًا: [يلزم التحقق من المادة] ولا تخمّن رقمًا.
+   الخطأ في رقم مادة أو في مدة اعتراض داخل مذكرة تُقدَّم لمحكمة ضرر حقيقي، لا هفوة تحريرية.
+٣. لا تُضف واقعة لم ترد في قسم «الوقائع»، ولا تفترض مستندًا غير مذكور.
+   ومن ذلك خاصةً: لا تنسب إلى مستند ما لا يُعلم أنه فيه — فلا تكتب أن صك حصر الورثة
+   «أثبت أن الورثة هم فلان وفلان» ما لم تُعطَ قائمتهم، ولا تصف أصلًا بأنه «الوحيد»
+   أو «قابل للقسمة» ما لم يُذكر ذلك. ولا تنسب إلى أحد صلة قرابة أو صفة في الإرث
+   (ابن، بنت، زوجة، عاصب…) لم تُذكر لك صراحةً. اكتب [فراغ: ……] بدلًا من كل ذلك.
+٤. ضع [فراغ: ……] مكان أي معلومة ناقصة بدل اختلاقها. لكن ما ذُكر لك صراحةً — ولو كان
+   نفيًا، مثل «لا توجد ديون» أو «لا وصية» أو «الرفض شفهي» — فهو واقعة مقرَّرة: اذكرها
+   جزمًا ولا تضع مكانها فراغًا ولا تحوّلها إلى تردد.
+   وانتبه: «المدّعون معه» ورثة منضمون إلى المدعي لا خصوم — فلا تطلب «اختصامهم» ولا
+   تدرجهم في الطلبات بوصفهم مدعى عليهم.
+٥. لا تَعِد بنتيجة ولا تُقدّر فرص القبول ولا تُبدِ رأيًا في قوة القضية.
+٦. العربية الفصحى بصياغة قانونية رسمية، أسباب مرقّمة، والشكلي مفصول عن الموضوعي.
+   و**اكتب مرافعة قوية**: ابنِ الحجة على الوقائع والمواد المتاحة بأقصى ما تحتمله،
+   ورتّب الأسباب من الأقوى إلى الأضعف، واربط كل واقعة بالمادة التي تسندها، واستوفِ
+   الأقسام كلها دون إحالة إلى ما سبق أو اختصار.
+   التحفظ مطلوب في نسبة الوقائع وفي أرقام المواد فقط — لا في قوة العبارة. فحيث تسندك
+   الواقعة والمادة، قرّر الحكم تقريرًا جازمًا بلا تردد ولا عبارات تمريض.
+٧. لا تستعمل مادة في غير موضعها. المادة التي تخصّ محكمة أو حالة بعينها لا تُستشهد بها
+   لإسناد محكمة أو حالة أخرى، ومادة الاختصاص الدولي ليست مادة اختصاص مكاني.
+   وقبل أن تستشهد بمادة اسأل نفسك: هل موضوعها هو ما أستدل عليه فعلًا؟
+٨. إن لم تجد في «المواد المتاحة» ما يسند ركنًا لازمًا — كاختصاص المحكمة أو أصل الحق —
+   فاكتب صراحةً: [لا توجد في المواد المتاحة مادة تسند هذا الركن] ثم تابع. الاستشهاد الخاطئ
+   أسوأ من عدم الاستشهاد، لأنه يُضعف المذكرة أمام القاضي.
+٩. في آخر ردك اكتب قسمًا بعنوان «ما ينقص لإكمال المذكرة» تعدّد فيه ما تحتاجه مني.
+${t.need&&t.need.includes("office")?`١٠. خاص بالنزاع مع منشأة قانونية — لا تخلط بين مسارين مستقلين:
+   الشكوى التأديبية حقٌّ عام جهتها الهيئة السعودية للمحامين ثم لجنة تأديب المحامين، ولا تُرجع المال.
+   والمطالبة بالمال حقٌّ خاص جهتها المحكمة المختصة. فلا تطلب عقوبة تأديبية في صحيفة دعوى مالية،
+   ولا تطلب ردّ مبلغ في شكوى تأديبية. وإن كان المستند المطلوب صحيفة دعوى مالية فالمحكمة العامة
+   بالاختصاص الاحتياطي، لأن المنشأة القانونية منشأة مهنية لا تاجر والعلاقة مدنية لا تجارية —
+   ولا تُسند الاختصاص للمحكمة التجارية. وإن كان العقد هو العقد الموحد المسجّل في نافذ فنبّه
+   أن الالتزام المحدّد الظاهر فيه يُنفَّذ عبر محكمة التنفيذ دون دعوى، وأن ردّ المبلغ مبناه الفسخ
+   وهو حكم قضائي. ولا تنسب إلى المكتب أنه «لم يُنجز شيئًا» إن ذُكر لك إنجاز جزئي، ولا تقدّر
+   قيمة ما أُنجز بنفسك.`:""}
+
+════════ بيانات القضية ════════
+تاريخ اليوم: ${greg(new Date())} الموافق ${hijri(new Date())} — استعمله في أي حساب زمني،
+ولا تصف تاريخًا سابقًا له بأنه مستقبلي.
+نوع الدعوى: ${t.n}
+المحكمة المختصة: ${t.court}${c.city?" ب"+c.city:""}
+المدعي: ${v(c.pName)}${c.pCap?" — "+c.pCap:""}
+${nl(c.coPl).length?`المدّعون معه (ورثة موافقون على القسمة، انضموا مدعين لا خصومًا):
+${nl(c.coPl).map(x=>"  - "+x).join("\n")}`:""}
+المدعى عليهم (الرافضون للقسمة):
+${nl(c.defs).map(x=>"  - "+x).join("\n")||"  - ……………"}
+${c.dName?`المورّث: ${c.dName}، تاريخ الوفاة ${dd(c.dDeath)}، صك حصر الورثة رقم (${v(c.dDeed)}) وتاريخه ${dd(c.dDeedDate)}
+أصول التركة:
+${nl(c.dAssets).map(x=>"  - "+x).join("\n")||"  - ……………"}`:""}
+${c.prDesc?`العقار: ${c.prDesc}
+رقم الصك: ${v(c.prDeed)} وتاريخه ${dd(c.prDeedDate)}
+منطقة عقارية معلنة: ${c.prZone==="y"?"نعم — يلزم التأشير بالدعوى في السجل العقاري":c.prZone==="n"?"لا":"لم يُتحقق بعد"}`:""}
+${c.oName||c.cAmt?`المنشأة القانونية: ${v(c.oName)}${c.oLawyer?" — المحامي المسؤول: "+c.oLawyer:""}${c.oLic?" — الترخيص/السجل رقم ("+c.oLic+")":""}
+التحقق من الترخيص: ${c.oLicChk==="y"?"مرخّص من وزارة العدل — يخضع لنظام المحاماة ولمسار التأديب":c.oLicChk==="n"?"غير مرخّص للمحاماة — لا يخضع لمسار تأديب لجنة تأديب المحامين":"لم يُتحقق بعد — لا تبنِ عليه حكمًا"}
+العقد: ${c.cDate?"مؤرَّخ في "+dd(c.cDate):"[فراغ: تاريخ العقد]"}${c.cUnified==="y"?" — وهو العقد الموحد لأتعاب المحاماة المسجّل في منصة نافذ، ويكتسب صفة السند التنفيذي":c.cUnified==="n"?" — عقد خاص أو اتفاق شفهي، وليس سندًا تنفيذيًا":" — لم يُتحقق من كونه العقد الموحد"}
+المبلغ المسدَّد: ${c.cAmt?c.cAmt+" ريال":"[فراغ: المبلغ]"}${c.cPayDate?" — سُدِّد بتاريخ "+dd(c.cPayDate):""}${c.cPayRef?" — بموجب "+c.cPayRef:""}
+نطاق العمل المتفق عليه:
+${nl(c.cScope).map(x=>"  - "+x).join("\n")||"  - ……………"}
+ما أُنجز فعلًا:
+${nl(c.cDone).map(x=>"  - "+x).join("\n")||"  - لم يُذكر أن شيئًا أُنجز"}
+${c.cNotice?`الإعذار الكتابي الموثّق: بتاريخ ${dd(c.cNotice)}`:"الإعذار: لم يُذكر إعذار موثّق"}
+${nl(c.cDocs).length?`أصول ومستندات سُلّمت للمكتب ولم تُرد:
+${nl(c.cDocs).map(x=>"  - "+x).join("\n")}`:""}
+الوكالة: ${c.cWakala==="y"?"ما زالت سارية":c.cWakala==="n"?"أُلغيت في ناجز":"لم يُتحقق بعد"}`:""}
+${c.jNo||c.jDelivery?`الحكم محل الاعتراض: رقم (${v(c.jNo)}) وتاريخه ${dd(c.jDate)} من ${v(c.jCourt)}
+تاريخ تسلّم صورة الصك: ${dd(c.jDelivery)}
+طبيعة القضية: ${c.jUrgent?"مستعجلة":"عادية"}
+منطوق الحكم: ${v(c.jText)}`:""}
+
+الوقائع:
+${v(c.facts,"……………")}
+
+الطلبات:
+${nl(c.requests).map(x=>"  - "+x).join("\n")||"  - ……………"}
+
+المستندات المتوفرة:
+${nl(c.evidence).map(x=>"  - "+x).join("\n")||"  - ……………"}
+${c.objForm?`\nأسباب شكلية أراها:\n${nl(c.objForm).map(x=>"  - "+x).join("\n")}`:""}
+${c.objSub?`\nأسباب موضوعية أراها:\n${nl(c.objSub).map(x=>"  - "+x).join("\n")}`:""}
+
+════════ المواد المتاحة — لا تستشهد بغيرها ════════
+${arts.map(a=>`[${a.l} — المادة ${a.a}] ${a.t}`).join("\n")}
+
+════════ المخرج المطلوب ════════
+اكتب: [اذكر هنا المستند الذي تريده — صحيفة دعوى / مذكرة اعتراضية / مذكرة جوابية / لائحة نقض]
+
+بالترتيب التالي: الديباجة، ثم أطراف الدعوى، ثم الموضوع، ثم الوقائع، ثم السند النظامي، ثم الطلبات، ثم المرفقات.
+
+**متن نظيف:** لا تضع داخل المتن تعليقات تحرير ولا ملاحظات موجّهة إليّ ولا شروحًا لِما فعلت.
+اجمع كل ملاحظاتك في قسم «ما ينقص لإكمال المذكرة» في آخر ردك. ولا يُستثنى من ذلك داخل
+المتن إلا شيئان: [فراغ: ……] مكان معلومة ناقصة، و[لا توجد في المواد المتاحة مادة تسند هذا
+الركن] حين يلزم فعلًا.
+
+**مسودة كاملة للتشذيب:** أنا سأراجع وأحذف ما لا يناسبني، فلا تحذف أنت. أدرِج كل طلب أو
+دفع أو سبب تسنده الوقائع والمواد — بما في ذلك الطلبات الاحتياطية والبدائل — وضع كل بديل
+في سطر مستقل مرقّم ليسهل حذفه. الإسهاب المسنَد أفضل هنا من الاختصار.
+
+ملاحظة أخيرة — ولا تُسئ صياغتها: ما تكتبه مسودة أعدّها نموذج ذكاء اصطناعي، ويجب أن
+يراجعها محامٍ مرخّص قبل الرفع. فلا تكتب في المستند أنها أُعدّت من محامٍ أو من مختص،
+ولا تنسبها إلى أحد. وإن أدرجت تنبيهًا فليكن بهذا المعنى حرفيًا:
+«مسودة آلية تحتاج مراجعة محامٍ مرخّص قبل التقديم».`;
+  }}
+};
+
+function openDocs(i){
+  cur=CASES[i]; cur._i=i; curIdx=i;
+  document.getElementById("caseListCard").style.display="none";
+  document.getElementById("caseEditCard").style.display="none";
+  document.getElementById("caseDocCard").style.display="";
+  const t=CASE_TYPES[cur.type]||CASE_TYPES.other;
+  document.getElementById("docTitle").textContent=cur.title||t.n;
+  document.getElementById("docLead").innerHTML=
+    `${t.n} · ${t.court}. كل مستند يُبنى من بياناتك ومن المواد المحققة في هذا الملف.
+     <strong>راجعه مع محامٍ مرخّص قبل تقديمه.</strong>`
+    + warnBox(checkCase(cur));
+  const want=["صحيفة دعوى","مذكرة اعتراضية (استئناف)","مذكرة جوابية","لائحة نقض","التماس إعادة النظر"];
+  document.getElementById("docBar").innerHTML=Object.entries(DOCS).map(([k,d])=>
+    `<button class="btn${k==="prompt"?" pri":""}" onclick="genDoc('${k}')">${d.n}</button>`).join("")
+    +`<button class="btn" onclick="showList()">رجوع</button>`
+    +`<div style="width:100%;border-top:1px solid var(--line);margin:6px 0 2px;padding-top:12px;
+        display:flex;gap:9px;flex-wrap:wrap;align-items:center">
+        <span style="font-size:.86rem;color:var(--dim)">صياغة داخل الصفحة:</span>
+        <select id="aiWant" style="width:auto;min-width:200px" onchange="aiPeek()">
+          ${want.map(w=>`<option>${w}</option>`).join("")}
+        </select>
+        <button class="btn" id="aiGo" onclick="aiDraft(false)">صِغ بالذكاء الاصطناعي</button>
+        <button class="btn" id="aiRe" onclick="aiDraft(true)" style="display:none">أعد الصياغة</button>
+        <span id="aiSaved" style="font-size:.82rem;color:var(--dim)"></span>
+      </div>`;
+  document.getElementById("docWrap").innerHTML="";
+  document.getElementById("docTools").style.display="none";
+  aiPeek();
+}
+
+/* يبيّن حالة المسودة المحفوظة للمستند المختار */
+function aiPeek(){
+  const sel=document.getElementById("aiWant"); if(!sel) return;
+  const d=draftsOf(cur)[sel.value];
+  const lbl=document.getElementById("aiSaved");
+  const re=document.getElementById("aiRe");
+  if(!d){ lbl.textContent=""; re.style.display="none"; return; }
+  const fresh=d.h===caseHash(cur);
+  lbl.innerHTML=fresh
+    ? `<span style="color:var(--ok)">محفوظة ${d.at} — ستُعرض بلا إعادة صياغة</span>`
+    : `<span style="color:var(--warn)">محفوظة ${d.at} — البيانات تغيّرت بعدها</span>`;
+  re.style.display="";
+  re.textContent=fresh?"أعد الصياغة":"أعد الصياغة بالبيانات الجديدة";
+}
+
+function showSaved(key,d){
+  curDoc=d.t;
+  const fresh=d.h===caseHash(cur);
+  document.getElementById("docWrap").innerHTML=
+    `<div style="font-size:.85rem;margin-top:12px;color:${fresh?"var(--dim)":"var(--warn)"}">
+       ${fresh?`مسودة محفوظة بتاريخ ${d.at} — بيانات القضية لم تتغيّر بعدها، فلم يُستدعَ النموذج.`
+              :`⚠ هذه المسودة من ${d.at}، وبيانات القضية تغيّرت بعدها — أعد الصياغة قبل الاعتماد عليها.`}
+     </div><div class="docout" id="docBox"></div>`;
+  document.getElementById("docBox").textContent=curDoc;
+  document.getElementById("docTools").style.display="flex";
+}
+
+/* معاينة مباشرة من بطاقة القضية */
+function quickReview(i){
+  openDocs(i);
+  genDoc("review");
+}
+
+async function aiDraft(force){
+  if(!cfg().key){
+    toast("أدخل مفتاح API في إعدادات الذكاء الاصطناعي أولًا");
+    showList();
+    document.querySelector("#p-cases details").open=true;
+    document.querySelector("#p-cases details").scrollIntoView({behavior:"smooth"});
+    return;
+  }
+  const want=document.getElementById("aiWant").value;
+  const h=caseHash(cur);
+  const saved=draftsOf(cur)[want];
+
+  // المحفوظة تُعرض كما هي ما دامت البيانات لم تتغيّر — لا استدعاء ولا تكلفة
+  if(saved && saved.h===h && !force){
+    showSaved(want,saved);
+    toast("معروضة من المحفوظ");
+    return;
+  }
+
+  const btn=document.getElementById("aiGo");
+  btn.disabled=true; btn.textContent="يصوغ… قد يستغرق دقيقة";
+  document.getElementById("docWrap").innerHTML=
+    `<div class="docout" style="color:var(--dim)">جارٍ الصياغة…</div>`;
+  document.getElementById("docTools").style.display="none";
+  const base=DOCS.prompt.build(cur);
+  const sys="أنت مساعد صياغة قانونية في الأنظمة السعودية. تلتزم حرفيًا بالقيود الواردة في رسالة "
+    +"المستخدم، ولا تستشهد بأي مادة أو مدة خارج قائمة «المواد المتاحة»، وتكتب [يلزم التحقق من المادة] "
+    +"عند الحاجة لمادة غير مدرجة. لا تخترع وقائع ولا تقدّر فرص القبول.";
+  const usr=base.replace(
+    "اكتب: [اذكر هنا المستند الذي تريده — صحيفة دعوى / مذكرة اعتراضية / مذكرة جوابية / لائحة نقض]",
+    "المستند المطلوب: "+want);
+  try{
+    document.getElementById("docWrap").innerHTML=
+      `<div style="font-size:.85rem;color:var(--dim);margin-top:12px" id="aiProg"></div>
+       <div class="docout" id="docBox"></div>`;
+    const prog=document.getElementById("aiProg");
+    const box=document.getElementById("docBox");
+    const r=await callAI(sys,usr,(txt,more,round)=>{
+      box.textContent=txt;
+      prog.textContent=more?`النص طويل — يُكمل تلقائيًا (الجزء ${toAr(round)})…`
+                           :`اكتملت الصياغة في ${toAr(round)} ${round===1?"جزء":"أجزاء"}.`;
+    });
+    curDoc=r.text;
+    box.textContent=curDoc;
+    if(r.truncated){
+      prog.innerHTML=`<span style="color:var(--warn)">النص ما زال مقطوعًا بعد خمس محاولات —
+        ارفع «سقف المخرجات» في الإعدادات أو اطلب المستند على أجزاء.</span>`;
+      document.getElementById("docWrap").insertAdjacentHTML("beforeend",
+        `<div class="bar" style="margin-top:12px">
+           <button class="btn" onclick="aiContinue()">أكمل من حيث توقف</button></div>`);
+    }
+    saveDraft(want,curDoc,h);
+    aiPeek();
+    document.getElementById("docTools").style.display="flex";
+    toast(r.truncated?"مقطوعة — اضغط «أكمل»":"حُفظت — راجعها قبل التقديم");
+  }catch(e){
+    document.getElementById("docWrap").innerHTML=
+      `<div class="legal" style="margin-top:14px"><strong>تعذّرت الصياغة:</strong><br>
+       ${String(e.message||e).replace(/\n/g,"<br>")}</div>`;
+  }
+  btn.disabled=false; btn.textContent="صِغ بالذكاء الاصطناعي";
+}
+
+/* حفظ المسودة في القضية نفسها مع بصمة البيانات التي صيغت منها */
+function saveDraft(key,text,h){
+  if(curIdx<0) return;
+  const c=CASES[curIdx];
+  c.drafts=c.drafts||{};
+  c.drafts[key]={t:text,h:h,at:new Date().toISOString().slice(0,10)};
+  c._id=c._id||uuid(); c._ts=Date.now();
+  if(!store()){
+    delete c.drafts[key];
+    toast("تعذّر حفظ المسودة — مساحة المتصفح ممتلئة");
+  }
+}
+
+/* إكمال يدوي لما بقي مقطوعًا */
+async function aiContinue(){
+  const prev=curDoc;
+  toast("يُكمل…");
+  try{
+    const r=await aiOnce([
+      {role:"system",content:"أكمل نصًا قانونيًا عربيًا من حيث توقف، بلا تكرار وبلا مقدمة."},
+      {role:"user",content:"هذا نص انقطع، أكمله من حرفه الأخير:\n\n"+prev},
+    ]);
+    curDoc=prev+r.text;
+    document.getElementById("docBox").textContent=curDoc;
+    const sel=document.getElementById("aiWant");
+    if(sel) saveDraft(sel.value,curDoc,caseHash(cur));
+    toast(r.fin==="length"?"ما زال مقطوعًا — اضغط مرة أخرى":"اكتمل وحُفظ");
+  }catch(e){ toast("تعذّر: "+String(e.message||e).slice(0,60)); }
+}
+
+function genDoc(k){
+  const d=DOCS[k];
+  curDoc=d.build(cur);
+  document.getElementById("docWrap").innerHTML=
+    `<div class="docout${d.mono?" mono":""}" id="docBox"></div>`;
+  document.getElementById("docBox").textContent=curDoc;
+  document.getElementById("docTools").style.display="flex";
+  if(k==="prompt") toast("انسخه والصقه في أي محادثة ذكاء اصطناعي");
+}
+function copyDoc(){
+  navigator.clipboard.writeText(curDoc).then(()=>toast("نُسخ"),()=>{
+    const ta=document.createElement("textarea"); ta.value=curDoc;
+    document.body.appendChild(ta); ta.select();
+    try{document.execCommand("copy");toast("نُسخ");}catch(e){toast("انسخه يدويًا");}
+    ta.remove();
+  });
+}
+function downloadDoc(){
+  const ok=trySave(curDoc,((cur&&cur.title)||"مستند")+".txt");
+  toast(ok?"إن لم يبدأ التنزيل فاستخدم «نسخ النص»":"استخدم «نسخ النص» بدلًا منه");
+}
+/* طباعة داخل الصفحة نفسها — بلا نافذة منفصلة تبقى مفتوحة عند الإلغاء */
+function printDoc(){
+  if(!curDoc){ toast("لا يوجد مستند"); return; }
+  const pa=document.getElementById("printArea");
+  pa.textContent=curDoc;
+  document.body.classList.add("printing");
+  const done=()=>{
+    document.body.classList.remove("printing");
+    pa.textContent="";
+    window.removeEventListener("afterprint",done);
+  };
+  window.addEventListener("afterprint",done);
+  try{ window.print(); }catch(e){}
+  setTimeout(done,1500);   // احتياط لو لم يُطلق المتصفح الحدث
+}
+
+/* ===================== NAV / THEME ===================== */
+function go(p){
+  document.querySelectorAll("nav.tabs button").forEach(b=>
+    b.classList.toggle("on",b.dataset.p===p));
+  document.querySelectorAll("section.page").forEach(s=>
+    s.classList.toggle("on",s.id==="p-"+p));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("nav.tabs button").forEach(b=>b.onclick=()=>go(b.dataset.p));
+
+document.getElementById("themeBtn").onclick=()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme",cur==="light"?"dark":"light");
+};
+
+document.getElementById("cDate").onchange=calc;
+document.getElementById("cType").onchange=calc;
+document.getElementById("cHol").onchange=calc;
+
+fill();
+renderWiz();
+load();
+renderCases();
+loadAI();
+sbLoad();
+</script>
+</body>
+</html>

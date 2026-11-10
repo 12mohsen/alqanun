@@ -1,0 +1,7 @@
+# بيانات محلية لا تُرفع
+*.bak
+*.bak-key
+*-backup.json
+qadaya-backup.json
+.DS_Store
+Thumbs.db
