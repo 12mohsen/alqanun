@@ -46,6 +46,13 @@ header{
   background:linear-gradient(135deg,var(--accent),#7d6414);
   display:grid;place-items:center;font-size:22px;color:#10151b;font-weight:700;
 }
+.wordmark{
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:.74rem;font-weight:600;letter-spacing:.34em;text-transform:lowercase;
+  color:var(--accent2);opacity:.9;margin-bottom:3px;
+  /* الاسم لاتيني داخل صفحة RTL، فيُثبَّت إلى اليمين مع بقية الترويسة */
+  direction:ltr;text-align:right;
+}
 h1{font-size:1.5rem;font-weight:700;letter-spacing:-.3px}
 .sub{color:var(--dim);font-size:.92rem;margin-top:4px}
 .tools{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
@@ -308,6 +315,7 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
 }
 @media(max-width:600px){
   h1{font-size:1.22rem}
+  .wordmark{font-size:.68rem;letter-spacing:.28em}
   .card{padding:17px}
   nav.tabs button{padding:10px 11px;font-size:.87rem}
 }
@@ -327,6 +335,7 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
   <div class="brand">
     <div class="seal">ع</div>
     <div>
+      <div class="wordmark" dir="ltr">alqanun</div>
       <h1>دليل المسار القضائي</h1>
       <div class="sub">التركات والأحوال الشخصية · العقار والمحكمة العامة · النزاع مع المنشآت القانونية — المملكة العربية السعودية</div>
     </div>
