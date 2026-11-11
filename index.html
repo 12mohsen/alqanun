@@ -279,7 +279,24 @@ textarea:focus,input[type=text]:focus,input[type=number]:focus{outline:none;bord
   position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
   background:var(--accent);color:#10151b;padding:11px 24px;border-radius:999px;
   font-weight:600;font-size:.9rem;z-index:99;box-shadow:0 6px 24px rgba(0,0,0,.35);
+  display:flex;align-items:center;gap:14px;cursor:pointer;max-width:min(92vw,620px);
 }
+.toast .tx{opacity:.55;font-weight:700;font-size:1.05rem;line-height:1}
+.toast:hover .tx{opacity:1}
+.toast.big{padding:14px 26px;font-size:.95rem;border-radius:16px;line-height:1.6}
+
+/* شريط ثابت أعلى نموذج الدعوى — المعلومة تبقى لا تومض */
+.cbar{
+  background:linear-gradient(135deg,rgba(201,162,39,.14),rgba(201,162,39,.05));
+  border:1px solid rgba(201,162,39,.45);border-radius:12px;
+  padding:14px 16px;margin-bottom:20px;
+}
+.cbar .r{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:7px}
+.cbar .r:last-child{margin-bottom:0}
+.cbar .k{color:var(--dim);font-size:.82rem;flex:0 0 auto;min-width:92px}
+.cbar .v{font-weight:600}
+.cbar .v.c{color:var(--accent2);font-size:1.02rem}
+.cbar .ls{color:var(--dim);font-size:.85rem;font-weight:400}
 
 /* ---------- tables ---------- */
 .search{
@@ -1704,9 +1721,16 @@ function storeCheck(){
      متصفحك لا يسمح بالحفظ المحلي في هذا الوضع، فالقضايا ستضيع عند إغلاق الصفحة.
      استخدم «تصدير نسخة احتياطية» قبل الإغلاق.</div>`;
 }
-function toast(m){
-  const d=document.createElement("div"); d.className="toast"; d.textContent=m;
-  document.body.appendChild(d); setTimeout(()=>d.remove(),2200);
+function toast(m,ms){
+  document.querySelectorAll(".toast").forEach(x=>x.remove());
+  const d=document.createElement("div");
+  d.className="toast"+(ms?" big":"");
+  d.innerHTML=`<span>${m}</span><span class="tx">×</span>`;
+  d.title="اضغط للإغلاق";
+  d.onclick=()=>d.remove();
+  document.body.appendChild(d);
+  const t=setTimeout(()=>d.remove(), ms||2600);
+  d.addEventListener("mouseenter",()=>clearTimeout(t));   /* لا يختفي وأنت تقرؤه */
 }
 
 /* ---- مهلة الاعتراض لبطاقة القضية ---- */
@@ -1772,7 +1796,7 @@ function startCase(ct){
   cur={type:ct,requests:"",evidence:""};
   go("cases");
   renderForm("دعوى جديدة — "+t.n);
-  toast("المحكمة المختصة: "+t.court);
+  toast("المحكمة المختصة: <strong>"+t.court+"</strong> — وهي مثبّتة أعلى النموذج فلا تحتاج حفظها", 9000);
   const el=document.getElementById("caseEditCard");
   if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
 }
@@ -1882,10 +1906,18 @@ function renderForm(title){
   document.getElementById("caseDocCard").style.display="none";
   document.getElementById("caseEditCard").style.display="";
   const dz=document.getElementById("dangerCard"); if(dz) dz.style.display="none";
-  document.getElementById("editTitle").textContent=title;
   const t=CASE_TYPES[cur.type]||CASE_TYPES.qisma;
+  if(/^دعوى جديدة/.test(title)) title="دعوى جديدة — "+t.n;
+  document.getElementById("editTitle").textContent=title;
 
   document.getElementById("caseForm").innerHTML=`
+  <div class="cbar">
+    <div class="r"><span class="k">نوع الدعوى</span><span class="v">${t.n}</span></div>
+    <div class="r"><span class="k">المحكمة المختصة</span><span class="v c">${t.court}</span></div>
+    <div class="r"><span class="k">الأنظمة المنطبقة</span>
+      <span class="ls">${t.laws.join(" · ")}</span></div>
+  </div>
+
   <fieldset class="fset"><legend>أساسيات</legend>
     ${F("اسم مختصر للقضية (لك وحدك)","title","مثال: تركة الوالد — قسمة")}
     <div class="fg"><label class="fl">نوع الدعوى</label>
@@ -1893,7 +1925,7 @@ function renderForm(title){
         ${Object.entries(CASE_TYPES).map(([k,v])=>
           `<option value="${k}" ${cur.type===k?"selected":""}>${v.n} — ${v.court}</option>`).join("")}
       </select>
-      <div class="hint">المحكمة المختصة: <strong>${t.court}</strong></div></div>
+      </div>
     ${F("المدينة","city","مثال: جدة")}
     <div class="hint" style="margin-top:-6px">تذكير: الاختصاص المكاني يتبع محل إقامة المدعى عليه،
       لا موقع العقار (المادة ٣٤).</div>
