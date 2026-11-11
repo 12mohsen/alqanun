@@ -364,6 +364,7 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
   <button data-p="tarikat">مسار التركات</button>
   <button data-p="aqar">مسار العقار</button>
   <button data-p="mihna">مسار المنشأة القانونية</button>
+  <button data-p="verify">تحقّق من المكتب</button>
   <button data-p="calc">حاسبة المُدد</button>
   <button data-p="laws">الأنظمة والمواد</button>
   <button data-p="detail">تفصيل الأنظمة</button>
@@ -571,6 +572,70 @@ footer{text-align:center;color:var(--dim);font-size:.82rem;margin-top:40px;
       وبقي للمكتب ما يقابل عملًا أنجزه.</p>
 
     <div class="tl" id="tlMihna"></div>
+  </div>
+</section>
+
+<!-- ============ VERIFY ============ -->
+<section class="page" id="p-verify">
+  <div class="card">
+    <h2>تحقّق من المكتب قبل أن تدفع</h2>
+    <p class="lead">المرافعة ورفع الدعاوى عن الغير <strong>مهنة مرخَّصة</strong>. ومن يزاولها
+      بلا ترخيص فهو منتحل صفة، ولا تملك عليه مسارًا تأديبيًا، ويصعب استرداد مالك.
+      دقيقتان هنا توفّران عليك شهورًا في المحاكم.</p>
+
+    <h3>الخطوة الأولى — ثلاثة استعلامات رسمية</h3>
+    <div class="tblwrap" style="margin-top:12px"><table>
+      <thead><tr><th>الاستعلام</th><th>ماذا يثبت</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="m">دليل المحامين</td>
+          <td>أن الشخص <strong>مرخّص من وزارة العدل</strong> وله عضوية أساسية فعّالة
+            ويعمل بمنشأة قانونية معتمدة. ابحث باسم المحامي المسؤول لا باسم المكتب.</td>
+          <td><a class="btn sm" href="https://eservice.sba.gov.sa/lawyers" target="_blank" rel="noopener">افتح</a></td></tr>
+        <tr><td class="m">سجل المنشآت القانونية</td>
+          <td>أن <strong>المكتب نفسه</strong> منشأة قانونية معتمدة. السجل يعرض
+            المنشآت الفعّالة فقط، فغياب الاسم مؤشر لا يُهمَل.</td>
+          <td><a class="btn sm" href="https://eservice.sba.gov.sa/" target="_blank" rel="noopener">افتح</a></td></tr>
+        <tr><td class="m">الاستعلام عن الأعضاء والمتدربين</td>
+          <td>تحقّق أدق برقم الهوية ورقم العضوية أو تاريخ الميلاد — حين يعطيك
+            اسمًا ولا تجده في الدليل.</td>
+          <td><a class="btn sm" href="https://stgerp.sba.gov.sa/inquiry/person" target="_blank" rel="noopener">افتح</a></td></tr>
+      </tbody>
+    </table></div>
+    <p class="hint" style="margin-top:12px">وإن تعذّر عليك البحث: وزارة العدل
+      <strong>١٩٥٠</strong>، والهيئة السعودية للمحامين <strong>٠١١٢٤٠٣٣٣</strong>.</p>
+
+    <h3>الخطوة الثانية — مؤشرات تُقرأ قبل الدفع</h3>
+    <p>أشِّر على ما ينطبق. هذه مؤشرات تستدعي التحقق، وليست حكمًا على أحد —
+      والحكم للاستعلام الرسمي وحده.</p>
+    <div id="redList" style="margin-top:14px"></div>
+    <div id="redOut" style="margin-top:18px"></div>
+  </div>
+
+  <div class="card">
+    <h2>وماذا بعد؟ — المسار يتفرّع هنا</h2>
+    <p>نتيجة البحث في دليل المحامين هي التي تحدد جهتك، وهذا ما تنصّ عليه الهيئة نفسها:
+      إن تبيّن أن المبلَّغ عليه محامٍ مرخّص فالمسار شكوى، وإلا فبلاغ انتحال صفة.</p>
+    <div class="tblwrap" style="margin-top:14px"><table>
+      <thead><tr><th>نتيجة البحث</th><th>جهتك</th><th>ثم</th></tr></thead>
+      <tbody>
+        <tr><td class="m" style="color:var(--ok)">ظهر مرخّصًا</td>
+          <td>شكوى للهيئة السعودية للمحامين → لجنة تأديب المحامين</td>
+          <td>ومعها دعوى مالية أمام المحكمة العامة — المسارَان مستقلان</td></tr>
+        <tr><td class="m" style="color:var(--warn)">لم يظهر</td>
+          <td>بلاغ انتحال صفة + شكوى لوزارة التجارة</td>
+          <td>والدعوى المالية أمام المحكمة العامة</td></tr>
+      </tbody>
+    </table></div>
+    <div class="bar" style="margin-top:18px">
+      <a class="btn" href="https://cx.sba.gov.sa/" target="_blank" rel="noopener">شكوى على مرخّص</a>
+      <a class="btn" href="https://sba.gov.sa/violation-report/" target="_blank" rel="noopener">بلاغ انتحال صفة</a>
+      <button class="btn pri" onclick="startCase('mhFaskh')">ابدأ دعوى استرداد المبلغ</button>
+    </div>
+    <div class="legal" style="margin-top:16px">
+      <strong>اختبار عملي لا يكذب:</strong> اطلب منه <strong>رقم القضية في ناجز</strong>.
+      فقضيتك تظهر لك أنت بحسابك في أبشر/ناجز. فإن لم يعطك رقمًا تتابع به بنفسك،
+      فالأرجح أن شيئًا لم يُقيَّد أصلًا — مهما طالت الوعود.
+    </div>
   </div>
 </section>
 
@@ -1440,6 +1505,7 @@ function fill(){
   renderTL("tlTarikat",DATA.tracks.tarikat);
   renderTL("tlAqar",DATA.tracks.aqar);
   renderTL("tlMihna",DATA.tracks.mihna);
+  paintRed();
 
   const db=document.getElementById("detailBody");
   db.innerHTML=DATA.detail.map(L=>`<div class="acc">
@@ -2490,6 +2556,84 @@ function paintCloud(busy){
       <button class="btn dan" onclick="sbForget()">مسح المشروع من المتصفح</button>
     </div>
     <div class="hint" id="sbMsg" style="margin-top:10px"></div>`;
+}
+
+/* ===================== كاشف المكاتب ===================== */
+/* w: الوزن · d: مؤشر حاسم بذاته */
+const RED=[
+  {w:4,d:true, t:"بحثتُ في دليل المحامين وسجل المنشآت القانونية فلم أجد له أثرًا",
+   n:"السجل يعرض الفعّالة فقط — فغياب الاسم ليس سهوًا."},
+  {w:4,d:true, t:"لا يذكر اسم محامٍ مرخّص ولا رقم ترخيص، لا في موقعه ولا في العقد",
+   n:"المرخّص يُشهر ترخيصه لأنه رأس ماله."},
+  {w:3,d:false,t:"يسمّي نفسه «مؤسسة» أو «مكتب استشارات» ويعرض رفعَ الدعاوى والمرافعة",
+   n:"التسمية شيء والعمل شيء: المرافعة عن الغير مهنة مرخّصة."},
+  {w:3,d:false,t:"طلب التحويل إلى حساب شخصي لا إلى حساب المنشأة",
+   n:"يصعّب الإثبات، ويشي بأن لا منشأة مسجّلة أصلًا."},
+  {w:3,d:false,t:"رفض العقد الموحد لأتعاب المحاماة، أو رفض الكتابة أصلًا",
+   n:"العقد الموحد المسجّل في نافذ سند تنفيذي — ورفضه يحرمك إياه."},
+  {w:3,d:false,t:"وعد بنتيجة مضمونة، أو لمّح إلى «علاقات» تسهّل القضية",
+   n:"لا أحد يضمن حكمًا، والتلميح للواسطة مخالفة بذاتها."},
+  {w:3,d:false,t:"لم يعطني رقم القضية في ناجز لأتابعها بحسابي",
+   n:"الاختبار الحاسم: قضيتك تظهر لك أنت. لا رقم = لا قيد."},
+  {w:2,d:false,t:"طلب وكالة شاملة قبل أي عقد مكتوب يحدد العمل والأتعاب",
+   n:"الوكالة تُعطى لعمل محدد، لا على بياض."},
+  {w:2,d:false,t:"موقعه فيه بقايا قالب جاهز: نصوص إنجليزية، عدّادات صفرية، أرقام وهمية",
+   n:"لا يثبت شيئًا وحده، لكنه يدل على قلة الجدية."},
+  {w:2,d:false,t:"السعر مقابل «كسب القضية» لا مقابل أعمال محددة بمراحلها",
+   n:"الأتعاب تُقدَّر بالجهد والمرحلة، لا بوعد النتيجة."}
+];
+
+function paintRed(){
+  const box=document.getElementById("redList");
+  if(!box) return;
+  box.innerHTML=RED.map((r,i)=>`
+    <label class="fl" style="display:flex;gap:11px;align-items:flex-start;cursor:pointer;
+      padding:11px 13px;border:1px solid var(--line);border-radius:10px;margin-bottom:9px;
+      background:var(--panel2);font-weight:400">
+      <input type="checkbox" id="rd${i}" onchange="scoreRed()" style="width:auto;margin:3px 0 0">
+      <span><span style="font-weight:600">${r.t}</span>
+        <span class="hint" style="display:block;margin-top:3px">${r.n}</span></span>
+    </label>`).join("");
+  scoreRed();
+}
+
+function scoreRed(){
+  const out=document.getElementById("redOut");
+  if(!out) return;
+  let sum=0, hard=false, n=0;
+  RED.forEach((r,i)=>{
+    const el=document.getElementById("rd"+i);
+    if(el&&el.checked){ sum+=r.w; n++; if(r.d) hard=true; }
+  });
+  let c,h,b;
+  if(hard){
+    c="danger"; h="توقّف قبل أن تدفع";
+    b="أشّرتَ على مؤشر حاسم: غياب الترخيص أو غياب اسم محامٍ مرخّص. "+
+      "لا تدفع ولا توقّع ولا تعطِ وكالة قبل أن تتحقق بنفسك من الاستعلامات الرسمية أعلاه. "+
+      "وإن كنتَ دفعتَ بالفعل، فمسارك: بلاغ انتحال صفة، وشكوى لوزارة التجارة، "+
+      "ودعوى مالية أمام المحكمة العامة.";
+  }else if(sum>=6){
+    c="warn"; h="مؤشرات متعددة — لا تكمل قبل التحقق";
+    b="لا شيء هنا يثبت مخالفة بذاته، لكن اجتماعها يستدعي وقفة. "+
+      "أكمل الاستعلامات الرسمية الثلاثة، واطلب رقم القضية في ناجز، "+
+      "واشترط العقد الموحد لأتعاب المحاماة قبل أي سداد.";
+  }else if(sum>0){
+    c="warn"; h="مؤشر أو اثنان";
+    b="قد يكون لها تفسير. اسأله مباشرة واطلب ما يزيلها كتابةً: "+
+      "رقم الترخيص، وعقدًا مكتوبًا يحدد العمل والأتعاب ومراحلها.";
+  }else{
+    c="ok"; h="لا مؤشرات — لكن التحقق لم يتم بعد";
+    b="غياب المؤشرات ليس شهادة. الاستعلامات الرسمية الثلاثة أعلاه هي الدليل، "+
+      "ولا تغني عنها قائمة ولا انطباع.";
+  }
+  out.innerHTML=`<div class="legal" style="border-color:var(--${c})">
+      <strong style="color:var(--${c})">${h}</strong>
+      ${n?`<span class="hint"> · ${toAr(n)} من ${toAr(RED.length)}</span>`:""}
+      <div style="margin-top:9px">${b}</div>
+    </div>
+    <div class="bar" style="margin-top:14px">
+      <button class="btn sm" onclick="RED.forEach((r,i)=>{const e=document.getElementById('rd'+i); if(e) e.checked=false;});scoreRed()">إعادة التعيين</button>
+    </div>`;
 }
 
 /* ===================== منطقة الخطر: مسح كل شيء ===================== */
